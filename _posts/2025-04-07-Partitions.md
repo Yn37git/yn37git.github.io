@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Partitions functions 
-date: 
+date: 2025-03-15
 description: a concise introduction
 ---
 
