@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Partitions functions 
-date: 2015-10-20 11:12:00-0400
+date: 
 description: a concise introduction
 ---
 
@@ -99,8 +99,11 @@ let this set of parts to be chosen represented by \(S\) then:
 \(1_r\) is 1 with red color, \(1_b\) is one with blue color etc
 - from above we have \(N^s={1_r,1_b,\dots,2_r,2_b,\dots} \) i.e.each part has \(s\) distinct colors and is unique.
 
+<embed src="https://yn37git.github.io/assets/pdf/notes_format.pdf" type="application/pdf" />
   
-  
+<iframe src="https://yn37git.github.io/assets/pdf/notes_format.pdf" style="width:718px; height:910px;" frameborder="0"></iframe>
+
+<iframe src="notes_format.pdf" style="width:718px; height:910px;" frameborder="0"></iframe>
   
   
   
