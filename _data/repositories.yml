@@ -1,14 +1,9 @@
 github_users:
-  - torvalds
-  - alshedivat
+  - Yn37git
 
 repo_description_lines_max: 2
 
 github_repos:
-  - alshedivat/al-folio
-  - jekyll/jekyll
-  - twbs/bootstrap
-  - jquery/jquery
-  - FortAwesome/Font-Awesome
-  - mathjax/MathJax
-  - jpswalsh/academicons
+  - Yn37git/Partition-number-theory
+  - Yn37git/Short_notes
+  - Yn37git/Partition-functions-app
