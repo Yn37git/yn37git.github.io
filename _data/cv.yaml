@@ -59,13 +59,3 @@ cv:
           - S. Chandankumar
         date: '2025'
         journal: communicated
-design:
-  theme: sb2nov
-  page:
-    size: a4
-    top_margin: 2cm
-    bottom_margin: 2cm
-    left_margin: 2cm
-    right_margin: 2cm
-    show_page_numbering: true
-    show_last_updated_date: true
