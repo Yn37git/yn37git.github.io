@@ -1,0 +1,71 @@
+cv:
+  name: "Yashas N"
+  location: "Bangalore, Karnataka, India"
+  email: "yashasn37@gmail.com"
+  phone: "+918310792155"
+  social_networks:
+    - network: GitHub
+      username: "Yn37git"
+    - network: LinkedIn
+      username: "yashasn37"
+  sections:
+    summary:
+      - "After four years of dedicated mathematics training, I have developed a strong understanding of fundamental concepts and their underlying principles. This knowledge has equipped me with the ability to approach and solve problems effectively, teach and clarify complex ideas to others, and contribute to fostering a positive and collaborative academic environment."
+    education:
+      - institution: "M. S. RAMAIAH UNIVERSITY OF APPLIED SCIENCES"
+        area: "Mathematics"
+        degree: "M.Sc"
+        start_date: "2022-12-31"
+        end_date: "2024-12-31"
+        highlights:
+            -  Relevant coursework- machine learning, numerical analysis, differential geometry, number theory, fluid mechanics, algebra, analysis and statistics.
+            - Submitted Master Thesis on Arithmetic properties of (l,m)-regular colored partitions.
+            - Learnt Machine learning algorithms and concepts that work behind these.
+            - Presented Talks on Partition Theory.
+            - To my best efforts and academic performance I was awarded Gold Medal from Faculty of Natural Sciences M.S. Ramaiah University of Applied Sciences.- Submitted Master Thesis on Arithmetic properties of (l,m)-regular colored partitions.
+      - institution: "St. Joseph's University "
+        area: "Physics, Chemistry, Mathematics"
+        degree: "B.Sc"
+        start_date: "2019-06-30"
+        end_date: "2022-04-30"
+        highlights:
+            -  Relevant coursework- analysis, group theory, differential equations, modern physics,electronics and general chemistry.
+            - Did my bachelors thesis/course work on Paradoxes in Mathematics.
+    Skills:
+        - label: "Programming Languages"
+          details: "Python, MATLAB and LaTex."
+        - label: "Others"
+          details: "Git, Markdown, Office tools, teaching and tutoring."
+    certificates and courses:
+      - Data Science course from InterForte
+      - Introductory Graphics Design from St Joseph's University
+      - MATLAB Onramp from MathWorks
+    Miscellaneous Experience:
+      - Created programs and a website on partitions and partition functions in number theory. This helped me find and verify the properties and congruence relations of thesepartition functions efficiently and faster than traditional methods.
+      - One-to-one tutoring (tuition’s) to school and college students.
+      - Created and evaluated multiple machine learning models on a variety of data in the InternForte data science course.
+    additional_experience_and_awards:
+      - label: "Gold Medal"
+        details: "M. S. Ramaiah University of Applied Sciences."
+      - label: "Languages"
+        details: " English, Kannada, Hindi."
+    Exams Qualified:
+      - GATE(2025), KSET(2024).
+    publications:
+      - title: Arithmetic properties of (ℓ, m)-regular colored partitions
+        authors:
+          - Yashas N.
+          - C.Shivashankar
+          - S. Chandankumar
+        date: '2025'
+        journal: communicated
+design:
+  theme: sb2nov
+  page:
+    size: a4
+    top_margin: 2cm
+    bottom_margin: 2cm
+    left_margin: 2cm
+    right_margin: 2cm
+    show_page_numbering: true
+    show_last_updated_date: true
