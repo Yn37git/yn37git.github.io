@@ -12,12 +12,12 @@ toc:
   - name: Administration and politics
   - name: Weather and climate
   - name: Reference places
-      subsections:
-        - name: Temples
-        - name: Mosque
-        - name: Shops
-        - name: Hospitals
-        - name: Schools and colleges
+     subsections:
+       - name: Temples
+       - name: Mosque
+       - name: Shops
+       - name: Hospitals
+       - name: Schools and colleges
   - name: Education
   - name: Employment and income sources
   - name: Communication
