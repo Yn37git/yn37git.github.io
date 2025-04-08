@@ -17,7 +17,7 @@ li,
 span,
 strong {
   color: var(--global-text-color);
-  font-family: Ubuntu, sans-serif;
+  font-family: Ubuntu;
   font-weight: 400;
 }
 body {
@@ -31,7 +31,7 @@ hr {
 table {
   td,
   th {
-    font-size: 1rem;
+    font-size: 1.5rem;
     padding: 1px 1rem 1px 0;
   }
 
@@ -66,7 +66,7 @@ blockquote {
   border-left: 5px solid var(--global-theme-color);
   margin: 1.5em 0;
   padding: 1em;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
 
   p {
     margin-bottom: 0;

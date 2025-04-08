@@ -166,7 +166,8 @@
 		& \quad -dim(W_1\cap W_2).
 	\end{align*}
 	\snote{note: there cannot be a definite formula for $ dim(\sum_{i=1}^{n}W_i) $ using dimensions of $ W_i's $ and their counterparts (union, intersections) if $ n\geq 3 $. }}
-	\tbx[Direct sum]{ Now if for two subspaces $ W_1,W_2 $ of $V $ if $ W_1\cap W_2=\emptyset $ we write their sum $ W_1+W_2 $ as $ W_1\oplus W_2 $   }
+	\tbx[Direct sum]{ Now if for two subspaces $ W_1,W_2 $ of $V $ if $ W_1\cap W_2=\emptyset $ we write their sum $ W_1+W_2 $ as $ W_1\oplus W_2 $ 
+	\yi If $ V=W_1\oplus W_2 $ for some non zero subspaces $ W_1,W_2 $ then for each vector $ v\in V $ can be written \textbf{uniquely} as $ v=w_1+w_2 $ for unique $ w_1\in W_1 $ and $ w_2\in W_2. $  }
 	\tbx[Matrix Representation of vectors]{ Fix a basis $ \beta=\{b_1,b_2,\ck, b_n\} $ for a vector space $ V(\F) $ then as $ B $ spans $ V $  every vector  $x \in  V $ can be written as $ x=x_1b_1+x_2b_2+\ck x_nb_n $ for $ x_i\in \F $ and $ b_i\in B $ and this representation is unique so each vector can be associated with a column matrix $ x_\beta=[x_1\; x_2\ck x_n]^T $ }
 	\tbx[Change of Basis Matrix]{  Given two basis $ \beta= \{b_1,b_2,\ck, b_n\}, \; \beta' =\{b'_1,b'_2,\ck, b'_n\} $ for $ V $ Then one can change the representation of $ x\in V $ from $ [x]_\beta $ to $ [x]_{\beta'} $ by 
 	\[[x]_{\beta'}=P[x]_\beta\] where $ P_n $ is a invertible matrix given by if $ b_j=p_{1j}b'_1+p_{2j}b'_2+\ck +p_{nj}b'_n$ then $ [p_{1j}\; p_{2j} \ck p_{nj}]^T $ forms the $ j^{th} $ column of $ P. $}
@@ -268,6 +269,27 @@ is an eigenvalue og $ A $ iff $ det(A-\lambda I)=0 .$
 \tbx{ Eigenspaces are invariant subspaces. }
 \tbx[Diagonalizability test]{  $ T $ is diagonalizable iff minimal polynomial of $ T $ \snote{$ m_T(x) $} splits into distinct linear factors in the underlying field $ \F $ i.e. \\
 $ T $ is diagonalizable $ \iff \; m_T(x)=(x-c_1)(x-c_2)\ck(x-c_n) $ for distinct $ c_i\in \F $ }
+\tbx[matrix representation]{
+$ T $ is diagonalizable iff their exist a representation of $ T $ in matrix form which is diagonal matrix i.e.
+if $ A $ is matrix of $ T $ in some basis then $ T $ is diagonalizable iff there exist an invertible matrix $ P $ such that $  P^{-1}  AP=D $ where $ D $ is diagonal i.e. iff 
+\begin{flushleft}
+	$ A=\begin{bmatrix}
+		a_{11} & a_{12} & \ck & a_{1n}\\
+		a_{21} & a_{22}& \ck & a_{2n}\\
+		\vdots & \vdots & \ddots &\vdots\\
+		a_{n1}& a_{n2}&\ck & a_{nn} 
+	\end{bmatrix}  $
+\end{flushleft}
+\begin{flushright}
+$ 
+\sim D=
+\begin{bmatrix}
+	d_{11} & 0 & \ck & 0\\
+	0& d_{22}& \ck & 0\\
+	\vdots & \vdots & \ddots &\vdots\\
+	0& 0&\ck & d_{nn} 
+\end{bmatrix}  $
+\end{flushright} }
 \section{Projections or \\ Idempotent Operators }
 \tbx[Projections]{ $ E: V(\F)\ra V(\F) $( is a projection if $ E^2=E $ 
 \yi if $ E $ is a projection then $ a\in R(T) $ iff $ E(a)=a. $  }
@@ -285,6 +307,7 @@ $ T $ is diagonalizable $ \iff \; m_T(x)=(x-c_1)(x-c_2)\ck(x-c_n) $ for distinct
   	 for $ E^2=E$ and  $ R(E)=W $\\
   $ TE=ET \iff T(W)\subseteq W $
   	 	\end{center} }
+   	 \tbx{ If vector space $ V=U\oplus W$ for some non zero subspaces $ U,W $ and if $ P $ is the projection operator on $ V $ such that $ R(P)=U $ then $ I-P $ is also a projection operator on $ V $ such that $ R(I-P)=W .$   }
    	\tbx[Diagonalizability and Projections]{ if a linear operator $ T $ on $ V $  is diagonalizable on  $ V $ then for distinct eigenvalues $ \lambda_1,\lambda_2,\ck, \lambda_n$ of $ T $ $ \exists $ projections $ E_1,E_2,\ck E_n $ on $ V $ such that
    	\yi range of $ E_i = $ eigenspace of $ \lambda_i $ in $ V $.
    	\yi $ T=\lambda_1 E_1+\lambda_2 E_2 +\ck +\lambda_n E_n .$
@@ -312,8 +335,38 @@ $ T $ is diagonalizable $ \iff \; m_T(x)=(x-c_1)(x-c_2)\ck(x-c_n) $ for distinct
    	   			\yi every $ K_\lambda $ \snote{generalised eigenspace} has a ordered basis constituting of cycle of generalised eigenvectors.
    	   			\yi if characteristic polynomial of $ T $ completely splits into linear factors in $ \F $ then there exist a basis  of $V $ containing only Cycle of generalised eigenvectors of $ T $, this basis gives a unique characteristic to $ T $ which when viewed in matrix form of $ T $ gives raise to Jordan canonical form.}
    	   			\tbx[Consequences of Jordan Form ]{ \y Two linear operators or square matrices \snote{whose characteristics polynomial  completely splits into linear factors in their under lying filed} are similar iff  they have the same Jordan form representation.
-   	   			\yi $ T\sim T^t. $   	   			}
-   	   	
+   	   			\yi $ T\sim T^t. $   	 
+   	   			\yi if characteristic polynomial of $ T $ completely splits into linear factors in $ \F $ then 
+   	   			\begin{center}
+   	   				$ T\sim D+N .$
+   	   				\end{center} where $ D $ is diagonal and $ N $ is nilpotent such that $ TN=NT $.	}
+   	   	\tbx[matrix representation]{ if  if characteristic polynomial of $ T $ completely splits into linear factors in $ \F $ then matrix of $ T: \; A$  is similar to $ J $ where $ J $ is represented as blocks with diagonal entries as eigenvalues and super diagonal entries $ 1 $ and rest entries $ 0 $ i.e.
+   	   	\begin{flushleft}
+   	   		$ A=\begin{bmatrix}
+   	   			a_{11} & a_{12} & \cdots& a_{1n}\\
+   	   			a_{21} & a_{22}& \cdots & a_{2n}\\
+   	   			\vdots & \vdots & \ddots &\vdots\\
+   	   			a_{n1}& a_{n2}&\cdots & a_{nn} 
+   	   		\end{bmatrix}  $
+   	   	\end{flushleft}
+   	   	\begin{flushright}
+   	   		$ 
+   	   		\sim D=
+   	   		\begin{bmatrix}
+   	   			[J_{1}] & 0 & \cdots & 0\\
+   	   			0& [J_{2}]& \cdots & 0\\
+   	   			\vdots & \vdots & \ddots &\vdots\\
+   	   			0& 0&\cdots & [J_{k}] 
+   	   		\end{bmatrix}  $ 
+   	   	\end{flushright} 
+   	   		where $ [J_i] =\begin{bmatrix}
+   	   		\lambda_i & 1 &0& \cdots &0\\
+   	   		0 &	\lambda_i & 1 & \cdots &0\\
+   	   		\vdots &\vdots & \ddots &\ddots &\vdots\\
+   	   		0&\cdots & \cdots &\lambda_i &1\\
+   	   		0&\cdots & \cdots & \ck&\lambda_i 
+   	   		\end{bmatrix}$, $ \lambda_i $ an eigenvalue of $ T .$
+   	   		}
    	   	
    	\section{Rational Form}
    	
