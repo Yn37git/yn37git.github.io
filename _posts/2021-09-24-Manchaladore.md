@@ -4,27 +4,27 @@ title: Manchaladore
 date: 2021-09-24
 description: A brief on my hometown.
 toc:
-    - Introduction
-    - Land
-    - History
-    - Agriculture
-    - Administration and politics
-    - Weather and climate
-    - Reference places
-        - Temples
-        - Mosque
-        - Shops
-        - Hospitals
-        - Schools and colleges
-    - Education
-    - Employment and income sources
-    - Communication
-    - Transportation
-    - Drinking water and food
-    - MIGRATION
-    - Wild life and Animals
-    - Development
-    - Problems faced by people and other expectations by the people
+    - name: Introduction
+    - name: Land
+    - name: History
+    - name: Agriculture
+    - name: Administration and politics
+    - name: Weather and climate
+    - name: Reference places
+        - name: Temples
+        - name: Mosque
+        - name: Shops
+        - name: Hospitals
+        - name: Schools and colleges
+    - name: Education
+    - name: Employment and income sources
+    - name: Communication
+    - name: Transportation
+    - name: Drinking water and food
+    - name: MIGRATION
+    - name: Wild life and Animals
+    - name: Development
+    - name: Problems faced by people and other expectations by the people
 ---
 
 

@@ -19,32 +19,32 @@ Click on the topics to open pdfs in this site itself, to read them or to downloa
 <details>
 <summary>Group theory</summary>
 
-<iframe src="https://yn37git.github.io/assets/Short_Notes/Abstract_algebra/Group Theory/Group_theory_shortnotes.pdf" style="width:718px; height:700px;" frameborder="0"></iframe>
+<iframe src="https://yn37git.github.io/assets/Short_Notes/Abstract_algebra/Group Theory/Group_theory_shortnotes.pdf" style="width:850px; height:600px;" frameborder="0"></iframe>
 </details>
 
 <details>
 <summary>Ring theory</summary>
 
-<iframe src="https://yn37git.github.io/assets/Short_Notes/Abstract_algebra/Ring Theory/Ring_theory_shortnotes.pdf" style="width:718px; height:700px;" frameborder="0"></iframe>
+<iframe src="https://yn37git.github.io/assets/Short_Notes/Abstract_algebra/Ring Theory/Ring_theory_shortnotes.pdf" style="width:850px; height:600px;" frameborder="0"></iframe>
 </details>
 
 <details>
 <summary>Field and Galios theory</summary>
 
-<iframe src="https://yn37git.github.io/assets/Short_Notes/Abstract_algebra/Field & galios Theory/Field_Galios_Theory_shortnotes.pdf" style="width:718px; height:700px;" frameborder="0"></iframe>
+<iframe src="https://yn37git.github.io/assets/Short_Notes/Abstract_algebra/Field & galios Theory/Field_Galios_Theory_shortnotes.pdf" style="width:850px; height:600px;" frameborder="0"></iframe>
 </details>
 </details>
 
 <details>
 <summary> Complex analysis</summary>
 
-<iframe src="https://yn37git.github.io/assets/Short_Notes/Complex Analysis/Complex_Analysis_short_notes.pdf" style="width:718px; height:700px;" frameborder="0"></iframe>
+<iframe src="https://yn37git.github.io/assets/Short_Notes/Complex Analysis/Complex_Analysis_short_notes.pdf" style="width:850px; height:600px;" frameborder="0"></iframe>
 </details>
 
 <details>
 <summary> Differential geometry</summary>
 
-<iframe src="https://yn37git.github.io/assets/Short_Notes/Diffrential_geometry/Diffrential _geometry_shortnotes.pdf" style="width:718px; height:700px;" frameborder="0"></iframe>
+<iframe src="https://yn37git.github.io/assets/Short_Notes/Diffrential_geometry/Diffrential _geometry_shortnotes.pdf" style="width:850px; height:600px;" frameborder="0"></iframe>
 </details>
 
 <details>
@@ -53,42 +53,42 @@ Click on the topics to open pdfs in this site itself, to read them or to downloa
 <details>
 <summary> linear alg</summary>
 
-<iframe src="https://yn37git.github.io/assets/Short_Notes/Linear_Algebra/linear_algebra/Linear_algebra_shortnotes.pdf" style="width:718px; height:700px;" frameborder="0"></iframe>
+<iframe src="https://yn37git.github.io/assets/Short_Notes/Linear_Algebra/linear_algebra/Linear_algebra_shortnotes.pdf" style="width:850px; height:600px;" frameborder="0"></iframe>
 </details>
 
 <details>
 <summary> Matrix properties </summary>
 
-<iframe src="https://yn37git.github.io/assets/Short_Notes/Linear_Algebra/matrix_properties/matrix_properties_shortnotes.pdf" style="width:718px; height:700px;" frameborder="0"></iframe>
+<iframe src="https://yn37git.github.io/assets/Short_Notes/Linear_Algebra/matrix_properties/matrix_properties_shortnotes.pdf" style="width:850px; height:600px;" frameborder="0"></iframe>
 </details>
 
 <details>
 <summary> Numerical Linear algebra </summary>
 
-<iframe src="https://yn37git.github.io/assets/Short_Notes/Numerical_analysis/Numerical_linear_algebra.pdf" style="width:718px; height:700px;" frameborder="0"></iframe>
+<iframe src="https://yn37git.github.io/assets/Short_Notes/Numerical_analysis/Numerical_linear_algebra.pdf" style="width:850px; height:600px;" frameborder="0"></iframe>
 </details>
 </details>
 
 <details>
 <summary> Naive set theory</summary>
 
-<iframe src="https://yn37git.github.io/assets/Short_Notes/Naive_set_theory/Naive_set_Theory_shortnotes.pdf" style="width:718px; height:700px;" frameborder="0"></iframe>
+<iframe src="https://yn37git.github.io/assets/Short_Notes/Naive_set_theory/Naive_set_Theory_shortnotes.pdf" style="width:850px; height:600px;" frameborder="0"></iframe>
 </details>
 
 <details>
 <summary> Real analysis</summary>
 
-<iframe src="https://yn37git.github.io/assets/Short_Notes/Real_analysis/Real_analysis_shortnotes.pdf" style="width:718px; height:700px;" frameborder="0"></iframe>
+<iframe src="https://yn37git.github.io/assets/Short_Notes/Real_analysis/Real_analysis_shortnotes.pdf" style="width:850px; height:600px;" frameborder="0"></iframe>
 </details>
 
 <details>
 <summary> Sequence and Series</summary>
 
-<iframe src="https://yn37git.github.io/assets/Short_Notes/Sequence_Series/Sequenece_Series_shortnotes.pdf" style="width:718px; height:700px;" frameborder="0"></iframe>
+<iframe src="https://yn37git.github.io/assets/Short_Notes/Sequence_Series/Sequenece_Series_shortnotes.pdf" style="width:850px; height:600px;" frameborder="0"></iframe>
 </details>
 
 <details>
 <summary> Special examples</summary>
 
-<iframe src="https://yn37git.github.io/assets/Short_Notes/Special_examples/Special_examples.pdf" style="width:718px; height:700px;" frameborder="0"></iframe>
+<iframe src="https://yn37git.github.io/assets/Short_Notes/Special_examples/Special_examples.pdf" style="width:850px; height:600px;" frameborder="0"></iframe>
 </details>
