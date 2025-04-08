@@ -17,8 +17,12 @@ li,
 span,
 strong {
   color: var(--global-text-color);
+  font-family: Ubuntu, Cantarell, sans-serif;
 }
-
+body {
+  font-family: Ubuntu;
+  font-weight: 400;
+}
 hr {
   border-top: 1px solid var(--global-divider-color);
 }
