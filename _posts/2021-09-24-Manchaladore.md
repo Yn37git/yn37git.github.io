@@ -4,7 +4,6 @@ title: Manchaladore
 date: 2021-09-24
 description: A brief on my hometown.
 toc:
-  - name: Equations
   - name: Introduction
   - name: Land
   - name: History
