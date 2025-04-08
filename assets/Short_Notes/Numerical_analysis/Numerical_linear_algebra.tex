@@ -1,0 +1,167 @@
+\documentclass[11pt]{extarticle}
+\usepackage{fullpage}
+\usepackage[ampersand]{easylist}
+\ListProperties(Hide=10, Style*=$\bullet\;\,$, Style2*=$\;\,${\tiny$\blacksquare$}$\;\,$,Space*=1mm,Space2*=0.1mm)
+
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,
+	linkcolor=black,
+	filecolor=black,      
+	urlcolor=black}
+
+\usepackage{amsmath,amssymb,amsthm,mathtools,mathrsfs}
+\newtheorem{thm}{Theorem}[]
+\usepackage{bibref}
+
+\usepackage[T1]{fontenc}
+\usepackage[sc,osf]{mathpazo}
+\usepackage{eulervm}
+\usepackage[bold=.05]{xfakebold}
+
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usetikzlibrary{shapes}
+\usepackage{pgfplots}
+\pgfplotsset{trig format plots=rad}
+\usetikzlibrary {3d}
+\pgfplotsset{compat=1.18}
+
+\usepackage[most]{tcolorbox}
+\tcbuselibrary{skins}
+\usepackage[explicit]{titlesec}
+\newtcolorbox{secbox}[1][]{enhanced,attach boxed title to top center,drop fuzzy shadow,breakable,colbacktitle=gray,colback=black,colframe=black,
+	coltext=white,size=title,title={#1}}
+\titleformat{\section}[runin]{\bfseries\LARGE}{}{0pt}{\hfill
+	%\begin{secbox}[\thesection]
+	%	\centering #1
+	%\end{secbox}
+	%}
+\tcbsidebyside[sidebyside adapt=left,segmentation style=solid,enhanced,size=small]
+{%
+	\thesection 
+}
+{%
+	#1
+}
+}
+\titleformat{\subsection}[runin]{\bfseries\large}{}{0pt}
+{\hfill
+%	\begin{secbox}[\thesubsection]
+	%		\centering #1
+	%	\end{secbox}
+\tcbsidebyside[sidebyside adapt=left,segmentation style=solid,enhanced,size=small]
+{%
+	\thesubsection 
+}
+{%
+	#1
+}
+}
+\titleformat{\subsubsection}[runin]{\bfseries}{}{0pt}
+{\hfill
+%		\begin{secbox}[\thesubsubsection]
+	%			\centering #1
+	%		\end{secbox}
+\tcbsidebyside[sidebyside adapt=left,segmentation style=solid,enhanced,size=small]
+{%
+	\thesubsubsection 
+}
+{%
+	#1
+}
+}
+
+\usepackage{multicol}
+\setlength{\columnsep}{5mm}
+\setlength\columnseprule{.1pt}
+
+\newcommand{\ra}{\rightarrow}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Na}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\w}[1]{\text{#1}}
+\newcommand{\ck}{.\,.\,}
+\newcommand{\sm}[2]{\displaystyle\sum_{#1}^{#2}}
+\newcommand{\Uint}[2]{\overline{\int\!}_{#1}^{\;#2}}
+\newcommand{\Lint}[2]{\underline{\int\!}_{\;#1}^{\;#2}}
+\newcommand{\pfrac}[2]{\frac{\partial#1}{\partial#2}}
+\newcommand{\ckfil}{$.\dotfill.$}
+\newcommand{\tm}{\times}
+\newcommand{\snote}[1]{{\footnotesize(#1)}}
+\newcommand{\st}{\,{}_{s}|_t\,}
+\newcommand{\gen}[1]{\langle #1 \rangle}
+\newcommand{\tbx}[2][]{
+\begin{tcolorbox}[enhanced,breakable,size=small,colback=black!2!white,title={#1},arc is angular, arc=1.5mm,drop fuzzy shadow]
+	#2
+\end{tcolorbox}
+}
+\newcommand{\y}{$\blacksquare\;$}
+
+\author{Yashas.N}
+\title{Numerical Linear Algebra}
+\date{}
+\begin{document}
+\maketitle
+	\begin{multicols}{2}
+		\tbx[]{if a matrix is in triangular form one can easy calculate its inverse by making note that inverse of a triangular 
+			matrix is of the same triangular type i.e. for example $ A $ is upper triangular non-singular matrix then 
+			$ A^{-1} $ is also an upper triangular matrix.}
+			\tbx[$LU$ Decomposition]{
+				\y From previous point we have if any non singular matrix $ A $ can be written as $ A=LU $ for lower triangular $ L $ and upper triangular $ U $ then $ A^{-1}=U^{-1}L^{-1} $ thus inverse can be easily calculated.\\  
+				\y This Decomposition may not be unique\\
+				\y To decompose in a easy way we take diagonal elements of $ U $ or $ L $ as $ 1. $ (only in one of the factors) and compute the coefficients by writing $ A=LU $ and solving some equations  in a linear order.\\
+				\y Now in addition if principal minors $ (\Delta_k) $ of matrix $ A $ are not zero then the above decomposition is unique.}
+				\tbx[Gauss elimination]{
+				if $ A=[a_{ij}] $ be a $ n\tm n $ non singular matrix then for linear system $ Ax=b$ then we can use elementary operations:\\
+				exchange of rows, addition of rows and multiplication by a non zero constant to a row to transform the  linear system$A'x=b'$ such that $ a'_{11}\neq 0  $ and $ a'_{i1}=0 $ for $ i<1 $  and continuing this process to get for $ i= 2,3,\ck, n$ we get a system $ Gx=\tilde{b} $ where $ G $ is upper triangular and has same solutions as original system.}
+				\tbx[Gauss-Jordan method]{ this method is similar to Gauss elimination but $ Ax=b $ for non singular square $ A $ is transformed to $ G_Jx=\tilde{b} $ where $ G_J $ is diagonal i.e. for $ A=[a_{ij}] $, $ a_{ii} $ is made non zero and all other $ a_{ij} $ is made zero with elementary transformations.}
+			  \tbx[General Iterative methods]{
+			  \y iterative methods can be generalised as $ x^{(k)} =Tx^{(k-1)}+c$ \\
+			  \y this method converges to a unique solution for any initial approximation $ x^{(0)} $ iff \snote{$\iff$} $ \rho(T)<1$ where $\rho(T)=\max(|\lambda|) $ for $ \lambda $ eigenvalue of $ T. $ }
+				\tbx[Jacobi's Method]{\y if $ Ax=b $ is a system such that for $ n $-square $ A=[a_{ij}] $ we have $ a_{ii}\neq 0 $ \snote{if not is made by rearranging rows or equations if possible} then for $ x=[x_i]^T $ we can transform $ x_i=  \left[\sm{\substack{j=1 \\  j\neq i}}{n}(-a_{ij}x_j/a_{ii}) +b_i/a_{ii}\right]$ from which we get the iterative method i.e. $ x^{(0)} $ is initial approximation and for $ k^{th} $ approximation $ x^{(k)} $ we have the iteration using $ x^{(k-1)} $ given by
+				\[ x_i^{(k)}=\frac{ 1 }{a_{ii}} \left[\sm{\substack{j=1 \\ j\neq i}}{n}(-a_{ij}x_j^{(k-1)}) +b_i\right].\]
+				 \y Now for matrix representation if $ A=D+L+U $ where $ D $ is diagonal $ L $ is lower diagonal with diagonal entries $ 0 $ and $ U $ is upper diagonal with diagonal entries $ 0 $ then for Jacobi method we have 
+				 \begin{align*}
+				 	(D+L+U)x&=b\\
+				 	\implies Dx&= -(L+U)x+b.\\
+				 	\implies x&=-D^{-1}(L+U)x+D^{-1}b.\\
+				 	i.e. \quad x^{(k)}&=-D^{-1}(L+U)x^{(k-1)}+D^{-1}b.
+				 	\end{align*}  
+			 	so we get $ T=-D^{-1}(L+U),c=D^{-1}b $ for general form.}
+				 \tbx[Gauss-Seidel Method]{ \y This is similar to Gauss method but here we use the previous $ k^{th} $ iterated variables for the next $ k^{th} $ one  i.e. for in $ x_i^{(k)} $ iteration we can replace $ x_j^{(k-1)} $ for $ j<i $ with $ x_j^{(k)} $ as these are already found i.e.\\
+				 	 $x_i^{(k)}=$
+				 \[\quad \frac{ 1 }{a_{ii}} \left[-\sm{j=1}{i-1}a_{ij}x_j^{(k)}-\sm{j=i+1}{n}a_{ij}x_j^{(k-1)}+b_i\right].\] 
+				 \y for matrix representation we rewrite the iterative formula as \\
+				 $\sm{j=1}{i}a_{ij}x_j^{(k)}=-\sm{j=i+1}{n}a_{ij}x_j^{(k-1)}+b_i$\\
+				 similar to Jacobi's case if $ A=D+L+U $ by above formula we have 
+				{ \small
+					\begin{align*}
+				 	(D+L)x^{(k)}&=-Ux^{(k-1)}+b.\\
+				 	i.e. x^{(k)}&= -(D+L)^{-1}Ux^{(k-1)}+(D+L)^{-1}b.
+				 	\end{align*}}
+			 	so we get $ T=-(D+L)^{-1}U,c=(D+L)^{-1}b. $ }
+			 	\tbx{ for system $ Ax=b $ , $ A=D+L+U $ \\
+			 		\y if $  A$ is strictly diagonal then both Jacobi and Gauss-Seidel methods converge for every initial approximation $ x^{(0)}. $ \\
+			 		\y  Gauss-Seidel method is twice as fast as Jacobi's method for convergence \\
+			 		now from general iterative methods we have \\
+			 		\y sufficient condition for convergence of Jacobi's method is that 
+			 		\[||T||=||-D^{-1}(L+U)||<1\quad i.e.\; \rho(T)<1.\]
+			 		\y similarly  sufficient condition for convergence of Gauss-Seidel method is that 
+			 		\[ ||T||=||-(D+L)^{-1}U||<1.\]
+			 		\y Both these method also converge if $ A =[a_{ij}]$ is such that \\
+			 		 $ \sm{\substack{j=1\\ j\neq i}}{n}|a_{ij}|\leq |a_{ii}| \text{ for } i=1,2,\ck,n $ and strict inequality holds for at least one $ i $.   }
+			 		 
+			 		 
+\begin{thebibliography}{9}
+	\bibitem{NABF} 
+	Burden R. L., Faires D. J., Burden A. M.: Numerical Analysis, Cengage Learning,(2016).
+	\bibitem{NASS}
+	S. S. Sastry: Introductory Methods of Numerical Analysis, PHI Learning,(2012).
+\end{thebibliography}			 		 
+			 		 
+	\end{multicols}
+
+
+\end{document}
