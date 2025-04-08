@@ -1,0 +1,326 @@
+\documentclass[11pt]{extarticle}
+	\usepackage{fullpage}
+	\usepackage[ampersand]{easylist}
+	\ListProperties(Hide=10, Style*=$\bullet\;\,$, Style2*=$\;\,${\tiny$\blacksquare$}$\;\,$,Space*=1mm,Space2*=0.1mm)
+	
+	\usepackage{hyperref}
+	\hypersetup{colorlinks=true,
+		linkcolor=black,
+		filecolor=black,      
+		urlcolor=black}
+	
+	\usepackage{amsmath,amssymb,amsthm,mathtools,mathrsfs}
+	\newtheorem{thm}{Theorem}[]
+	\usepackage{bibref}
+	
+	\usepackage[T1]{fontenc}
+	\usepackage[sc,osf]{mathpazo}
+	\usepackage{eulervm}
+	\usepackage[bold=.5]{xfakebold}
+	
+	\usepackage{tikz}
+	\usetikzlibrary{calc}
+	\usetikzlibrary{shapes}
+	\usepackage{pgfplots}
+	\pgfplotsset{trig format plots=rad}
+	\usetikzlibrary {3d}
+	\pgfplotsset{compat=1.18}
+	
+	\usepackage{multicol}
+	\setlength{\columnsep}{5mm}
+	\setlength\columnseprule{.1pt}
+	
+	\usepackage[most]{tcolorbox}
+	\tcbuselibrary{skins}
+	\usepackage[explicit]{titlesec}
+	\newtcolorbox{secbox}[1][]{enhanced,attach boxed title to top center,drop fuzzy shadow,breakable,colbacktitle=gray,colback=black,colframe=black,
+		coltext=white,size=title,title={#1}}
+	\titleformat{\section}[runin]{\bfseries\LARGE}{}{0pt}{\hfill
+	\tcbsidebyside[sidebyside adapt=left,segmentation style=solid,enhanced,size=small]
+	{%
+		\thesection 
+	}
+	{%
+		#1
+	}
+}
+\titleformat{\subsection}[runin]{\bfseries\large}{}{0pt}
+{\hfill
+	%	\begin{secbox}[\thesubsection]
+		%		\centering #1
+		%	\end{secbox}
+	\tcbsidebyside[sidebyside adapt=left,segmentation style=solid,enhanced,size=small]
+	{%
+		\thesubsection 
+	}
+	{%
+		#1
+	}
+}
+\titleformat{\subsubsection}[runin]{\bfseries}{}{0pt}
+{\hfill
+	\tcbsidebyside[sidebyside adapt=left,segmentation style=solid,enhanced,size=small]
+	{%
+		\thesubsubsection 
+	}
+	{%
+		#1
+	}
+}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Na}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\w}[1]{\text{#1}}
+\newcommand{\ck}{.\,.\,}
+\newcommand{\sm}[2]{\displaystyle\sum_{#1}^{#2}}
+\newcommand{\Uint}[2]{\overline{\int\!}_{#1}^{\;#2}}
+\newcommand{\Lint}[2]{\underline{\int\!}_{\;#1}^{\;#2}}
+\newcommand{\pfrac}[2]{\frac{\partial#1}{\partial#2}}
+\newcommand{\ckfil}{$.\dotfill.$}
+\newcommand{\snote}[1]{{\footnotesize(#1)}}
+\newcommand{\st}{\,{}_{s}|_t\,}
+\newcommand{\tm}{\times}
+\newcommand{\smdp}{ \,
+	\begin{tikzpicture}
+		\draw[thick] (0,0)--(1ex,1ex)--(1ex,0)--(0,1ex);
+	\end{tikzpicture} 
+	\,
+}
+\newcommand{\gen}[1]{\langle #1 \rangle}
+\newcommand{\pst}{ \,\rotatebox[origin=c]{90}{$ \gen{||} $} \,}
+\newcommand{\tbx}[2][]{
+	\begin{tcolorbox}[enhanced,breakable,size=small,colback=black!2!white,title={#1},arc is angular, arc=1.5mm,drop fuzzy shadow]
+		#2
+	\end{tcolorbox}
+}
+\newcommand{\rai}{\xrightarrow{\setBold\sim}}
+\newcommand{\y}{$\blacksquare\;$}
+\newcommand{\rref}{\w{\small{ rrec }}}
+\newcommand{\yi}{\\$\blacksquare\;$}
+\author{Yashas.N}
+\title{Linear Algebra }
+\date{}
+\begin{document}
+	\maketitle
+	\boldmath
+\begin{multicols}{2}
+	\section*{\normalsize Symbols and notations used}
+	\tbx{\centering
+	$ A_{m\tm n} \ra$ $ m\tm n $ matrix. \\
+	 $ A_n \ra n\tm n$ matrix.\\
+	 $ \sim \;\ra $ the relation below $ A\sim B\implies A=P^{-1}AP.$\\ 
+	 iff $ \ra\; \iff $  
+	}
+	\section{Basic Linear equations theory}
+	\tbx{ Every $ A_{m\tm n}=PR_{m\tm n} $ for Row reduced Echelon form $ R $ and an invertible matrix $ P $ let this relation be denoted by $ A \w{\small{ rrec }} R$}
+   \tbx{ if $ m<n $ then the homogeneous system $ A_{m\tm n}X=0 $ has a non trivial solution \\
+   i.e. if the number of equations is less than the number of variables then the Homogeneous System has a non trivial solution }
+   \tbx[Inverse Properties]{  
+   \y $ A_n $ has inverse $ A^{-1} $ iff $ AX=0 $ has only trivial solutions.
+   \yi $ A $ is invertible iff $ A\rref I $ (identity) 
+   \yi if Elementary matrices are the corresponding matrices of elementary transforms \snote{change of rows, addition of one row to another, multiplication of a row with an non zero constant} then 
+   $ A $ is invertible iff $ A $ is product of elementary matrices. }
+   \tbx[Echelon Form]{ every $ A_{m\tm n}=P_m R Q_n $ for $ P,Q $ invertible and $ R $ is such that it has an identity in upper corner and all other entries zero i.e. $ R= \begin{bmatrix}
+   		I_k & 0\\
+   		0& 0
+   	\end{bmatrix} $  for some identity $ I_k .$ }
+	\tbx[Consistency ]{System of linear equations : \\$ A_{m\tm n}X_{n\tm 1}=b_{1\tm m}$ for $ b\neq 0 $  is consistent \snote{has a solution}  iff the row reduced Echelon form of augmented matrix $ [A:b] $ has same number of non zero rows as in row reduced echelon form of $ A.$ }
+	\section{Vector Spaces}
+	\tbx[Definition]{$ (V,\F,+) $ denoted by $ V(\F) $   : $ V $ is vector space over Field $ \F $ if 
+	\yi $ (V,+) $ is a commutative group, \\
+	for every $ \alpha,\beta \in \F$ and every  $ a,b\in V $ 
+	\yi $ 1a=a $ where $ 1\in \F $ is multiplicative identity of $ \F. $ 
+	\yi $ (\alpha+\beta)a=\alpha a+\beta a $ 
+	\yi $ \alpha (a+b)=\alpha a+\alpha b $ 
+	\yi $ (\alpha\beta)a=\alpha(\beta a) $ \\
+	The elements of $ V $ are called \textbf{vectors }and elements of $ \F $ are called \textbf{scalars}}
+	\tbx[Span]{ if $ K=\{v_1,v_,\ck, v_n\} \subseteq V(\F)$ then span of $ K$ is the set $ \{\sum \alpha_iv_i| v_i \in K, \alpha_i \in \F\} $ i.e. is all the formal sums from set $ K $ with $ \F. $ This is denoted by $ span(K).$ 
+		 }
+	\tbx[Subspace]{ A subset $ S $ of vector space $ V(\F)$ is a subspace if $ S(\F) $ is a vector space by same operations as in $ V $ 
+	\yi given any $ K\subseteq V(F) $ $ span(K) $ is a subspace of $ V(\F) .$
+	\yi $ S $ is a subspace of $ V $ iff $ \alpha a+b \in S\; \forall a,b\in S $ and $ \alpha\in \F $ the underlying field of both spaces  
+	\yi Intersection of subspaces (arbitrary) is again a subspace i.e. if $ W_1,W_2 $ are subspaces of $ V $ then
+	$ W_1\cap W_2 $ is also a subspace of $ V $.
+	\yi Union of subspaces may not be a subspace
+	\yi Union of two subspaces is a subspace iff one of them is contained in another i.e. for  $ W_1,W_2 $ subspaces of $ V $, $ W_1\cup W_2 $ is a subspace iff $ W_1\subseteq W_2 $ or $ W_2\subseteq W_1. $\\ \snote{note: this is not the same in case of $ 3 $ subspaces : consider $ Z_2\tm Z_2 (Z_2) $ vector space here  $ Z_2\tm Z_2=span((0,1))\cup span((1,0))\cup span((1,1)) $.} }
+
+	\tbx[Dependence]{ a set of vectors $ \{v_1,v_,\ck, v_n\} \subseteq V(\F)$ are called Linearly independent in $ V $ if $ \alpha_1v_1+\alpha_2v_2+\ck+\alpha_nv_n=0 \implies $ all $ \alpha_i's$ are $ 0 $ and no other choice is left. Other wise the subset is called linearly dependent}
+	\tbx[Basis]{  a subset $ K $ of $ V $ is a spanning set of $ V $ if $ span(K)=V.$\\
+	A Linearly independent spanning set of $ V(\F) $ is called a Basis of $ V. $ 
+	}
+	\tbx[Dimension]{ In a given vector space $ V(\F) .$
+	\yi The number of elements in Basis is constant $ n\in \Z^+. $ 
+	\yi if a set contains more vectors than the Basis set of a vector space then it is linearly dependent.
+	\yi if a linearly independent set contains exactly the same number of elements as a Basis then it is also a Basis.
+	\yi These above points leads us to the Definition : Number of elements $ n $  in The Basis set of $ V(\F) $ is unique and is called the Dimension of $ V(\F)$ denoted by $ dim(V)=n. $ }
+	\tbx{ if $ W_1,W_2\subseteq V $ are subspaces then 
+	\y $ dim(W_i) \leq V.$ 
+	\yi let $ W_1+W_2=span(W_1,W_2) $ then 
+	\begin{align*}
+		dim(W_1+W_2) &= dim(W_1)+dim(W_2)\\
+		& \quad -dim(W_1\cap W_2).
+	\end{align*}
+	\snote{note: there cannot be a definite formula for $ dim(\sum_{i=1}^{n}W_i) $ using dimensions of $ W_i's $ and their counterparts (union, intersections) if $ n\geq 3 $. }}
+	\tbx[Direct sum]{ Now if for two subspaces $ W_1,W_2 $ of $V $ if $ W_1\cap W_2=\emptyset $ we write their sum $ W_1+W_2 $ as $ W_1\oplus W_2 $   }
+	\tbx[Matrix Representation of vectors]{ Fix a basis $ \beta=\{b_1,b_2,\ck, b_n\} $ for a vector space $ V(\F) $ then as $ B $ spans $ V $  every vector  $x \in  V $ can be written as $ x=x_1b_1+x_2b_2+\ck x_nb_n $ for $ x_i\in \F $ and $ b_i\in B $ and this representation is unique so each vector can be associated with a column matrix $ x_\beta=[x_1\; x_2\ck x_n]^T $ }
+	\tbx[Change of Basis Matrix]{  Given two basis $ \beta= \{b_1,b_2,\ck, b_n\}, \; \beta' =\{b'_1,b'_2,\ck, b'_n\} $ for $ V $ Then one can change the representation of $ x\in V $ from $ [x]_\beta $ to $ [x]_{\beta'} $ by 
+	\[[x]_{\beta'}=P[x]_\beta\] where $ P_n $ is a invertible matrix given by if $ b_j=p_{1j}b'_1+p_{2j}b'_2+\ck +p_{nj}b'_n$ then $ [p_{1j}\; p_{2j} \ck p_{nj}]^T $ forms the $ j^{th} $ column of $ P. $}
+	\section{Linear Transform}
+	\tbx[Definition]{ a map $ T:V(\F)\ra W(\F) $ (between vector spaces with same underlying field)  is called a linear transform if for every $ v,u\in V $ and $ \alpha\in F $ 
+	\yi $ T(v+u)=T(v)+T(u) $ 
+	\yi $ T(\alpha v)=\alpha T(V) $}
+	\tbx[Range and Null space]{ For a linear transform $ T:V\ra W $ :\\
+	\y Range Space of $ T $ denoted by $ R(T)\subseteq W$ is $ \{w|w=T(v)\w{ for some }v\in V\} $
+	\yi Null Space of $ T $ denoted by $ N(T)\subseteq V $ is $ \{v|T(v)=0\in W\} $
+	\yi Both of them are subspaces of the underlying space.
+	\yi $ T $ is one-one iff $ N(T)=\{0\} .$
+	\yi $ T $ is onto if $ R(T)=W $ 
+	\yi if $ dim(V)=dim(W) $ and $ N(T)=\{0\} $ then $ T $ is onto thus $ T $ is bijective. }
+	\tbx{ if $ T,U $ are both liner transforms from $ V\ra W $ and if both agree on a basis of $ V $ \snote{i.e. $ T(b_i)=U(b_i) \; \forall i$ for some basis $ \beta=\{\ck,b_i,\ck\} $ of $ V $} then both of then are same i.e. $ T\equiv U .$}
+	\tbx[Rank Nullity Theorem]{for a linear transform  $ T:V(\F)\ra W(\F) $ if $ rank(T)=dim(R(T)) $ and  $ nullity(T)=dim(N(T)) $ then \[ rank(T)+nullity(T)=dim(V)\]
+	\snote{this is just an analogue of $ 1^{st} $ isomorphism theorems of Groups}}
+	\tbx[Matrix of Linear Transform]{Given a linear transform $ T:V\ra W$, basis $ \beta=\{b_1,b_2\ck,b_n\}  $ of $ V $ and basis $ \beta'=\{b'_1,b'_2,\ck,b'_m\} $ of $ W $ then we can write the liner transform in the corresponding matrix representation of vectors as 
+	\[ [T(x)]_{\beta'}=[T]_{\beta}^{\beta'}[x]_\beta \]
+	 where $ [T]_{\beta}^{\beta'}$ is a $ m\tm n $ matrix  called Matrix of linear transform of $ T $ and is given by if $ T(b_j)=t_{1j}b'_1+t_{2j}b'_1 +\ck +t_{mj}b'_m$  then $ [t_{1j}\; t_{2j} \ck t_{mj}]^T $ forms the $ j^{th} $ column of $ [T]_{\beta'}^{\beta} .$}
+	 \tbx[Change of Basis]{  if $ T:V\ra V $ then $ [T]_\beta^\beta $ is simply written as $ [T]_\beta $ now if $ P $ is the change of basis matrix from basis $ \beta'$ to basis $ \beta$ of $ V $ i.e. $ [x]_\beta=P[x]_{\beta' }$ then
+	 \[[T]_{\beta'}= P^{-1}[T]_\beta P\]
+	 \snote{This can be treated as the origin of 'similar' equivalence matrix relationship $ A\sim B \iff A=P^{-1}BP .$}
+	 }
+	 \tbx[Isomorphism of Vector spaces]{ Two spaces $ V,W $ over same vector space $ \F $ are said to be isomorphic to each other if there exist an invertible linear transform $ T :V\ra W$ (i.e. $ T $ is linear bijective map) and this is denoted by $ V\cong W. $ 
+	 \yi if $ V(\F) $ is of dimension $ n $ then \\
+	 $ V\cong \F^n=\{(\alpha_1,\alpha_2,\ck \alpha_n)|\alpha_i\in \F\} $ i.e. set of $ n $ tuples of $ \F $ with component wise addition. 
+	 \yi clearly $ V(\F)\cong W(\F) $ iff $ dim(W)=dim(V).$ }
+	 \tbx[Space of Linear Transform]{Set of linear transforms\\
+	 	 $ L(V,W)=\{T| T :V\ra W \w{ \footnotesize  is linear transform}\} $ forms a commutative group under addition i.e. $ (T+U)(v)=T(v)+U(v) $ (as in $ W $ ) so it also forms a Vector space over $ \F $ (same field as in $ V$ and $W. $ )
+	 \yi if $dim(V)=n$ and $ dim(W)=m $ both finite then $ dim(L(V,W)) =nm$ }
+	 \tbx[Linear Functional]{Linear transformation $ f:V(\F)\ra \F $ is called a Linear Functional
+	 \yi This is possible as $ \F(\F) $ is an one dimensional vector space.
+	 \yi $ rank(f)=1 \w{ or } 0$ so $ Nullity(f)=n-1 \w{ or } n $ if $ dim(V)=n <\infty.$
+	 \yi \textbf{Dual space } of $ V $ denoted by $V^*= L(V,\F) $ is the set of all linear functionals  on $ V $ 
+	 \yi clearly $ dim(V^*)=dim(V) $ if $ dim(V) $ is finite
+	 \yi \textbf{Dual Basis :} for every basis $ \beta =\{b_1,b_2,\ck , b_n\} $ of $ V $ there exist a corresponding basis $ \beta^*=\{f_1,f_2,\ck , f_n\} $ of $ V^* $ such that $ f_i(b_j)=\delta_{ij}=
+	 \begin{cases}
+	 	1 & \w{ if } i=j\\
+	 	0 & \w{ if } i\neq j\\
+	 \end{cases} $ this $ \beta^* $ is called the dual basis of $ \beta $ }
+ \tbx{
+ \y if $ \{\ck, f_i , \ck\} $ is the dual basis of $ \{\ck, b_i,\ck \} $ and $ x\in V $ is represented as $ x=x_1b_1+x_2b_2+\ck+x_nb_n $ then $ x_i=f_i(x) $ i.e. the coordinate functions in representation is nothing but the dual functions, i.e. \\$ x=\sum_{i=1}^{n} f_i(x)b_i .$ 
+ \yi $ V\cong V^{*}\cong V^{**}= L(V^*,\F)$ \snote{note: $ \cong  $ in  $V\cong V^{**} $ is nothing but functional evaluation at a point(vectors) only i.e. every element of  $V^{**}  $ is of form $ \hat{x} $ for $ \hat{x}(\psi)=\psi(x)$ for some $ x\in V $ .} }
+ \tbx[Functional representation Theorem]{ if $ V $ is finite dimensional vector space, $ \beta =\{b_i\} $ is its basis and $ [x]_\beta=[x_1\; x_2\ck x_n] $ then every functional $ f $ is of form 
+ \[f(x)=a_1x_1+a_2x_2+\ck +a_nx_n\]  in which $ a_i=f(b_i).$ are fixed but $ x_i $ varies on input representation $ x. $ }
+ \tbx[Annihilator]{ if $ A\subset V(\F) $ be any subset of $ V $ then annihilators  of $ A$ is the set of linear functionals $ A^o=\{f|f(A)=0,f\in V^*\}\subseteq V^* $ 
+ \yi clearly $ A^o$ is a subspace of $ V^* $ for any subset $ A $ of $ V $ 
+ \yi subspaces $ W_1=W_1 $ iff $ W_1^o=W_2^o$ 
+ \yi $ (W_1+W_2)^o=W_1^o\cap W_2^o.$ 
+ \yi if $ W $ is subspace of $ V $ then 
+ \begin{center}
+ 	$ dim(W)+dim(W^o)=dim(V) .$
+ \end{center}
+ \y if $ W $ is subspace of $ V $ then $ W\cong W^{oo} .$ }
+ \tbx[Transpose of linear transform]{ if $ T:V\ra W $ is linear transform then its transpose $T^t:W^*\ra V^* $ is a linear transform defined by the evaluation \\ $ T^t(g(.))=g(T(.)) $  i.e. for $ g\in  W^*$,
+ $ T^t(g) $ is the functional $ f=g(T(.)) \in V^*$
+ \yi $ [T^t]_{\gamma^*}^{\beta*}=([T]_\beta ^\gamma)^t $ i.e. the corresponding matrix of $ T^t $ in dual basis of $ \gamma $ in $ W $ and $ \beta $ in $ V $ is just the Transpose of the matrix of $ T $ in $ \beta  $ and $ \gamma. $ 
+ \yi if $ W $ is finite dimensional then for linear $ T:V\ra W $ we have\\
+  $ R(T^t)=(N(T))^o $ and $ N(T^t)=(R(T))^o $  
+ \yi $ T $ is $ 1-1 $ iff $ T^t $ is onto and $ T $ is onto iff $ T^t $ is $ 1-1 .$
+ \yi $ Rank(T^t) =Rank(T).$
+    }
+\tbx{ if linear transform $ T\in L(V)=L(V,V) $ then it is called a linear operator. }
+	\section{Determinant}
+\tbx[Motivation]{for a finite dimensional space every linear transform in $ L(V) $ can be represented as a unique Matrix, but we need to 'uncover' this matrix to gain the properties of corresponding linear transform one such way is to create a Function from set of matrices to the underlying field with some properties which helps us with this 'gain'. }
+\tbx{ Some Properties needed for such a function are :
+\yi It must be a linear in terms of rows (or columns) of the matrix this is called $ n $-linear.
+\yi It must be alternating i.e. if any 2 rows (or columns) are equal then it is zero.
+\yi its vale on Identity should be $ 1 $.}
+\tbx{  Say we obtain a function $ D $ with this property for $ (n-1)\tm (n-1) $ matrices then this can be extend to $ n\tm n $ by 
+\[E_j(A_n)=\sum\limits_{i=1}^{n} (-1)^{i+j} a_{ij}D(A_{ij})\] for fixed $ j\in \{1,2,\ck , n\} $, where $ a_ij $ is the $ i^{th} $ row $ j^{th} $ column entry of $ A $ and $ A_ij $ is the $ n-1\tm n-1 $ matrix obtained from $ A_n $ by removing $ i^{th} $ row and $ j^{th} $ column.}
+\tbx[Definition ]{ From above points we get determinant for a $ n\tm n  $ matrix with entries from $ \F $ as $ D: \F^{n\tm n}\ra \F$ that is $ n$-linear, Alternating and $ D(I)=1 $ is Defined by 
+recursion from the above point or if $ (i_1,i_2,\ck,i_n) $ runs trough all the possible permutations of $ n $ i.e $ n $- tuple with elements from $ \{1,2,\ck, n\} $ with out repetition then 
+$ D(A=[a_{ij}])=\sum\limits_{(i_1,i_2,\ck,i_n)} (-1)^{i_1+i_2+\ck+i_n}a_{1i_1}a_{2i_2}\ck a_{ni_n} $ }
+\tbx[Additional Properties ]{ 
+\y $ det(A)=det(B) $ if $ B $ is obtained by interchanging rows of $ A $ 
+\yi $  det \begin{bmatrix}
+	A &B\\
+	0 & C
+\end{bmatrix} 
+= det(A)det(C).$ }
+	\section{Diagonalizability}
+\tbx{ For linear operator $ T\in L(V) $ a vector $ \alpha\in V$ is called an eigenvector and $ \lambda $ called eigenvalue if $ T(\alpha)=\lambda\alpha. $ i.e. $ \alpha \in N(T-\lambda I) $ }
+\tbx{\y if $ A\in M_n(\F) $ (all $ n\tm n $ matrices with entries from $ \F $) then $ \lambda $ 
+is an eigenvalue og $ A $ iff $ det(A-\lambda I)=0 .$  
+\yi From above point we get all eigenvalues  of  $ A\in M_n(\F) $ are the solutions of \textbf{Characteristic polynomial} $ f(t)=det(A-tI) .$  }
+\tbx{ for a linear operator $ T $ on finite dimensional space  $ V $
+\yi The polynomial $ p(T) $ such that $ p(T)\equiv 0 $ i.e $ p(T)x=0 \; \forall x\in V$ then $ p(T) $ is called the \textbf{annihilating polynomial} of $ T $  
+\yi the set of all annihilating polynomials of $ T $ forms an ideal in $ \F[x] $ now as $ \F $ is a field it is also an euclidean domain so this ideal is principle thus is generated by a monic polynomial of minimum degree in it called the \textbf{minimal polynomial} of $ T. $  }
+\tbx{ \textbf{Algebraic Multiplicity} of an eigenvalue $ \lambda $ for a linear operator $ T $ is multiplicity of $ \lambda $ in the characteristic polynomial of $ T. $ \\
+\textbf{Geometric multiplicity } of an eigenvalue $ \lambda $ for a linear operator $ T $ is the dimension of the nullspace of $ T-\lambda I $.}
+\tbx{ A linear operator $ T $ on $ V $ is said to be Diagonalizable if there exist a basis of $ V $ containing only eigenvectors of $ T. $
+\yi $ T $ is diagonalisable iff every eigenvalue of $ T $ belongs to the underlying field and Algebraic multiplicity = Geometric multiplicity for every eigenvalue of $ T $.}
+\tbx[Cayley-Hamilton Theorem]{ if  $ T $ is a linear operator on finite dimensional space  $ V $ then characteristic polynomial of $ T $ divides minimal polynomial of $ T $  i.e. if  $ f $ is characteristic polynomial of $ T $ then $ f(T)\equiv 0 .$ }
+\tbx{ for a given eigenvalue $ \lambda $ of $ T \in L(V)$ the set of all eigenvectors corresponding to
+	 $ \lambda $ form a subspace of $ V $ this is called eigenspace of $ \lambda.$   }
+\tbx[Invariant subspace]{ $ W $ is an invariant subspace of $ T $ over $ V $ if $ T(W)\subseteq W. $   }
+\tbx{ Eigenspaces are invariant subspaces. }
+\tbx[Diagonalizability test]{  $ T $ is diagonalizable iff minimal polynomial of $ T $ \snote{$ m_T(x) $} splits into distinct linear factors in the underlying field $ \F $ i.e. \\
+$ T $ is diagonalizable $ \iff \; m_T(x)=(x-c_1)(x-c_2)\ck(x-c_n) $ for distinct $ c_i\in \F $ }
+\section{Projections or \\ Idempotent Operators }
+\tbx[Projections]{ $ E: V(\F)\ra V(\F) $( is a projection if $ E^2=E $ 
+\yi if $ E $ is a projection then $ a\in R(T) $ iff $ E(a)=a. $  }
+\tbx{ if $ V $ is a finite dimensional vector space, say $ \{b_1,b_2,\ck b_n\} $ is a given ordered basis then we can define projection operators $ E_i $ \snote{$ i=1,2,\ck n-1 $ } as follows: for $x\in V,\; x= \sum\limits_{j=1}^{n}a_jb_j $ we have 
+ $ E_i(x)=\sum\limits_{j=1}^{i} a_jb_j$  i.e. restriction of the element to a particular subspace. Here we get $ R(E_i)=span(\{b_1,\ck b_i\}) $ and $ N(E_i) =span(\{b_i,\ck b_n\})$ \snote{note : $ 0 $ and $ I $ are also projection operator so we can extend these definitions to include 0-space and whole space.} }
+ \tbx{ By intuition of above point we get \\
+  if vector space $ V=W_1\oplus W_2 \oplus \ck \oplus W_n $ then there exists linear operators $ E_1,E_2\ck E_n $ such that
+  \yi Range of $ E_i = W_i$ 
+  \yi each $ E_i $ is a projection.
+  \yi $ E_iE_j=0 $ for $ i\neq j. $ 
+  \yi $ I=E_1+E_2+\ck +E_n $ \\
+  Conversely if above 4 points are satisfied for some set of linear operators $ \{E_i\} $ on finite dimensional vector space $ V $ then for $ W_i=R(E_i) $ we have $ V= W_1\oplus W_2 \oplus \ck \oplus W_n$.}
+  \tbx{ if a linear operator $ T $ on $ V $ \snote{finite dimensional} and if $ E $ the projection operator of subspace $ W\subseteq V $ \snote{defining it can be done by using basis definition of the projections}  then $ T $ commutes with $ E $ iff $ W$ is invariant on $ T $ i.e. 
+  	 \begin{center}
+  	 for $ E^2=E$ and  $ R(E)=W $\\
+  $ TE=ET \iff T(W)\subseteq W $
+  	 	\end{center} }
+   	\tbx[Diagonalizability and Projections]{ if a linear operator $ T $ on $ V $  is diagonalizable on  $ V $ then for distinct eigenvalues $ \lambda_1,\lambda_2,\ck, \lambda_n$ of $ T $ $ \exists $ projections $ E_1,E_2,\ck E_n $ on $ V $ such that
+   	\yi range of $ E_i = $ eigenspace of $ \lambda_i $ in $ V $.
+   	\yi $ T=\lambda_1 E_1+\lambda_2 E_2 +\ck +\lambda_n E_n .$
+   	\yi $ E_iE_j=0 $ for $ i\neq j $.
+   	\yi $ I=E_1+E_2+\ck +E_n $ \\
+   	  \textbf{Conversely} if last 3 points are satisfied for any linear operator $ T $ and some set of projections $ \{E_i\} $ on finite dimensional vector space $ V $ then $ T $ is Diagonalisable.}
+   	  \tbx[Primary Decomposition Theorem]{ for a Linear operator $ T $ on finite dimensional vector space $ V $ and if minimal polynomial of $ T =m_T(x)=P_1^{r_1}(x)P_2^{r_2}(x)\ck P_n^{r_n}(x)$ where $ P_i $ are distinct \textbf{primes} $ \F[x] $ then for $ W_i = $ Nullspace of $ P_i^{r_i}(T) $ we have
+   	  \yi $ V=   V= W_1\oplus W_2 \oplus \ck \oplus W_n$. 
+   	  \yi $ W_i $ is $ T $ invariant i.e. $ T(W_i)\subseteq W_i. $ 
+   	  \yi for $ T_i $ restriction of $ T $ on subspace $ W_i $ has minimal polynomial $ P_i^{r_i} $.}
+   	   \section{Jordan Form}
+   	   	\tbx[Generalised eigenvectors]{ For a linear operator $ T $ on $V$, if $ \lambda $ is an eigenvalue  of $ T $ then a vector $ v $ is such that $ (T-\lambda I)^kv=0 $ for some positive integer $ k $ is generalised eigenvector.
+   	   	\yi The Subspace $ K_\lambda=\{v|(T-\lambda I)^kv=0 \w{ for some +ve integer }k\} $ is called generalised eigenspace.}
+   	   	\tbx[properties of generalised eigenspaces]{
+   	   	For a given linear operator let $ K_\lambda $ denote generalised eigenspace of $ T $ w.r.t (with respect to) eigenvalue $ \lambda $ of $ T $ then 
+   	   		\yi $ K_\lambda $ is $ T $ invariant.
+   	   		\yi  for eigenvalue $ \mu \neq \lambda $ of $ T $: $ T-\mu I $ is one-one on $ K_\lambda $.
+   	   		\yi $ dim(K_\lambda)=m_\lambda $ where $ m_\lambda= $ Algebraic multiplicity of $\lambda$.    
+   	   		\yi $ K_\lambda=N((T-\lambda I)^{m_\lambda}) $where $ m_\lambda= $ Algebraic multiplicity of  $\lambda$.
+   	   		\yi if all of the eigenvalues of $ T $ belong to the underlying field then\\
+   	   		$ V=K_{\lambda_1}\oplus K_{\lambda_2}\oplus\ck\oplus K_{\lambda_n} .$  where $ \lambda_1,\lambda_2,\ck\lambda_n  $ are distinct eigenvalues of $ T $.   }
+   	   		\tbx{Cycle of generalised eigenvector : if  $ v\in K_\lambda $ then the set $ \gamma=\{(T-\lambda I)^{k-1}v,(T-\lambda I)^{k-2}v,\ck (T-\lambda I)v,v\} $, where $ (T-\lambda I)^kv=0 $ and $ (T-\lambda I)^{k-1}v $ called as initial vector, forms a linearly independent set in $ K_\lambda $
+   	   		\yi if $ \gamma_1,\gamma_2,\ck, \gamma_l $ are cycle of generalised eigenvectors for a given eigenvalue $ \lambda $ such that for each $ \gamma_i $ initial vectors are distinct and linearly independent in $ K_\lambda $ then $ \gamma=\cup \gamma_i $ is a linearly independent set in $ K_\lambda $.}
+   	   		\tbx[existence Jordan canonical form]{ for any linear operator $ T\in L(V(\F)) $
+   	   			\yi every $ K_\lambda $ \snote{generalised eigenspace} has a ordered basis constituting of cycle of generalised eigenvectors.
+   	   			\yi if characteristic polynomial of $ T $ completely splits into linear factors in $ \F $ then there exist a basis  of $V $ containing only Cycle of generalised eigenvectors of $ T $, this basis gives a unique characteristic to $ T $ which when viewed in matrix form of $ T $ gives raise to Jordan canonical form.}
+   	   			\tbx[Consequences of Jordan Form ]{ \y Two linear operators or square matrices \snote{whose characteristics polynomial  completely splits into linear factors in their under lying filed} are similar iff  they have the same Jordan form representation.
+   	   			\yi $ T\sim T^t. $   	   			}
+   	   	
+   	   	
+   	\section{Rational Form}
+   	
+
+	\section{Inner Product Spaces}
+	\section{Forms}
+	\section{Bilinear Forms}
+	\section{Algebra}
+\end{multicols}
+\end{document}

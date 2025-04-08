@@ -30,7 +30,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "post-partitions-functions",
+        },{id: "post-short-notes",
+        
+          title: "Short Notes",
+        
+        description: "Introductory undergraduate mathematics course topics short notes summarized or complied from well known books for the topics.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/Short-Notes/";
+          
+        },
+      },{id: "post-partitions-functions",
         
           title: "Partitions functions",
         
@@ -39,6 +50,17 @@ ninja.data = [{
         handler: () => {
           
             window.location.href = "/blog/2025/Partitions/";
+          
+        },
+      },{id: "post-manchaladore",
+        
+          title: "Manchaladore",
+        
+        description: "A brief on my hometown.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2021/Manchaladore/";
           
         },
       },{

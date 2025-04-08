@@ -1,0 +1,190 @@
+\documentclass[11pt]{extarticle}
+\usepackage{fullpage}
+\usepackage[ampersand]{easylist}
+\ListProperties(Hide=10, Style*=$\bullet\;\,$, Style2*=$\;\,${\tiny$\blacksquare$}$\;\,$,Space*=1mm,Space2*=0.1mm)
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\newtheorem{thn}{Theorem}[]
+\usepackage{mathtools}
+\usepackage{bibref}
+
+\usepackage[T1]{fontenc}
+\usepackage[sc,osf]{mathpazo}
+\usepackage{eulervm}
+
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,
+	linkcolor=black,
+	filecolor=black,      
+	urlcolor=black}
+	
+\usepackage{multicol}
+%\setlength{\columnsep}{0.5cm}
+\setlength\columnseprule{.1pt}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\w}[1]{\text{#1}}
+\newcommand{\sm}[2]{\displaystyle\sum_{#1}^{#2}}
+\newcommand{\snote}[1]{{\footnotesize(#1)}}
+\newcommand{\ck}{.\,.\,}
+\newcommand{\ckfil}{$.\dotfill.$}
+\author{Yashas.N}
+\title{Sequence and Series}
+\date{}
+\begin{document}
+	\maketitle
+	\boldmath
+\begin{multicols}{2}
+	\begin{easylist}
+		\section{Trivial properties }
+		& The below properties are for in general complete spaces. whose defining property is the following point
+		& Cauchy sequence $\iff$ Convergent sequence \\ ( in general metric spaces $\R^n$ for $n\in \mathbb{N}$ are complete in particular $\R$ and $\C$ are complete).
+		& $a_n \ra 0 \w{ as } n \ra \infty$ is a necessary condition for a series $\sm{n=1}{\infty} a_n$ to converge. \snote{not sufficient eg: $\sum1/n$ harmonic series }\\
+		\ckfil
+		
+		\section{Tests for positive termed series}
+		
+		& Below tests apply for series whose general terms are positive only (i.e. $\geq0$)\\
+		 \snote{Note : it can also be used to check for absolute convergence as taking absolute value of each term results in terms $ \geq 0 $ }
+		 & for rest of the notes let behaviour denote convergence and divergence simultaneously i.e. say $ \{a_n\} $ follows behaviour of $ \{b_n\} $ means that $ \{a_n\} $ converges if $ \{b_n\} $ converges and $ \{a_n\} $ diverges if $ \{b_n\} $ diverges. 
+		& \textbf{Comparison test} : for series $\sum u_n,\sum v_n$ if $u_n\leq k\times v_n \w{ for } k>0$ then $u_n$ converges if $v_n$ converges and $ v_n $ diverges if $ u_n $ diverges.
+		& \textbf{Limit form of comparison test} for series $\sum u_n,\sum v_n$ if \[l=\lim\limits_{n\ra \infty}\frac{u_n}{v_n}.\]
+		then:
+		&& if $l\neq 0$ then $\sum u_n$  follows behaviour of $\sum v_n.$
+		&& if $l=0$ then $\sum u_n$ converges if $\sum v_n$ converges. \\
+		(as $0<u_m\leq v_m$ holds for sufficiently large $m$, and also if $\sum u_n$ diverges then $\sum v_n$ diverges).
+		&& if $l=\infty$ $\sum u_n$ diverges if $\sum v_n$ diverges.\\
+		 (as $0<v_m\leq u_m$ holds like preceding point).
+
+		& \textbf{Cauchy's Condensation test} : if $f(n)$ is a monotone decreasing sequence of positive numbers \snote{i.e. $ f(n)>0, f(k)\geq f(k+1)\; \forall k\in  \N$} then for $m\in \mathbb{N}$ $\sum f(n) \w{ and } \sum m^nf(m^n)$ have same behaviour. \snote{Mostly used in the form $ \sum 2^nf(2^n). $}
+		& \textbf{Raabe's Test} : for series $\sum u_n$ of positive real numbers if $D_n=n\left(1-\frac{u_{n+1}}{u_{n}}\right)$ and 
+		\[D=\limsup D_n,\; d=\liminf D_n\]
+		then :
+		&& if $D<1$ series converges
+		&& if $d>1$ series diverges 
+		&& no conclusions if $d\leq1\leq D$
+		& \textbf{Integral test} : if $f(x)\geq 0$ in $[1,\infty)$ and is monotonically decreasing then $\sm{n=1}{\infty}f(n)$ and $\int_{1}^{\infty}f(x)dx$ follow same behaviour.
+		&& \textbf{Intergral inequality }: if  $\sm{n=1}{\infty}f(n)$ is as above and converges to $ s $ then the for partial sums $ s_n= \sm{k=1}{n}f(k)$  we have 
+		\[\int\limits_{n+1}^{\infty}f(t)dt\leq s-s_n \leq \int\limits_{n}^{\infty}f(t)dt \]
+		\ckfil
+		\section{General tests}
+		& \textbf{Ratio test} for series $\sum z_n$ with non zero terms $\in \C$ if 
+		$r_n=\left|\frac{z_{n+1}}{z_n}\right|$
+		\[r=\liminf r_n,\; R=\limsup r_n.\]
+		then :
+		&& if $R<1$ series converges absolutely
+		&& if $r>1$ series diverges
+		&& no conclusion of behaviour if $r\leq 1 \geq R$
+		& \textbf{Root test} : for series $\sum z_n$ if 
+		\[L=\limsup |z_n|^{1/n} \]
+		then :
+		&& if $L<1$ series converges absolutely.
+		&& if $L>1$ series diverges.
+		&& if $L=1$ no conclusion.\\
+		\ckfil
+		\section{Miscellaneous series properties}
+		& if $\sum (x_n+y_n)$ converges then both $\sum x_n$ and $\sum y_n$ converge or diverge (one cannot diverge and another converge).
+		& if $\sum a_n$ and $\sum b_n$ converge absolutely then 
+		$\sum c_n=\sum a_n b_n$ converges absolutely. 
+		& restatement of above point : $a_n,b_n>0$ and $\sum a_n,\sum b_n$ converge then $\sum a_n b_n$ converges
+		& if $a_n\geq 0$ and $\sum a_n$ converges then $\sum a_n^k$ for $k \geq 1$ converges (as $a_n \ra 0$, for sufficiently large $n$ we get $a_n<1\implies (a_n)^k\leq a_n$ and comparison test convergence follows). 
+		& if $0 \leq a_n \ra a$ then \[ s_n=\frac{a_1+a_2+\dots+a_n}{n} \ra a\]
+		& for converse of above point if $s_n$ converges and if for $a_n=s_n-s_{n-1}$, $\lim na_n=0$ then $a_n$ converges 
+		& similar to above point if $|na_n|\leq M<\infty\; \forall n$ and $\lim s_n=s$ then $a_n \ra s$
+		& if $0<a_n \ra a$ then \[ (a_1.a_2\dots a_n)^{1/n} \ra a\]
+		& if $\sum a_n$ converges then $\sum \frac{\sqrt{a_n}}{n}$ converges
+		& if $a_n>0$ and $\sum a_n$ converges then $\sum \sqrt{a_n a_{n+1}}$ converges.
+		& Series {\Large$\sum_{n=0}^{\infty}\left(\frac{az+b}{cz+d}\right)^n$} for $|a|=|c|>0$ converges whenever \[\frac{|b|^2-|d|^2}{2}<Re(z(c\bar{d}-a\bar{b})).\]
+		or in general if $|a|\neq|c|$, then converges whenever 
+		\[\frac{(|a|^2-|c|^2)|z|^2+|b|^2-|d|^2}{2}<Re(z(c\bar{d}-a\bar{b})).\]
+		& \textbf{Dirichlet's Test :}If $\left\{\sm{k=1}{n}a_k\right\}$ is a bounded sequence and $\{b_n\}$ is an null sequence ($b_n \ra 0 \w{ as } n \ra \infty$) then $\sm{n=1}{\infty}a_n b_n$ converges.
+		& \textbf{Abel's Test :} if $ \{x_n\} $ is convergent monotone sequence and series $ \sum y_n $ is convergent then $ \sum x_n y_n $ is convergent.
+		& if $a_n>0$ and $\sm{n=1}{\infty}a_n$ diverges, $s_n=\sm{k=1}{n}a_k$ then
+		&& $\sm{n=1}{\infty}\frac{a_n}{s_n}$ diverges
+		&& $\sm{n=1}{\infty}\frac{a_n}{s_n^2}$ converges
+		& For any sequence $\{a_n\}$
+		\[\liminf\left|\frac{a_{n+1}}{a_n}\right|\leq \liminf\left|a_n\right|^{1/n}\]
+		\[\leq \limsup\left|a_n\right|^{1/n}\leq \limsup\left|\frac{a_{n+1}}{a_n}\right|\]
+		& if $\sum a_n$ converges and $\{b_n\}$ is monotonic and bounded then $\sum a_n b_n$ converges
+		& \textbf{Leibniz Theorem} : if $\{c_n\}$ is such that $c_n >0$ and is monotonic decreasing to $ 0 $ 
+		\snote{ i.e. $ c_{n+1}<c_n,\quad c_n \ra 0 $ }
+		 then $\sm{n=1}{\infty} (-1)^{n+1} c_n$ converges.
+		& a series $\sum a_n$ is said to be absolutely convergent if $\sum |a_n|$ converges
+		& if a series is absolutely convergent the it is convergent.
+		& if $\sm{n=0}{\infty}a_n$ converges absolutely, $\sm{n=0}{\infty}a_n=A$,
+		$\sm{n=0}{\infty}b_n=B$ and $c_n=\sm{k=0}{n}a_kb_{n-k}$ (Cauchy product) then $\sum_{n=0}^{\infty}c_n=AB$
+		& Cauchy product of two absolutely convergent series is absolutely convergent. 
+		& if $\{k_n\}$ is a sequence in $\mathbb{N}$ such that every integer appears once and if $a'_n=a_{k_n}$ then a rearrangement of $\sum a_n$ is of type $\sum a'_n$
+		& \textbf{Riemann Rearrangement Theorem} : if series of real numbers $\sum a_n$ converges but not absolutely then for any $-\infty\geq \alpha\geq \beta \geq \infty$ series $\sum a_n$ can be rearranged to $\sum a'_n$ with partial sum $s'_n $ such that
+		\begin{center}
+			$\liminf s'_n=\alpha$ and $\limsup s'_n=\beta$
+		\end{center}
+		& for a given double sequence $\{a_{ij}\}$ for $i=1,2,\dots ,j=1,2,\dots$ if $\sm{j=1}{\infty}|a_{ij}|=b_i$ and $\sum b_i$ converges then \begin{center}
+			$\sm{i=1}{\infty}\sm{j=1}{\infty}a_{ij}=
+			\sm{j=1}{\infty}\sm{i=1}{\infty}a_{ij}$
+		\end{center},
+		same holds true i.e. summation can be changed if each of $a_{ij}\geq 0$ also.
+		& \[\lim\limits_{n\ra \infty}\sum\limits_{r=\alpha}^{\beta}\frac{1}{n}f(\frac{ r }{n})=\int\limits_{a}^{b}f(x)dx\]
+		where replace : \begin{center}
+		$ r/n \ra x$\\ 
+ $ 1/n\ra dx $\\ 
+ $ a=\lim\limits_{n\ra \infty}\alpha/n $\\ 
+ $ b=\lim\limits_{n\ra \infty}\beta/n $ 
+ 	\end{center}  
+ \snote{ to derive use simple notion of Riemann Integration: if $ f $ is integrable in $ [a,b] $ then for every $ \epsilon>0 $  $ \left|\sm{i=1}{n} f(t_i)\Delta(x_i)-\int\limits_{a}^{b}f(x)d(x)\right|<\epsilon$ holds for some  partition $ p([x_i,x_{i+1}]_1^{n-1}) $ of $ [a,b] $ and for any $ t_i\in [x_i,x_{i+1}] $}\\
+	\ckfil
+		\section{Some limits and theorems}
+		& \textbf{L'Hospital Rule} : if $f,g$ are real differentiable functions in $(a,b)$ (for $-\infty\leq a<b\leq \infty$) such that $g'(x)\neq 0$ in $(a,b)$ then as $x\ra a$ $f(x)\ra 0,g(x)\ra 0$ or if $g(x)\ra \pm \infty$  and if $\frac{f'(x)}{g'(x)}\ra A$ then $\frac{f(x)}{g(x)}\ra A$ (analogous result holds for $x\ra b$)  (is also true if $f,g$ are complex valued and $f(x)\ra 0,g(x)\ra 0$)
+		& for $f,g:D\subset \R \ra \R$, if $\lim\limits_{x\ra c}f(x)=0$ and $g(x)$ is bounded in some deleted neighbourhood of $c$ then $\lim\limits_{x\ra c}f(x)g(x)=0$ 
+		& if $\lim\limits_{x \ra c}f(x)=l$ and $g$ is continuous at $l$  or in some set whose limit point is $l$ then $\lim\limits_{x\ra c}g(f(x))=\lim\limits_{x\ra l}g(x)$ 
+		& $\lim\limits_{n \ra \infty}\sm{m=1}{n}\frac{1}{m}-\ln n =\gamma$ a fixed number 
+		& $\lim\limits_{n \ra \infty} z^n=0$ if $|z|<1$
+		& if $a>1$ and $p(n)$ is a fixed polynomial in $n$ then $\lim\limits_{n \ra \infty}\frac{a^n}{p(n)}=\pm \infty$ (depends on $p(n)$, precisely on coefficient of largest degree term).
+		& $\lim\limits_{n \ra \infty} n^{1/n}=1$ in particular if $|z|\neq 0$ then $\lim\limits_{n \ra \infty}|z|^{1/n}=1$
+		& $\lim\limits_{n \ra \infty} \left(1+\frac{a}{n}\right)^{n}=e^a$
+		& for $\alpha\in \R,p>0$ we have\\
+		$\lim\limits_{n \ra \infty}\frac{n^\alpha}{(1+p)^n}=0$
+		& if $\alpha,\beta>0$ and $x\in \R$ then :
+		&& $\lim\limits_{x \ra \infty} \frac{(\ln(x))^\alpha}{x^\beta} = 0$
+		&& $\lim\limits_{x \ra \infty} \frac{x^\alpha}{e^{\beta x}} = 0$
+		& from some preceding points we get \\
+		growth of $ ln(n) $ $ < $ growth of  $ n $ $ < $ growth of $ p(n) $ \snote{for non constant $ p(n) $.} $ < $ growth of   $ a^n $ \snote{$ a>1 $} $ < $ growth of $ n! $.
+		& series $\sm{n=1}{\infty}\frac{1}{n^p}$ converges for $p>1$ and diverges for $p\leq 1$
+		& series $\sm{n=2}{\infty}\frac{1}{n(\ln n)^p}$ converges for $p>1$ and diverges for $p\leq1$
+		this result can be continued to series like $\sm{n=2}{\infty}\frac{1}{n\ln n(\ln\ln n)^p}$, $\sm{n=2}{\infty}\frac{1}{n\ln n\ln\ln n(\ln\ln\ln n)^p}$
+		and so on.\\
+		& for series such as $ \sm{n=0}{\infty}q^n z^{kn} $ for some $ k\geq 0 $ fixed then this series is equal to series $ \sm{n\geq 0}{}a_n z^n $ where 
+	\end{easylist}
+			$ a_n=
+			\begin{cases}
+				q^{n/k} & \text{if } n= 0,k,2k,3k,\dots\\
+				0 & \text{otherwise } 
+			\end{cases} $\\
+				\begin{easylist}
+		Thus $ R=\limsup1/|a_n|^{1/n}= q^{-1/k}. $ for $ \sm{n=0}{\infty}q^n z^{kn} $ series.\\
+			\ckfil
+
+	\section{Uniform Convergence}
+
+		& define uniform norm for a function $ f:  A\subseteq \R \ra \R $ as $ ||f||_A=\sup (|f(a)| \text{ for } a \in A) $ 
+		& A sequence of bounded functions $ \{f_n\}$ in $\R $ converges uniformly to $ f $ in domain $ A\subseteq R $ iff $ ||f_n-f||_A\ra 0 $ i.e. the uniform norm of $ f_n-f $ converges to$ 0 .$ 
+		& one way  to find the uniform norm for a function is to differentiate it and find its maximum on domain.
+		& \textbf{Dinni's Theorem }: if $ \{f_n\} $ is a monotone sequence of continuous functions on $ [a,b] $ (closed and bounded) that converges to $ f $ which is continuous on $ [a,b] $ then the convergence is uniform.\\
+		& if $ f(x) $ is uniformly continuous on $ \R $ and non zero at integer values then $ \sm{n=1}{\infty}\frac{ 1 }{f(n)}  $ is never convergent \snote{use $ |f(x)|\leq A|x|+B $ }\\
+		 \ckfil
+	\end{easylist}
+	\begin{thebibliography}{9}
+		\bibitem{Ru}
+		Rudin W.: Principles of Mathematical Analysis,McGraw-Hill,3,(1976).
+		\bibitem{CVA}
+		Ponnusamy S., Silverman H.: Complex Variables and Applications,Birkhauser,(2006).
+		\bibitem{BT}
+		Robert G. Bartle, Donald R. Sherbert: Introduction to Real Analysis, Wiley publishers, 4, (2011).
+	\end{thebibliography}
+\end{multicols}
+\end{document}

@@ -1,0 +1,464 @@
+\documentclass[11pt]{extarticle}
+\usepackage{fullpage}
+\usepackage[ampersand]{easylist}
+\ListProperties(Hide=10, Style*=$\bullet\;\,$, Style2*=$\;\,${\tiny$\blacksquare$}$\;\,$,Space*=1mm,Space2*=0.1mm)
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\newtheorem{thn}{Theorem}[]
+\usepackage{mathtools}
+\usepackage{bibref}
+
+\usepackage[T1]{fontenc}
+\usepackage[sc,osf]{mathpazo}
+\usepackage{eulervm}
+
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,
+	linkcolor=black,
+	filecolor=black,      
+	urlcolor=black}
+
+\usepackage{multicol}
+%\setlength{\columnsep}{0.5cm}
+\setlength\columnseprule{.1pt}
+
+\newcommand{\tm}{\times}
+\newcommand{\ck}{.\,.\,}
+\newcommand{\snote}[1]{{\footnotesize(#1)}}
+\newcommand{\w}[1]{\text{#1}}
+\author{Yashas.N}
+\title{Matrix Properties}
+\date{}
+\begin{document}
+	\maketitle
+	\boldmath
+	
+\begin{multicols}{2}
+\section*{Symbols used:}
+{\scriptsize 
+	\begin{align*}
+	\text{iff} \quad&\rightarrow\quad\text{if and only if}\\
+	\text{Capital letters}\quad&\rightarrow\quad\text{Matrices }A_{m\times n}=[a_{ij}]_{m \times n}\\
+	A^T \text{ or } A'\quad&\rightarrow\quad\text{Transpose of Matrix}\\
+	\bar{A}\quad&\rightarrow\quad\text{Conjugate of Matrix}\\
+	AB\quad&\rightarrow\quad\text{Matrix product}\\
+	|A|\text{ or } det(A) \quad&\rightarrow\quad\text{Determinant of Matrix}\\
+	tr(A)\text{ or }trace(A) \quad&\rightarrow\quad\text{trace of Matrix}\\
+	A^*\quad&\rightarrow\quad\text{Conjugate transpose of Matrix}\\
+	%A\oplus B \quad&\rightarrow\quad\text{Hadamard product or element wise multiplication}\\
+	A^{-1} \quad&\rightarrow\quad\text{Inverse of Matrix}\\
+	I \quad&\rightarrow\quad\text{Identity}\\
+	Im(A) \quad&\rightarrow\quad \text{Image or range space of }A\\
+	rank(A)\w{ or } r(A)\quad&\rightarrow\quad \text{Dimension of Range space of }A\\
+	ker(A) \quad&\rightarrow\quad \text{Null space of }A\\
+	null(A) \quad&\rightarrow\quad \text{Dimension of Null space of }A\\ 
+	\mathbb{F}  \quad&\rightarrow\quad \text{Field}
+\end{align*}}
+
+
+\section{Basic properties}
+
+\begin{easylist}
+	& $A(BC)=(AB)C$
+	& $tr(AB)=tr(BA)$
+	& $(AB)'=B'A'$
+	& $(AB)^*=B^*A^* $
+	& if $A$ is Hermitian then $iA$ is skew-Hermitian and vise-versa.
+	& if $A,B$ are symmetric, $AB$ is symmetric iff $AB=BA$.
+	& $AA',A'A$ are always symmetric.
+	& For any Square Matrix $A$:
+	&& $A+A'$ is symmetric.
+	&& $A-A'$ is skew- symmetric.
+	&&  $A+A^*$ is Hermitian.
+	&&  $A-A^*$ is skew-Hermitian .
+	& By preceding point any Square matrix can be decomposed (by +) into symmetric - skew-symmetric or Hermitian- skew-Hermitian pair.
+	& $B'AB$ is symmetric or skew as is $A$
+	& $B^*AB$ is hermitian or skew as is $A$
+	& Determinant is a Multiliear (row), Alternating and Normalized Function on Matrices.
+	& Determinant of upper or lower triangle or diagonal matrix is equal to product of diagonal elements.
+	& $|AB|=|A||B|=|BA|$
+	& $|A'|=|A|$
+	& $|A^*|=\bar{|A|}$
+	& $A$ is invertible iff $|A|\neq 0$.
+	& $A^{-1}=\frac{adj(A)}{|A|}$ where $adj(A)$ is the transpose of co-factor matrix.
+	& $B^{-1}-A^{-1}=B^{-1}(A-B)A^{-1}$
+	& Cramer's rule for a system of linear equations $Ax=b$ where $A$ is square and for 
+	$x=[x_1,x_2,\ck,x_n]^T$ we have $x_i=\frac{|A\leftarrow_i b|}{|A|}$ where $A\leftarrow_i b$ is obtained by replacing $i^{th}$ column of $A$ by $b$.
+%	& $[A\leftarrow_i b]_{i=1..n} = adj(A)b $
+	& $|adj(A)|=|A|^{n-1}$ where $A$ is an $n\times n$ matrix
+	& $adj(A^*)=Adj(A)^*$
+	& $adj(A^{-1})=adj(A)^{-1}=A/|A|$
+	& $adj(adj(A))=|A|^{n-2}A$
+	& $adj(AB)=adj(B)adj(A)$ for non-singular matrices $A,B$.
+	& $A$ is orthogonal if $A'A=I$
+	& $A$ is orthogonal $\implies |A|=\pm1 \implies$ invertible.
+	& $A$ is unitary if $A^*A=I$
+	& if $A,B$ are orthogonal then so are $AB,BA$. Similar result follows in unitary case also.
+	& $rank(A)=r$ iff all the $r+1$ order minors are zero i.e. if any one of $r^{th}$ order minor is non zero then $rank(A)\geq r$.
+	& $rank(A)=rank(A')=rank(A^*)$
+	& Elementary transformation: exchange of rows, multiplication of row by non zero constant, addition of k multiple of a row to another row.
+	& Elementary transformations doesn't change the rank of a matrix.
+	& Every elementary transformation has a corresponding non singular matrix which when pre-multiplied to a given matrix gives the respective operation.
+	& Normal form of a matrix : (Echelon form) A matrix which can be partitioned into identity and null matrices where the identity is present in upper-left part.
+	& $\exists P,Q$ non-singular square matrices such that $N=PAQ$ where $A$ is any matrix and $N$ is its normal or Echelon form. 
+	& $rank(AB) \leq min(\{rank(A),rank(B)\})$. 
+	& $rank(A+B)\leq rank(A)+rank(B)$.
+	& \textbf{Sylvester inequality} : \\for any matrices $A_{m\times k},B_{k \times n}$ 
+{\footnotesize
+		\begin{align*}
+		rank(AB) &= rank(B)-dim(Im(B)\cap ker(A))\\
+	\w{so }	rank(A) &+Rank(B)-k&\leq rank(AB)\\
+		&\leq min(\{rank(A),Rank(B)\}).
+	\end{align*}}
+	\snote{use: for $ Bx\neq0 $, $ ABx=A(Bx) =0$ iff $ x\in Im(B)\cap ker(A) $ and that $ dim(Im(B)\cap ker(A))\leq null(A)=k-r(A) $ so $ -dim(Im(B)\cap ker(A))\geq r(A)-k .$  }
+	& \textbf{Frobenius Inequality} :\\
+	 for $A_{m\times k},B_{k \times p},C_{p\times n}$
+	{\footnotesize \[rank(AB)+rank(BC)\leq rank(B)+rank(ABC). \]}
+	& $rank(A)=rank(A^*A)$
+	& if all entries of $ A $ are real then $ rank(A'A)=rank(A) $.
+	& if $A$ is n-squared then :
+	&& $rank(A)=n \implies rank(adj(A))=n$.
+	&& $rank(A)=n-1 \implies rank(adj(A))=1$.
+	&& $rank(A)<n-1 \implies rank(adj(A))=0$ i.e. $adj(A)\equiv 0$.
+	\snote{use minors and cofactor definition of $ Adj(A).$}
+	& $rank(A)\!\geq rank(A^2)\!\geq \ck \geq\! rank(A^n)
+	\!\geq\!..$
+	& $null(A)\leq null(A^2)\leq \ck \leq null(A^n)\leq..$
+	& if $rank(A^m)=rank(A^{m+1})$ then 
+	&& $rank(A^k)=rank(A^m)\quad \forall k\geq m$
+	&& $null(A^k)=null(A^m)\quad \forall k\geq m$
+	& Eigenvalues of Hermitian matrices are real.\\
+	\snote{ if $ \lambda $ is eigenvalue then $ (Ax)^*=x^*A^*=x^*A=(\lambda x)^*=\overline{\lambda}x^* $ so $ x^*A^*x=\lambda x^*x=\overline{\lambda}x^*x\implies\overline{\lambda}=\lambda $}
+	& Eigenvalues of Skew-Hermitian are purely imaginary or zero.
+	& If $\lambda$ is Eigenvalue of Unitary matrix $A$ then $|\lambda| = 1$\\
+	\snote{if $ Ux=\lambda x$ then $ x^*U^*Ux=x^*Ix=x^*x  $ but $ (x^*U^*)(Ux)=\overline{\lambda} \lambda x^*x.$ }
+	& Real Eigenvalues of Orthogonal Matrices are $1$,$-1$ only.
+	& Eigenvalues of $A$ and $A'$ are same.
+	& Eigenvalues of triangular, diagonal matrices are its diagonal elements.
+	& if $\lambda$ is an eigenvalue of non-singular matrix $A$ then
+	&& $\lambda \neq 0$
+	&& $\frac{1}{\lambda}$ is the eigenvalue of $A^{-1}$.
+	&& $\lambda^k$ is the eigenvalue of $A^k$.
+	&& $\frac{|A|}{\lambda}$ is the eigenvalue of $adj(A)$.
+	& if $\{\lambda_i\}$  are eigenvalues of $A$ then eigenvalues of $B=p(A)$ are of form $p(\lambda_i)$ only.
+	& For $A_n$ with eigenvalues $\lambda_1,\lambda_2,\ck , \lambda_n$ $trace(A)=\sum_{i=1}^{n}\lambda_i$ ,
+	$det(A)=\prod_{i=1}^{n} \lambda_i$ and $trace(adj(A))=\sum_{i=1}^{n}\prod_{j\neq i}^{n}\lambda_i.$
+	& If $A=P^{-1}BP$ then $A$ and $B$ have same eigenvalues
+	& for square Matrices $A,B$ eigenvalues of $AB$ and $BA$ are same. \\
+	\snote{ use if $ ABx=\lambda x $ then $ BA(Bx)=B(ABx) =\lambda Bx$ so $ \lambda $ is eigenvalue of $ BA $ also and vis-a-viz.}
+	& Geometric multiplicity (no of eigenvectors for an eigenvalue) $\leq$ 
+	Algebraic multiplicity(order of eigenvalue in characteristic polynomial).
+	& $A=P^{-1}BP$ this Relation $ARB$ (similarity) is equivalence, determinant invariant,
+	 eigenvalue invariant , trace invariant.
+	& A matrix is diagonalizable if it is similar to a diagonal matrix
+	& A matric is diagonalizable iff for each of its eigenvalue Geometric multiplicity = Algebraic multiplicity.
+	& square matix $ A $ is diagonalizable iff minimal polynomial of $ A $ splits into distinct linear factors in the given field i.e. minimal polynomial of $ A $ is separable and has only linear irreducible factors.
+	& A non-zero Nil-potent ($A^m=0$) matrix has eigenvalues as zero only.
+	& A non-zero Nil-potent matrix is never Diagonalizable. \\
+	\snote{if $ A $ is diagonalizable then $ P^{-1}AP=D$ so $ (P^{-1}AP)^m=P^{-1}A^mP=0=D^m \implies D\equiv 0$   thus $ A\equiv 0 $ }
+	& \textbf{ Schurs theorems: }
+	&& Every Square matrix $A$ is Unitarily similar to Upper triangular matrix whose diagonals are eigenvalues of $A$ (complex values included).  
+	&& If $A\in M_n(\mathbb{R})$ and has only real eigenvalues then it is real orthogonally similar to real upper triangular matrix.\\
+	\snote{say $  \lambda_1,\lambda_{2},\ck , \lambda_{n} $ are eigenvalues of $ A_{n\tm n} $ (with repeats) let $ x $ be normalised eigenvector of $ A $ to eigenvalue $ \lambda_{1} $ then $ x^*x=1 $ and $ Ax=\lambda_{1}x $, now from an orthonormal basis with $ x $ and let this matrix be $ U_1=[x\; u_2\ck u_n] $ thus we have $ U_1^*AU_1=[\lambda_1,\star;\; 0,A_1] $ for $ A_{1_{n-1\tm n-1}} $ and as $ U_1 $ is unitary we have eigenvalues of $ A_1 $ are $ \lambda_{2},\ck , \lambda_{n}  $ only so lets commence the same procedure for $ A_{1_{n-1\tm n-1}} $ we get $ U_2 $ join this to form $ V_2=[1,0;\; 0,U_2] $ then we get $ (U_1V_2)^*AU_1V_2=[\lambda_{1},\star,\star;\; 0,\lambda_{2},\star;\; 0,0,A_2] $ clearly $ U_1V_2 $ was unitary so proceeding similarly we get the theorem}
+	&& If $A\in M_n(\mathbb{R})$ has complex eigenvalues then it is similar to a matrix with diagonal blocks of $1$-by-$1$ and $2$-by-$2$ only (has upper triangular entries). Where $1$-by-$1$ blocks are real eigenvalue of $A$ and $2$-by-$2$ blocks are $[a\quad b;-b\quad a]$ for $a+ib$ eigenvalue.\\
+	\snote{for $ A_{n\tm n} $ let $ \lambda=a+ib $ and its eigenvector is $ x=u+iv $ then prove $ \overline{\lambda},\overline{x} $ are eigenpairs so $ x,\overline{x} $ are linearly independent so are $ u,v $ and as $ Au=au-bv,Av=bu+av $ and if $ S=[u,v,S_1]_{n\tm n} $ be made non singular  thus $ S^{-1} AS=[B,\star;\; 0 A_1]$ for $ B= [a\quad b;-b\quad a]$. }
+	& \textbf{Every Symmetric matrix ($A\in M_n(\mathbb{R})$) is orthogonally similar to diagonal matrix $(D)$ i.e. $D=P^TAP,\; P^TP=I$.}
+	& \textbf{ Every Hermitian matrix ($A$) is unitarily similar to diagonal matrix $(D)$ i.e. $D=P^*AP,\; P^*P=I$.}
+	& A matrix $A$ is normal iff $A^*A=AA^*$
+	& \textbf{A matrix is  Unitarily similar to diagonal matrix iff it is Normal.}
+	& A triangular normal matrix is Diagonal also a block diagonal normal matrix has off diagonal blocks =$0$.
+	& if $A$ is normal then $p(A)$ (specially $A+aI$ , $a \in \mathbb{C}$) is normal. In other words if $ A $ is diagonalisable then so is $ P(A) $ \snote{ note: even zero matrix is considered as a diagonal matrix}.
+\end{easylist}
+
+
+\section{Quadratic Form}
+\begin{easylist}
+	& $Q:\mathbb{F}^n\times \mathbb{F}^n \rightarrow \mathbb{F}$ given by 
+	$ \displaystyle\sum_{i=0}^{n} \sum_{j=0}^{n} a_{ij} x_i x_j $
+	where $a_{ij} \in \mathbb{F}$ a field.
+	& It can be represented as $X'AX$ for $X=[x_1,x_2,\ck,x_n]^T$ and \textbf{Symmetric} matrix $A= [A]_{ij}=\frac{1}{2}(a_{ij}+a_{ji})$
+	& Congruence relation $(ARB)$ : if $A=P^T B P$ for some non-singular $P$, $A,B$ square.
+	& Matrices congruent to Symmetric matrices are Symmetric.
+	& Quadratic forms are equivalent if the corresponding matrices are congruent.
+	& Congruent matrices or equivalent Forms have same Range.
+	& Every Symmetric matrix is congruent to a diagonal matrix. \snote{same as orthogonally diagonalizable}
+	& Every $n$-rowed real Symmetric matrix with rank $r$ is congruent to a Diagonal matrix with diagonal $[1,..1,-1,..-1,0,..0]$ with 1 appearing $p$ times -1 appearing $r-p$ times and 0 $n-r$ times.
+	& Canonical Form of real Quadratic Form: for $Q$ has matrix $A$ and if $P'AP=$ diag$[1,..1,-1,..-1,0,..0]$ then $X=PY$ which transforms $Q$ to $y_1^2+..+y_p^2-y_{p+1}^2-..-y_r^2$ for Real non singular matrix $P$.
+	& Number of positive terms in canonical form is \textbf{Index}, difference of positive and negative terms is \textbf{Signature}.
+	& Index and Signature are congruence invariant.
+	& Two real Quadratic forms (symmetric matrices) are orthogonally equivalent iff their matrices have same eigenvalues and multiplicities.
+	& A Quadratic Form $Q$ is:
+	&& positive definite if $Q(X)\geq 0$ and \\
+	$Q(X) = 0 \iff X=0$
+	&& negative definite if $Q(X)\leq 0$ and \\
+	$Q(X) = 0 \iff X=0$
+	&& positive semi-definite if $Q(X)\geq 0$ 
+	&& negative semi-definite if $Q(X)\leq 0$ 
+	&& or is indefinite
+	& if for a $n$ dimensional Quadratic form Rank=$r$ and Signature=$s$ then it is :
+	&& positive definite iff $s=r=n$.
+	&& negative definite iff $-s=r=n$.
+	&& positive semi-definite iff $s=r<n$.
+	&& negative semi-definite iff $-s=r<n$.
+	&& indefinite iff $|s| \neq r$
+	& Now as real Symmetric matrices are diagionizable and have a canonical form we have:
+	&& Index = number of positive eigenvalues.
+	&& Rank = number of non zero eigenvalues.
+	&& Signature = no of +ve - no of -ve eigenvalues.
+  	& from above we have for a real Quadratic form $Q$ with matrix $A$ then $Q$ is:
+  	&& positive definite iff all eigenvalues are positive or $>0$.
+  	&& negative definite iff  all eigenvalues are negative or $<0$.
+  	&& positive semi-definite iff at-least one eigenvalues is $0$ and others $>0$.
+  	&& negative semi-definite iff at-least one eigenvalues is $0$ and others $<0$.
+  	&& indefinite iff eigenvalues are -ve as well as +ve.
+  	&& every real non-singular matrix $A=PS$ for $P$ orthogonal $S$ positive definite\\
+  	($S=Q'D_1Q, D_1=\sqrt{diagonalization (A'A)},\\ P=AS'$)
+  	&& $Q$ with matrix $A$ is positive definite iff all leading principal minors of $A$ are positive.
+  	&& A matrix $A$ is positive definite $\implies |A|>0$
+  	&& A complex Quadratic form is hermitian if its corresponding matrix is hermitian.
+  	&& A Hermitian Form assumes only real values.
+  	& if $norm(A)=\sum_{i,j}|[A]_{ij}|^2$ then $norm(A)=trace(A^*A).$
+
+\end{easylist}
+
+\section{Jordan Form}
+\begin{easylist}
+	& \textbf{Canonical Form} : Given a equivalence relation on set of matrices, the main problem is to find whether $A$ and $B$ belong to same equivalence class. One classical way of doing this is choosing a set of representative matrices such that each matrix belong to only one class and distinct members are of different classes. Such a set of representatives is the Canonical Form of such relation.
+	& Jordan form is the canonical form for relation of Similarity.
+	& A matrix in Jordan form Consist of Jordan blocks $J_k(\lambda)$ which is a upper triangular matrix of size k-by-k with diagonal entries $\lambda$ and super diagonal $1$ and others $0$ i.e.
+\end{easylist}
+$J_k(\lambda)=
+\begin{bmatrix}
+	\lambda&1&&&\\
+	&\lambda&1&&\\
+	&&\ddots&\ddots&\\
+	&&&\lambda&1\\
+	&&&&\lambda
+\end{bmatrix}_{k\times k}$
+\begin{easylist}
+	& $J_k(0)^{k+n}=0$ for $ n\geq 0 $ i.e. $ J_k(0) $ is nilpotent matrix such that $ J_k(0)^k=0.$ 
+	& $rank(J_k(0)^l)=max(k-l,0)$
+	& Convention: $rank(J_k(0)^0)=k$
+	& if $r_k(A,\lambda)=rank(A-\lambda I)^k$ and\\ $w_k(A,\lambda)=r_{k-1}(A,\lambda)-r_{k}(A,\lambda)$ then in Jordan Form of $A$ :
+	&& $w_k(A,\lambda)$ = number of blocks with eigenvalue $\lambda$ that has size at least $k$ 
+	\snote{use the fact for every Jordan block of $ \lambda,$ $ A-\lambda I $ is Similar to Jordan form consisting of $ J_k(0) $ Jordan block instead of $ \lambda $ so as we measure ranks each power decreases the rank of the block by one if the block size is greater than the power.}
+	&& so $w_1(A,\lambda)= n-r_1(A,\lambda)$ = number of Jordan Blocks with eigenvalue $\lambda$ = Geometric multiplicity of  of $\lambda$ as eigenvalue of $A$
+	&& $w_{k}(A,\lambda)-w_{k+1}(A,\lambda)$ = number of blocks of Size $k$
+	&& $q$ : index of $\lambda$ in $A$ = smallest integer such that $rank(A-\lambda I)^{q+1}=rank(A-\lambda I)^q=r_{q+1}(A,\lambda)=r_q(A,\lambda)$
+	&& $w_1(A,\lambda)+w_2(A,\lambda)\ck +w_q(A,\lambda)$ = Sum of dimensions all Jordan blocks in $\lambda$ = Algebraic Multiplicity of $\lambda$ as eigenvalue of $A$
+	&& Weyr characteristic of $A \in M_n$ associated with $\lambda \in \mathbb{C}$ is \\
+	$ w(A,\lambda)=(w_1(A,\lambda),w_2(A,\lambda)\ck ,w_q(A,\lambda))$
+	&& Segre characteristic of $A \in M_n$ associated with $\lambda \in \mathbb{C}$ is\\
+	$s(A,\lambda)= s_1(A,\lambda)\geq s_2(A,\lambda),\ck \geq s_{w_1}(A,\lambda) > 0$ 
+	where $s$ is sizes of Jordan Blocks in $\lambda$ as they occur in Jordan form (non-increasing order)
+	&& for a given $A,\lambda$ eigenvalue, If we arrange $w(A,\lambda)$ in dot form as rows (partitions: Ferrers diagram) then its  columns are $s(A,\lambda)$ and Vise-versa. 
+	& for $A_n$ upper diagonal with $[A]_{ii}=1,$\\$[A]_{i,i+1}\neq 0$ then $A$ is similar to $J_n(1)$
+	& if $\lambda = 1$ is the only eigenvalue of $A$ then $A$ is similar to $A^k$
+	& in $J$ Jordan form of $A$:
+	&& Total No of Jordan blocks = Total no of independent eigenvectors.
+	&& No of Jordan blocks in $\lambda$ = Dimension of eigenspace of $\lambda$
+	&& Sum of sizes of Jordan blocks in $\lambda$ = Algebraic Multiplicity.
+	& If $A_n$ is non singular then $A$ is similar to $A^T.$\\
+	\snote{use : for Jordon block $ J_n=J_n(\lambda) $ and $B_n= B_{n\tm n} $ reversal matrix (upside down identity) we have $ J_n=B_nJ_n'B_n $ as $ B_n^{-1} =B_n$ we have $ J_nRJ_n' $ }
+	
+	& If minimal polynomial of $A$ = $\prod_{i=1}^{k}(t-\lambda_i)^{r_i}$ then
+	largest Jordan block of $\lambda_i$ in JCF of $A$ is of size $r_i$.
+\end{easylist}
+\section{Rational Form}
+\begin{easylist}
+	& Jordan form of $A_n$ is possible iff The characteristics polynomial of $A$ splits completely to linear factors over $\mathbb{F}$ (i.e. $(x-a_i)^{n_i}, \; a_i \in \mathbb{F}$), which may not be possible if there are irreducible polynomials of degree more than $1$ in $\mathbb{F}[x]$, so to make canonical form under consideration of these Matrices we arrive at Rational form which uses the concept of Invariant subspaces, Cyclic subspaces and Primary Decomposition theorem.
+	& For given monic polynomial (characteristic/minimal) $p(x)=x^n+a_{n-1}x^{n-1}+..+a_1x+a_0 \; a_i's \in \mathbb{F}$ of linear transform $T:V\rightarrow V$ if there exist $x$ such that $T_x=\{x,T(x),T^2(x),..,T^{n-1}(x)\}$ is a linear independent set then The matrix of $T$ with respect to $T-$cyclic basis $T_x$ is Companion matrix which has same characteristic and minimal polynomial $= \; p(x)$ and is given by 
+\end{easylist}
+$C_A=\begin{bmatrix}
+	0&\ck&\ck&0&-a_0\\
+	1&0&\ck&0&-a_1\\
+	0&1&\ck&0&-a_2\\
+	\vdots&\ddots&\ddots&\vdots&\vdots\\
+	0&\ck&0&1&-a_{n-1}
+\end{bmatrix}$
+
+\begin{easylist}
+	& If $p(x)=(p_1(x))^{n_1}(p_2(x))^{n_2}..(p_k(x))^{n_k}$ and $m(x)=(p_1(x))^{m_1}(p_2(x))^{m_2}..(p_k(x))^{m_k}$ are characteristics and minimal polynomial of linear transform $T:V\rightarrow V$ where $p_i's$ are irreducible in $\mathbb{F}$ of degree $d_i$ respectively then :
+	&& $K_{p_i}=\{x:(p_i(T))^{k}(x)=0\}$ is $T$ invariant Subspace of $V$
+	&& $K_{p_i}=ker((p_i(T))^{m_i})$ (Null space) , $K_{p_i}\cap K_{p_j}=\{0\}$ for $i \neq j$
+	&& Every $K_{p_i}$ has a union $T-$cyclic basis as a basis.
+	& From above and Primary decomposition theorem we have: for a linear transformation $T:V\rightarrow V$ with matrix $A$ has a basis in which $A$ is similar to 
+\end{easylist}
+$\begin{bmatrix}
+	C_1&&\ck&&0\\
+	0&C_2&\ck&&0\\
+	\vdots&&\ddots&&\vdots\\
+	0&&\ck&&C_k
+\end{bmatrix}$\\
+where $C_is$ are companion matrices related to minimal polynomial's irreducible terms.
+\begin{easylist}
+	& Dimension of $K_{p_i} = \; d_i n_i$ ($di=$ degree of $p_i$, $n_i=$ power of $p_i$ in characteristic polynomial) 
+	& Dim($K_{p_i}$) = dimension of total blocks associated with $p_i$
+	& number of blocks associated with $p_i=$$ r_1 =\frac{1}{d_i}[dim(V)-rank(p_i(A))]$
+	& number of blocks of size atleast $i-by-i$ =
+	$r_i=\frac{1}{d_i}[rank(p_i(A)^{i-1})-rank(p_i(A)^i)]$
+\end{easylist}
+\section{Mics Properties}
+\begin{easylist}
+	& $A$ has a block $B_n$ in its block form iff it has an $n$ dimensional invariant space associated. 
+	& $\Lambda_n$ is a block matrix in which $[\Lambda]_{i,j} =0$ if $i\neq j$, $\Lambda_{ii}=\lambda_i I_{n_i}$ blocks and commutes with $B$ iff $B$ is a block Diagonal conformal with $\Lambda$ i.e. iff 
+\end{easylist}
+	$ \Lambda= 
+	\begin{bmatrix}
+		\lambda_1 I_{n_1}& & & 0 \\
+		 & \lambda_2 I_{n_2}& & \\
+		&&\ddots&\\
+		0 & & &\lambda_d I_{n_d}
+	\end{bmatrix},\\
+	B = \begin{bmatrix}
+		B_{n_1} &&& 0 \\
+		 & B_{n_2}& & \\
+		&& \ddots & \\
+		0&&&B_{n_d}
+	\end{bmatrix} $
+\begin{easylist}
+	& Extremum of $X^TAX$ for constraint $X^TX=1$ occurs in eigenvalues of $A$.
+	& From above Extremum of real Quadratic Form $X^TAX$ with constraints  $X^TX=1$ is the largest eigenvalue of $A$ vise-versa Max\{$X^TAX | A$ is symmetric, $X^TX=1$\} = largest eigenvalue of $A$.
+	& $\mu$ is a eigenvalue of $p(A)$ iff $\mu = p(\lambda)$ for an eigenvalue $\lambda$ of $A$ (where $p(.)$ is a polynomial over $\mathbb{F}$).
+	& if $\lambda$ is an eigenvalue of $A$ then corresponding eigenvector are non-zero columns of $adj(A-\lambda I)$ (use full only if $rank(A-\lambda I)=n-1).$
+	& Coefficients of Characteristic polynomial of $A$ of degree n : $n\rightarrow 1, n-1 \rightarrow -trace(A), constant \rightarrow (-1)^n det(A)$.
+	& $A,B$ are simultaneously Diagonalizable iff  $A,B$ communicate i.e. if $D_1=S^{-1}AS, D_2=S^{-1}BS$ for same $S$ $\iff \, AB=BA$.
+	This even holds for a family of Diagonalizable matrices.
+	& for $A_{m\times n}$
+\end{easylist}
+ $ \begin{bmatrix}
+ 	I_m & A \\
+ 	0 & I_n 
+ \end{bmatrix}^{-1}
+ = \begin{bmatrix}
+	I_m & -A \\
+	0 & I_n \\
+\end{bmatrix} $
+\begin{easylist}
+	& For $A_{m\times n} B_{n\times m}$ Eigenvalues of $AB$ = Eigenvalues of $BA$ (including zero).
+	& Cauchy's Determinant Identity :
+	$det(A+xy^T) = det(A)+y^T adj(A) x$\\ (so $|I+xy^*|=1+y^*x$)
+	& if $S=A+iB$ and non-singular then $\exists \tau \in \mathbb{R}$ such that $T=A+\tau B$ is non-singular.\\
+	\snote{use that $ p(t)=det(A+t B) $ has at most $ n $ zeroes in complex plane so there is $ \tau\in \mathbb{R} $ such that $ p(\tau)\neq 0 $}
+	& Every real Matrix $A$ similar over $\mathbb{C}$ to real matrix $B$ is similar over $\mathbb{R}.$ i.e. $0 \neq A,B \in M_n(R)$ if $S\in M_m(C)$ and $B=S^{-1}AS$ then $\exists T\in M_n(R)$ such that $B=T^{-1}AT$
+	& If $A$ is diagonalizable i.e. $A=S^{-1}DS$ then $p(A)=S^{-1}p(D)S$ which makes evaluation of $p(A)$ easier. 
+	& If $A_n$ has distinct eigenvalues(diagonalizable) and Commutes with $B$ then $B$ is Diagonalizable (more precisely $ A_n,B $ are simultaneously diagonalizable) and $B=p(A)$ \\
+	\snote{use similarity, partition arguments and Lagrange interpolation poly which provides a polynomial map of $ n $ distinct reals to any $ n $ reals }
+	for some polynomial $p(t)$ of degree at most $n-1$
+	& If $B$ is Diagonalizable then $B$ has a square-root i.e $\exists A | A^2=B.$
+	& If $A_n,B_n$ are similar so are $adj(A), adj(B)$.
+	& All Unitary Matrices Form a group in $GL(n,\mathbb{C})$ and compact in $\mathbb{C}^{n^2}.$ 
+	& Singular Value Decomposition: Every matrix $A_{m,n}$ can be written as $A=U_m S V_n$ where $U,V$ are Unitary and $S$ is the diagonal
+	 (with zero) entries that are eigenvalue of $A^*A$ or $AA^*$.
+	 & Reversal Matrix $B$ is matrix that is up-side-down of Identity and $BA$ reverses row order of $A$,  $AB$ reverses column order of $A$
+	 And $B=B^*=B^{-1}$
+	& By Jordan Canonical form Every non-singular matrix is similar to its Transpose
+	& $A$ is similar to $\bar{A}$ iff $A$ is Similar to a real matrix (Same condition for $A \sim A^*$)
+	& $A$ is hermitian iff $ tr(A^2)=tr(A^*A) $
+	& if $A$ is hermitian then, $\forall x \in \mathbb{C}^n$ :
+	&& $x^*Ax$ is positive iff all eigenvalues are positive
+	&& $x^*Ax$ is negative iff all eigenvalues are negative	
+	&& if eigenvalues are$\lambda_{1}\leq\lambda_{2}\leq \ck \lambda_{n}$ and subspaces $\{S\}$ of $\mathbb{C}^n$ then
+	$ \lambda_{1}= min(\frac{x^*Ax}{x^*x}), \lambda_{n}= max(\frac{x^*Ax}{x^*x}), \\
+	\lambda_{k}=\displaystyle \min_{\{ dim(S)=k\}} \displaystyle\max_{0\neq x\in S} \frac{x^*Ax}{x^*x} \\
+	=\max_{ \{dim(S)=n-(k+1)\}} \displaystyle\min_{0\neq x\in S} \frac{x^*Ax}{x^*x} $
+	& In general even if $A \in M_n$ is not hermitian with eigenvalues $\lambda_{1},\lambda_{2} \ck , \lambda_{n}$ then  
+	$\displaystyle\min_{x\neq 0} \left| \frac{x^*Ax}{x^*x} \right|\leq |\lambda_i|\leq  
+	\displaystyle\max_{x\neq 0} \left| \frac{x^*Ax}{x^*x} \right| $\\
+	(can be pure inequality also)
+	& Every Jordan matrix is similar to a complex symmetric matrix so \textbf{Every matrix is similar to a complex symmetric matrix}
+\end{easylist}
+
+\section{Properties based on Matrix Norm}
+\begin{easylist}
+	& A function $||| \cdot ||| : M_n \rightarrow \mathbb{R}$ is a matrix norm if:
+\end{easylist}
+\begin{enumerate}
+	\item $|||A||| \geq 0\quad$  Non-negative
+	\item[1a.] $|||A||| = 0 \iff A=0 \quad$ Positive
+	\item $|||cA|||=|c| \; |||A|||\quad \forall c\in \mathbb{C} \quad$ Homogeneous
+	\item $|||A+B||| \leq |||A|||+|||B||| \quad$ Triangular Inequality
+	\item $|||AB|||\leq |||A||| \; |||B||| \quad$ Sub-multiplicativity 
+\end{enumerate}
+
+\begin{easylist}
+	& Clearly $|||A^k|||\leq |||A|||^k$ now If $A^2=A \; \implies |||A|||\geq 1$ in particular \boldmath{$|||I||| \geq 1 $}
+	& Some Matrix norms:
+	&& $l_1$ norm : $||A||_1=\displaystyle\sum_{i,j=1}^{n}|a_{ij}|$
+	&& $l_2$ norm : $||A||_2=|tr(A^*A)|$\\
+	$=\sqrt{\sigma_1(A)^2+\ck+\sigma_n(A)^2} =
+	\left( \displaystyle\sum_{i,j=1}^{n}|a_{ij}|^2\right)^{1/2}$
+	&& $l_\infty$ norm : $||A||_\infty =\displaystyle \max_{1\leq i,j\leq n}|a_{ij}|$
+	&& max Column sum norm \\ $|||A|||_1 =\displaystyle \max_{1\leq j\leq  n}\displaystyle\sum_{i=1}^{n}|a_{ij}|$
+	&& max Row sum norm \\ $|||A|||_\infty= \displaystyle\max_{1\leq i\leq  n}\displaystyle\sum_{j=1}^{n}|a_{ij}|$
+	&& Spectral norm $|||A|||_2=\sigma_1(A)$ = Largest Singular Value of $A$ 
+	& \textbf{Matrix norm induced by vector norm} : if $||\cdot||$ is norm in $\mathbb{C}^n$ then:\\
+	$|||A|||=\displaystyle \max_{||x||=1}||Ax||=\displaystyle \max_{x\neq 0 }\frac{||Ax||}{||x||}\\ =\displaystyle \max_{||x||\leq 1} ||Ax|| = \max_{||x||_\alpha = 1 }\frac{||Ax||}{||x||} $\\
+	(for any other norm $||\cdot||_\alpha $ in $ \mathbb{C}^n$) is a Matrix norm with additional properties:
+	&& $|||I|||=1$
+	&& $||Ay|| \leq |||A||| \; ||y||$
+	& For Any Matrix $A \in M_n(\mathbb{C})$ we have $|\lambda| \leq \rho (A)=\max(|\lambda_i|) \leq |||A|||$ and if $A$ is non-singular then $ \rho(A)\geq|\lambda|\geq 1/|||A|||$
+	& if there is Matrix norm such that $|||A||| < 1$ then $\lim\limits_{k\rightarrow \infty} A^k = 0$
+	& from above we have $\lim\limits_{k\rightarrow \infty} A^k = 0$ iff $\rho(A)<1$
+	& For any given Matrix norm $|||\cdot|||$ we have
+	$\rho(A)=\lim\limits_{k\rightarrow \infty} |||A^k|||^{1/k}$
+	& Matrix power series $\displaystyle \sum_{k=0}^{\infty} a_k A^k$ converges if $\rho(A)\leq R$ where $R$ is the radius of convergence of complex power series  $\displaystyle \sum_{k=0}^{\infty} a_k z^k$ i.e. if $\exists \; |||\cdot||| \; : \; |||A|||<R $
+	& Matrix $A$ is nonsingular if $\exists |||\cdot||| \; | \; |||I-A|||<1 $ and 
+	$A^{-1} = \displaystyle \sum_{k=0}^{\infty} (I-A)^k$
+	& From above we have if $A_n=[a_{ij}] $ and $|a_{ii}|> \sum_{j\neq i} |a_{ij}|$ i.e. absolute value of diagonal elements are greater than sum of absolute values of elements in corresponding rows (or columns) then \boldmath{$A$}\textbf{ is non singular}
+\end{easylist}	
+
+\section{Properties associated to Quadratic forms}
+\begin{easylist}
+	& $A_n$ if Hermitian iff :
+	&& $x^*Ax$ if real for all $x \in \mathbb{C}^n$
+	&& $A$ is normal and all its eigenvalues are real
+	&& $S^*AS$ is Hermitian $\forall S \in M_n$
+	& from above $A$ is +ve (-ve) semi-definite ($ x^*AX \geq 0 \; or \; \leq 0$) $\implies \; A$ is hermitian 
+	& if $A$ is +ve definite (-ve) then $ A^*, A^{-1}, A^T, \bar{A}$ are all +ve definite (-ve).
+	& every Diagonal entry of +ve (-ve) definite (semi) Matrix are +ve(non -ve, -ve) only.
+	& A positive semi-definite matrix is positive definite iff it is non-singular
+	& for $A_n=[a_{ij}]$ a +ve (-ve) semi-definite matrix if $a_{kk}=0$ then $a_{ik}=a_{ki}=0 \; \forall i \in \{1,2,\ck,n\}$ i.e. if diagonal entry is 0 then that row and column are 0.
+	& $A$ is positive semi definite iff $A=B^*B$ for some $B$
+	& $A_n$ is positive definite iff $det(p_k)>0\; \forall 1\leq k\leq n$ where $p_k$ is the $k\times k$ principle matrix partitioned in $A$ (along the diagonal).
+\end{easylist}
+
+\section{Other Important Theorems }
+\begin{easylist}
+	& Gersgorin Theorem: for a matrix $A_n=[a_{ij}]$
+	&& A Gersgorin Disk of $A$ = \\ 
+	$\{z\in \mathbb{C} : |z-a_{ii}|\leq R'_i(A)=\sum_{j\neq i} |a_{ij}|\}$ for $i=1,2,\ck,n$
+	&& Eigenvalues of $A$ are all in the union of Gersgorin Discs of $A$ i.e.\\
+	$ \{\lambda_i\} \in G(A)=\bigcup_{i=1}^n \{z\in \mathbb{C} : |z-a_{ii}|\leq R'_i(A)\}$
+	&& if $G(A)$ forms a disjoint set $G_k(A)$ which is union of $k$ discs then $G_k(A)$ contains exactly $k$ eigenvalues (counted according to algebraic multiplicity).
+	&& The above statements remain true even if radius of the discs are $C'_j=\sum_{i\neq j} |a_{ij}|$ as $A^T$ has same eigenvalues.
+	&& from above we have \\
+	$ \rho(A) \leq \min \left\{ \max_i \sum_{j=1}^{n} |a_{ij}| , \max_j \sum_{i=1}^{n} |a_{ij}| \right\} $
+	&& if $p_1,p_2,...,p_n$ are positive real numbers then \\
+	\boldmath{$ \{\lambda_i\} \in \bigcup_{i=1}^n \{z\in \mathbb{C} : |z-a_{ii}|\leq \frac{1}{p_i}\sum_{j\neq i} p_j|a_{ij}|\}$}\\
+	or \\
+	\boldmath{$ \{\lambda_i\} \in \bigcup_{i=1}^n \{z\in \mathbb{C} : |z-a_{jj}|\leq p_j\sum_{i\neq j} \frac{1}{p_i} |a_{ij}|\}$}\\
+	as similar matrices have same eigenvalues
+	& $A$ is Diagonally dominant if $|a_{ii}|\geq \sum_{j \neq i} |a_{ij}|$ and strictly diagonally dominant if  $|a_{ii}| > \sum_{j \neq i} |a_{ij}|$ 
+	& if $A$ is strictly diagonally dominant then : $A$ is non-singular, if $a_{ii}>0 \; \forall i=1,2,...,n$ then every eigenvalue of $A$ has a positive real part, and if $A$ is hermitian and $a_{ii}>0 \; \forall i=1,2,...,n$ then $A$ is positive definite.\
+	& $A_n$ has nonzero diagonal entries, is diagonally dominant and $|a_{ii}|>R'_i$ for atleast $n-1$ values of $i$ then $A$ is non singular.
+	& If every entry of $A$ is non zero, $A$ is diagonally dominant and $|a_{kk}|>R'_k$ for any $k$ then $A$ is non singular 
+	& if $A_n$ has the property that $\forall p,q \in \{1,2,..,n\} \; \exists$ sequence of distinct integers $p=k_1,k_2,..,k_m=q$ such that $a_{k_1 k_2},a_{k_2k_3},..a_{k_{m-1}k_m}$ are non zero, $A$ is diagonally dominant and $|a_{kk}|>R'_k$ for any $k$ then $A$ is non singular
+	& The above property states that if $A$ is a probability/stochastic matrix then for each node in directed graph of $A$ is strongly connected (for each pair of nodes there is a finite length directed path to them or the stochastic matrix has only one class and all states are communicating)
+\end{easylist}
+	
+
+\begin{thebibliography}{9}
+	\bibitem{ARV}
+	Vasishtha A.R., Vasishtha A.K.: Matrices, Krishna Educational Publishers,3,(2018).  
+	\bibitem{MA}
+	Roger A.H., Charles R.J.: Matrix Analysis, Cambridge University press,2,(2013). 
+	\bibitem{LA}
+	Stephen H. Friedberg, Arnold J. Insel, Lawrence E. Spence.: Linear algebra Pearson Education,4,(2003).
+	\bibitem{MT}
+	Fuzhen Zhang.:Matrix Theory Basic Results and Techniques, Springer,2,(2011).
+\end{thebibliography}
+\end{multicols}
+\end{document}

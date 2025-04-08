@@ -1,0 +1,335 @@
+\documentclass[11pt]{extarticle}
+\usepackage{fullpage}
+\usepackage[ampersand]{easylist}
+\ListProperties(Hide=10, Style*=$\bullet\;\,$, Style2*=$\;\,${\tiny$\blacksquare$}$\;\,$,Space*=1mm,Space2*=0.1mm)
+
+\usepackage{amsmath,amssymb,amsthm,mathtools,mathrsfs}
+\newtheorem{thm}{Theorem}[]
+\usepackage{bibref}
+
+\usepackage[T1]{fontenc}
+\usepackage[sc,osf]{mathpazo}
+%\usepackage{eulervm}
+
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,
+	linkcolor=black,
+	filecolor=black,      
+	urlcolor=black}
+	
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usetikzlibrary{shapes}
+\usepackage{pgfplots}
+\pgfplotsset{trig format plots=rad}
+\usetikzlibrary {3d}
+\pgfplotsset{compat=1.18}
+
+\usepackage{multicol}
+\setlength{\columnsep}{5mm}
+\setlength\columnseprule{.1pt}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Na}{\mathbb{N}}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\w}[1]{\text{#1}}
+\newcommand{\ck}{.\,.\,}
+\newcommand{\sm}[2]{\displaystyle\sum_{#1}^{#2}}
+\newcommand{\Uint}[2]{\overline{\int\!}_{#1}^{\;#2}}
+\newcommand{\Lint}[2]{\underline{\int\!}_{\;#1}^{\;#2}}
+\newcommand{\pfrac}[2]{\frac{\partial#1}{\partial#2}}
+\newcommand{\ckfil}{$.\dotfill.$}
+
+\author{Yashas.N}
+\title{Differential Geometry}
+\date{}
+\begin{document}
+    \maketitle
+    \boldmath
+    
+\begin{multicols}{2}
+
+\section{Introduction}
+\subsection{Definitions}
+\begin{easylist}
+& \textbf{Euclidean space}: $\mathbb{R}^n$ metric space with norm:  $|| x ||=\sqrt{(x_1^2+x_2^2+x_3^2\dots+x_n^2)}$\\
+\end{easylist}
+now for $\mathbb{R}^3$ Euclidean space:
+\begin{easylist}
+& \textbf{Scalar field} $V $ assigns each point in $\mathbb{R}^3$ to a corresponding scalar
+& \textbf{Vector field} $V:\mathbb{R}^3 \to \mathbb{R}^3 $ assigns each point in $\mathbb{R}^3$ to a corresponding vector \ eg: natural frame fields: $U_1=(1,0,0)_p,U_2=(0,1,0)_p,U_3=(0,0,1)_p$ Then every vector field $v(p)=\sum_{i=1}^3v_i(p)U_i$ where $v_i$ is scalar field 
+& \textbf{Tangent vector} $V_{p}$ is a vector in $V$ direction at point $p$ i.e. $(v_{1},v_{2},v_{3})_{(p_{1},p_{2},p_{3})}$
+\end{easylist}
+\subsection{Basics}
+\begin{easylist}
+& \textbf{Directional derivative} $v_{p}[f]$: for scalar field $f$ directional derivative is the rate of its change at $p$ in $v$ direction so: 
+\begin{center}
+$v_{p}[f]=\frac{d}{dt}(f(p+tv))|_{t=0}$ 
+\end{center} 
+here $p+tv$ is the line at $p$ in $v$ direction so at $t=0$ line is at $p$ hence the definition makes sense
+& now if $v_{p}$ is chosen as the vector from vector field $V$ i.e. $V(p)_{p}$ then direction derivative in a way give change of 
+scalar field with respect to (w.r.t) vector field at p in a sense it is like operating \textbf{\textit{vector field on scalar field}}
+& if $v_{p}=(v_{1},v_{2},v_{3})_{(p_{1},p_{2},p_{3})}$ Then 
+\begin{center}
+$v_{p}[f]=\displaystyle\sum_{i=1}^{3}v_i\frac{d}{dx_i}(f)(p)$ 
+\end{center} 
+& clearly directional derivative is linear and $v_p[fg]=v_p[f]g+fv_p[g]$ (Libnizian rule)
+& \textbf{Curve} $a:$ open interval of $ \mathbb{R} \to \mathbb{R}^3 $ and $a$ is differentiable i.e. if $a(t)=(a_{1}(t),a_{2}(t),a_{3}(t))$ then each $a_{i}(t)$ is differentiable real function \\
+e.g.. straight line $a(t)=p+tV$
+& $a'(t)=a'(t)_{a(t)}$ i.e $a'$ is a tangent vector at a point in direction of rate change of $a$
+& Re-parametrisation if $I$ , $J$ are open intervals in $\mathbb{R}$ , $a:I \to \mathbb{R}^3$ is curve and $h:J \to I$ is a differentiable function then $b(s)=a(h(s))$ is a curve same as a but different velocity i.e. 
+\begin{center}
+$b'(s)=\frac{dh}{ds}a'(h)$
+\end{center}
+& Lemma $a'(t)[f]=\frac{d}{dt}(f(a))(t)$
+& a curve $a$ is \textbf{regular} if $a'\neq 0 $   
+\end{easylist}
+\section{Forms}
+\subsection{1-forms}
+\begin{easylist}
+& \textbf{1-form} $\phi$: function from set of all tangent vector to $\mathbb{R}$ that is linear at each point i.e at p $\phi=\phi_{p}$ then $\phi_p(aV+bW)=a\phi_p(V)+b\phi_p(W)$ 
+& so if $v_p=V(p)_p$ then 1-form acts on an vector field also converting it to a scalar in a way \textbf{\textit{vector field to scalar field } }
+& $df:$ for a differentiable function define 1-form $df(v_p)=v_p[f]$
+& now $dx_i(v_p)=v_i \: for\: i=1,2,3$ 
+& as 1-forms are linear at a point $\implies$ if $\psi (v_p)=f_1dx_1+f_2dx_2+f_3dx_3(v_p)=f_1(p)dx_1(v)+f_2(p)dx_2(v)+f_3(p)dx_3(v)$ 
+then $\psi$ is a 1-form
+& every 1-form $\phi=\sum f_idx_i$ where $f_i=\phi(U_i)$
+& so $df(v_p)=\sum \frac{\partial f}{\partial x_i}(p)dx_i(v)d$ Thus $df \equiv \sum \frac{\partial f}{\partial x_i}dx_i$
+\end{easylist}
+\subsection{Differential forms}
+\begin{easylist}
+& if $T_p$ is the vector space containing all tangent vectors at point p then 1-forms is a linear functional on this space 
+& going with the flow of 1-form we define other forms as linear in $T_p \times T_p$ ,$T_p \times T_p \times T_p$ etc. 
+& \textbf{Wedge product} : it is a operation on two 1-forms defined by $dx_i \wedge dx_j(v)=dx_i(v)dx_j(v)$ and $dx_i \wedge dx_j=-dx_j\wedge dx_i$
+& now other forms can be obtained by this wedge product i.e. 1-form $\wedge$ 1-form gives 2-form, \\
+1-form $\wedge$ 2-form gives 3-form, etc 
+& so \
+1-form = $fdx+gdy+hdz$  \\
+2-form = $fdxdy+gdydz+hdxdz$ \\
+3-form = $fdxdydz$
+& \textbf{Exterior derivative} : of 1-form ($\phi=\sum f_idx_i$) = 2-form $d\phi=\sum df_i \wedge dx_i$ \ so exterior derivative can be used to convert 1-form to a 2-form, 2-form to 3-form \dots etc
+& Theorem: for function f 1-forms $\psi$ and $\phi$ then
+\begin{enumerate}
+\item $d(f\phi)=df\wedge\phi+fd\phi$
+\item $d(\phi\wedge\psi)=d\phi \wedge \psi - \phi \wedge d\psi$ 
+\end{enumerate}
+&
+    \begin{enumerate}
+    \item $df \leftrightarrow grad(f)$
+    \item if $\phi (1-form) \leftrightarrow V$ then $d\phi \leftrightarrow curl(V)$
+    \item if $\eta (2-form) \leftrightarrow V$ then $d\eta \leftrightarrow div(V)dxdydz$
+    \end{enumerate}
+\end{easylist}
+\section{Mapping}
+\begin{easylist}
+& \textbf{Mapping} $F:\mathbb{R}^n \to \mathbb{R}^m$  such that $F(p)=(f_1(p),f_2(p),\dots,f_n(p))$ then each $f_i$ is differentiable real function 
+& \textbf{Tangent map} of $F:\:F*(v_p)$ is the initial velocity of curve $t \rightarrow F(p+tv)$ this sends tangent vectors in $\mathbb{R}^n$ to tangent vectors in $\mathbb{R}^m$  
+& $F*(v)=(v[f_1],v[f_2],\dots,v[f_n])_{F(p)}$
+& clearly tangent map is linear thus it is a linear transformation from from and to Tangent vector spaces 
+& $F$ is regular iff $F*$ is one-one i.e. Jacobian matrix of has rank equal to domain space
+\end{easylist}
+\section{Frame fields}
+\begin{easylist}
+& \textbf{frame}: a set of 3 unit vectors that are mutually perpendicular to each other in $\mathbb{R}^3$
+& attitude matrix of a frame $A$: coordinate matrix of a frame (clearly it is orthogonal i.e $A.A^T=I$
+\end{easylist}
+\subsection{Curves and Frame fields}
+\begin{easylist}
+& a curve $a$ is said to have unit speed if $\|a'(t)\|=1\: \forall \:t$  in domain
+& \textbf{*Theorem}: if $a$ is a regular curve in $\mathbb{R}^3$ then there exist as reparametrisation $b$ of $a$ such that $b$ is a unit speed curve (proof by inverse function theorem)
+now $b=a(s(t))$ which has unit length then $s(t)$ is the called arclength function of $a$ as it converts $\|a'\|$ to one
+& \textbf{Vector field on a curve} $Y$:  (for a curve $a$) assigns a Tangent vector $Y(t)_{a(t)}$ for every point $a(t)$
+&   $Y$ is parallel vector field to $a$ id $\|Y(t)\|=1 \:\forall\: t$
+\end{easylist}
+\subsubsection{Franet fields}
+\begin{easylist}
+& if $b$ is a unit speed curve then for $b$:
+& $T=b'$ is called \textbf{Tangent vector field}, clearly $\|T\|=1$ so $T$ tells us the direction of change of   $b$ 
+& $T'=b''$ is called \textbf{Curvature vector field}, it measures how the curve is changing 
+&  $N=\frac{T'}{\|T'\|}$ is called \textbf{Normal vector field}, clearly $\|N\|=1$ so $N$ measures the direction of change of  $b$ , clearly $\|B\|=1$ 
+& $B=T \times N$ is called \textbf{Binormal vector field} 
+& \textbf{Theorem}: for a unit curve $b$ vector fields $T,N,B$ form a frame at each point, this is called Frenet Frame field on $b$
+& \textbf{*Curvature} $k$ of a curve $b$ at a point is $\|T'\|$ at that point, clearly there is a one-one correspondence between the curve 'turn rate' or 'bending rate' and curvature at the point
+& \textbf{Torsion} $\tau$ of a curve $b$ at a point is $-B'.N$ at that point, there is a one-one correspondence between the curve 'twist rate' or 'rotating rate' and Torsion at the point
+& \textbf{*Theorem} 
+\end{easylist}
+$\begin{bmatrix}
+T'\\
+N'\\
+B'\\
+\end{bmatrix}
+=
+\begin{bmatrix}
+0&k&0\\
+-k&0&\tau\\
+0&-\tau&0
+\end{bmatrix}
+\begin{bmatrix}
+T\\
+N\\
+B
+\end{bmatrix}$
+\begin{easylist}
+& $k=0 \implies b$ is a straight line
+& a curve $a$ is plane curve if it lies entirely on a plane i.e. $\exists$ vectors $p$ and $q$ such that $((b(t)-p).q=0\; \forall \; t$ 
+& Theorem: if $k>0$ , $b$ is a plane curve iff $\tau=0$ at every point
+& Theorem: if $\tau=0$, $k>0$ and is constant then $b$ is part of a circle of radius $\frac{1}{k}$
+\end{easylist}
+\subsubsection{Arbitrary speed curves}
+\begin{easylist}
+& if $a(t)$ is a arbitrary speed curve (regular) then it can be reparametrised to unit speed curve $\overline{a}(s(t))$this concept is use for below and  $v=\frac{ds}{dt}$ is speed of the curve as $b'(s)=(a(t(s))=a'(t)\frac{dt}{ds}=1$ 
+& we define $T,N,B,k,\tau$ of $a(t)$ to be equivalent to that of $\overline{a}(s)$ i.e $T=\overline{T}(s),k=\overline{k}(s)\dots$
+& so now $T'=(\overline{T}(s))'=\overline{T}'(s)\frac{ds}{dt}=vT'$ and so on for others i.e. correct it by multiplying it with $v$
+& \textbf{Theorem} same rule as above holds for franet frame also i.e 
+\end{easylist}
+$\begin{bmatrix}
+T'\\
+N'\\
+B'\\
+\end{bmatrix}
+=\textbf{v}
+\begin{bmatrix}
+0&k&0\\
+-k&0&\tau\\
+0&-\tau&0
+\end{bmatrix}
+\begin{bmatrix}
+T\\
+N\\
+B
+\end{bmatrix}$
+\begin{easylist}
+& for a reggular curve $a$
+\begin{enumerate}
+\item $T=a'/\|a'\|$
+\item $k=\|a' \times a''\|/\|a'\|^3$
+\item $B=a' \times a''/\|a' \times a''\|$
+\item $\tau=(a' \times a'').a'''/\|a' \times a''\|^2$
+\end{enumerate}
+\end{easylist}
+\subsection{*Covariant derivative}
+\begin{easylist}
+& \textbf{*Covariant derivative}: of vector field $W$ w.r.t $v_p$ = $\nabla_vW=W'(p+tv)|_{t=0}$ i.e. it gives initial rate of change of $W(p)$ as it moves in $v$ direction
+& if $W=(w_1,w_2,w_3)$ then $\nabla_vW=\sum vv[w_i]U_i(p)$ 
+& clealy his opeation is linear and obeys Libnizian rule
+& now if $v_p=V(p)_p$ then covatiant derivative is like operating a \textbf{vector field on a vector field} 
+\end{easylist}
+\subsection{Frame fields}
+\begin{easylist}
+& \textbf{Frame fields}: Vector Fields $E_1,E_2,E_3$ in $\mathbb{R}^3$ constitute a frame field if 
+$E_i.E_j=\delta_{ij}$ at each point eg: spherical frame fields, cylindrical frame fields  
+\end{easylist}
+\section{Transforms}
+\begin{easylist}
+& Isometry F: $\mathbb{R}^3 \to \mathbb{R}^3$ such that $d(F(p),F(q))=d(p,q)\: \forall\: p,q$
+& eg: Translation: $T_a(p)=p+a$ for fixed $a$, \\
+Rotation :$R_{xy\theta}(p_1,p_2,p_3)=(p_1cos(\theta)-p_2sin(\theta),p_1sin(\theta)+p_2cos(\theta),p_3)$ 
+& Orthogonal Transformation C : $\mathbb{R}^3 \to \mathbb{R}^3$ such that $C(p).C(q)=p.q$ and is linear
+\\eg: Rotation
+& Lemma: if $C$ is an orthogonal transformation then $C$ is an isometry
+& Lemma: if $F$ is an isometry and $F(0)=0$ then $F$ is an orthogonal transformation
+\end{easylist} 
+\section{*Surfaces}
+\begin{easylist}
+& Coordinate patch $x$: $D \to \mathbb{R}^3$ (D is any open set in $\mathbb{R}^2$ that is one-one and regular (i.e. $x*$ is also one-one)
+& \textbf{*Proper patch} x: a coordinate patch with $x^{-1}:x(D) \to D$ is continuous 
+& \textbf{*Surface} in $\mathbb{R}^3$ is a subset $M$ such that for each point $p$ of $M$ there exist a proper patch in $M$ whose image contains a neighborhood of $p$ in $M$
+& clearly if $x(u,v)=(u,v,f(u,v)$ where f is real differentiable function then $x$ is a patch , this type of patch is called \textbf{Monge patch}
+& A surface which is proper patch in its self is called a \textbf{Simple surface}
+& \textbf{*Theorem}:  $M:g(x,y,z)=c$ is a surface iff $dg \neq 0\:\forall\:p\epsilon M$\\
+(proof by implicit function theorem)
+& patch computation: $M$ is a surface iff $M$ is one-one and Jacobian matrix of $M$ has rank 2
+& partial velocity functions: $x_u=\frac{\partial x}{\partial u}=(\frac{\partial x_1}{\partial u},\frac{\partial x_2}{\partial u},\frac{\partial x_3}{\partial u})$ , $x_v=\frac{\partial x}{\partial v}=(\frac{\partial x_1}{\partial v},\frac{\partial x_2}{\partial v},\frac{\partial x_3}{\partial v})$ these essentially give tangent vectors in $u$ an $v$ directions at a point in $x$
+& Tangent vector to a plane $M$ $v_p$: if $p \epsilon M$ and $v$ is initial velocity of some curve in $M$ (i.e. a curve that is on the surface itself) 
+& \textbf{*Lemma}: if $x(u_0,v_0)=p$ and $v_p$ is tangent vector to $x$ iff $v_p$ can be expressed as linear combination of $x_u(u_0,v_0)$ and $x_v(u_0,v_0)$
+& Euclidean vector field $Z$: is a vector field defined for all points on a surface $M$ in $\mathbb{R}^3$ and assigns $Z(p)_p$ tangent vector to $p$ (basically a tangent vector map defined on a surface)
+& Tangent vector field on $M$ $V$: a euclidean vector field on $M$ for which $V(p)_p$ is tangent to $M$ 
+& Normal vector field on $M$ $N$: a euclidean vector field on $M$ for which $N(p)_p$ is orthogonal to tangent plane of $M$ at $p$ ($T_p(M)$)
+& clearly for $M:g=c$ the gradient($g$) vector field forms a normal vector field   
+& \textbf{Manifold*} (M,P): in n dimensions, M is a set with P being a collection of abstract patches (functions $D \to M$ that is 1-1 where $D$ is a open set of $\mathbb{R}^2$) which satisfy:
+\begin{enumerate}
+\item The covering property : The images of patches in P cover M 
+\item The smooth overlay property : for any patches $x,y$ in P functions $y^{-1}x,x^{-1}y$ are euclidean differentiable (differentiable in euclidean space) and defined are on open sets of $\mathbb{R}^n$
+\item The Hausdorff property : for any $p\neq q$ in M there are disjoint patches $x$ and $y$ in P with $p \epsilon x$ and $q \epsilon y$  
+\end{enumerate}
+& clearly manifold generalizes the concept of surface (surface in $\mathbb{R}^3$ is just 2-D manifold:\\(surface point set, set of patches that cover it) )
+\end{easylist}
+\section{*Curvature}
+\begin{easylist}
+& \textbf{*Shape operator} $S$: for a surface $M$ and $p$ on it and $V_p$ tangent to it we have
+$S_p(v)=-\nabla _p U$ where $U$ is the unit normal vector field on neighbourhood of $p$ in $M$\\
+clearly as $U$ is unit normal to tangent plane at $p$ $\nabla_p U$ tells us how $U$ changes in $v$ direction i.e. how tangent plane is changing (in directions) giving us a local picture of how $M$ itself is changing at $p$
+& Lemma: shape operator is a liner operator i.e. $S_p:T_p(M) \to T_p(M)$
+& \textbf{* Normal curvature} $k(u)=S(u).u$ where $u$ is the unit vector tangent to $M$ at $p \epsilon M$ 
+& lemma: for a curve $a$ in $M$ and unit normal vector $U$ at a point in $a$ $a''U=S(a')a'$ \\
+from for a given curve on a surface with given velocity then its acceleration in normal direction is entirely defined by the surface 
+& from above lemma if we define $u=a'(0)$ (initial velocity) then 
+$k(u)=s(u).u=s(a').a'=a''U=k(0)N(0)U(p)\; \w{ ($k$ is curvature of a curver) } \\
+= k(0).cos(\eta)$
+(since $N$ and $U$  are both unit vectors) so now if we orient $a$ or rather take $a$ to be in plane determined by 
+$U(p)$ and $u=a'$ only then $\eta = 0 \; or\; \pi$ only thus gives geometrical meaning to normal curvature
+& \textbf{Principle curvatures} $k_1$ and $k_2$: the maximum and the minimum values of $k(u)$ of $M$ at a point $p$ and the directions in which they occur is the principal directions
+& Umbilic point $p$: of $M$ if umbilical if $k(u)$ is constant in all directions at $p$
+& \textbf{* Theorem}: now as shape operator is linear operator it can be expressed in matrix form for this : if p is not an umbilical point then: 
+\begin{enumerate}
+\item Principal directions (of $k_1$ and $k_2$) are orthogonal 
+\item These directions are eigenvectors of $S_p$ with $k_1$ and $k_2$ as eigenvalues
+\end{enumerate}
+&  \textbf{* Gaussian curvature} K: at a point p is equal to $det(S_p)$ thus is a function on $M$
+& \textbf{* Mean curvature} H : at a point p is equal to $1/2 \; trace(S_p)$
+& \textbf{Lemma} : $K=k_1k_2$ and $H=\frac{1}{2}(k_1+k_2)$   
+& Theorem: if $v$ and $w$ are linearly independent tangent vectors at a point p of M then: 
+\begin{align*}
+S(v) \times S(w) &= K(p) v \times W \\
+S(v) \times w + v \times S(w) &= 2H(p)v \times w
+\end{align*}
+this can be use to formulate formulas for K and H
+& Corollary  $k_1,k_2=H \pm \sqrt{H^2-K}$
+\end{easylist} 
+\subsection{Curvature computation}
+\begin{easylist}
+& For a surface $M$ if 
+\begin{center}
+$E=x_u.x_u   \quad F=x_u.x_v \quad G=x_v.x$ \\
+$U=\frac{x_u \times x_v}{\|x_u \times x_v\|}$ \\
+$l=U.x_{uu} \quad m=U.x_{uv} \quad n=U.x_{vv}$
+\end{center}
+then
+\begin{center}\large
+$K=\frac{ln-m^2}{EG-F^2}$\\
+$H=\frac{Gl+En-2FM}{2(EG-F^2)}$
+\end{center}
+\end{easylist}
+\section{Tensors}
+\subsection{Definitions}
+\begin{easylist}
+& Einstein summation convection $\displaystyle\sum_{i=1}^n a_ix^i=a_ix^i$ i.e. summation symbol is just removed (here dimension of the space should be known (n))
+& Dummy index: any index which is repeated in a given term and which can be replaced by other index without changing the expression 
+& Free index: index occurring only once in any given term 
+& Kronecker delta:
+\end{easylist}
+
+$\delta_{ij}=
+\begin{cases}
+1 &\quad \text{if}\; i=j\\
+0 &\quad \text{if}\; i\neq j
+\end{cases}$
+
+\begin{easylist}
+& Contra-variant Vectors: if $A_i$ in X coordinate system are transformed to $\overline{A_i}$ in Y coordinate system by rule:
+\begin{center}
+$\overline{A_i}=\frac{\partial \overline{x^j}}{\partial{x_i}}A_j$
+\end{center}
+& Covariant Vectors: if $A_i$ in X coordinate system are transformed to $\overline{A_i}$ in Y coordinate system by rule:
+\begin{center}
+$\overline{A_i}=\frac{\partial x^j}{\partial \overline{x_i}}A_j$
+\end{center}
+\end{easylist}
+\begin{thebibliography}{9}
+    \bibitem{dif}
+    Barrett O'Neill: Elementary Differential Geometry,Elsevier Academic press,2,2006. 
+
+\end{thebibliography}
+\end{multicols}
+\end{document}
