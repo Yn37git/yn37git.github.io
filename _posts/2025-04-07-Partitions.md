@@ -4,9 +4,12 @@ title: Partitions functions
 date: 2025-03-15
 description: a concise introduction
 ---
+Here's a presentation I did in my master's u can go through it : [link](https://yn37git.github.io/assets/pdf/Q_series__Ramanujan_s_functions_and_Overpartitions.pdf) 
+or read this blog for glimpses.
 
 ## Partitions
- ---
+---
+
 A partition of a positive integer $$ n $$ is a finite nonincreasing
 sequence of positive integers : 
 $$ (\lambda_1,\lambda_2,\dots,\lambda_r) \text{ such that } 
@@ -39,10 +42,12 @@ this it is a type of Pochhammer notation of shifted factorial extended to base '
 -  if $$ p(n) $$ represent the number of integer partitions of a non negative integer n then :
 
 $$
+\begin{align*}
 \sum_{n=0}^\infty p(n)q^n &= \frac{1}{(q;q)_\infty}=\frac{1}{f_1}\\
 \qquad &=(1-q)^{-1}(1-q^2)^{-1}\dots(1-q^n)^{-1}\dots \\ 
 \qquad &= (1+q+q^2+q^3+\dots+q^n+\dots)(1+q^2+q^4+q^6+\dots+q^2n+\dots)\\
 &\quad \dots(1+q^n+q^{2n}+q^{3n}+\dots)\dots
+\end{align*}
 $$ 
 
   ( these expansions holds for $$ |q|<1 $$ )

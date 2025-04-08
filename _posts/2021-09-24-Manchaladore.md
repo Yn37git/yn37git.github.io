@@ -8,27 +8,27 @@ description: A brief on my hometown.
 <details>
 <summary> Table of Contents </summary>
 
-- [Introduction](#introduction)
-- [Land](#land)
-- [History](#history)
-- [Agriculture](#agriculture)
-- [Administration and politics](#administration-and-politics)
-- [Weather and climate](#weather-and-climate)
-- [Reference places](#reference-place-located-in-and-near-manchaldore)
-  - [Temples](#temples)
-  - [Mosque](#mosque)
-  - [Shops](#shops)
-  - [Hospitals](#hospitals)
-  - [Schools and colleges](#schools-and-colleges)
-- [Education](#eucation)
-- [Employment and income sources](#employment-and-income-sources)
-- [Communication](#communication)
-- [Transportation](#transportation)
-- [Drinking water and food](#drinking-water-and-food)
-- [MIGRATION](#migration)
-- [Wild life and Animals](#wild-life-and-animals)
-- [Development](#development)
-- [Problem and expectations](#problems-faced-by-people-and-other-expectations-by-the-people)
+ - [Introduction](#introduction)
+ - [Land](#land)
+ - [History](#history)
+ - [Agriculture](#agriculture)
+ - [Administration and politics](#administration-and-politics)
+ - [Weather and climate](#weather-and-climate)
+ - [Reference places](#reference-place-located-in-and-near-manchaldore)
+   - [Temples](#temples)
+   - [Mosque](#mosque)
+   - [Shops](#shops)
+   - [Hospitals](#hospitals)
+   - [Schools and colleges](#schools-and-colleges)
+ - [Education](#eucation)
+ - [Employment and income sources](#employment-and-income-sources)
+ - [Communication](#communication)
+ - [Transportation](#transportation)
+ - [Drinking water and food](#drinking-water-and-food)
+ - [MIGRATION](#migration)
+ - [Wild life and Animals](#wild-life-and-animals)
+ - [Development](#development)
+ - [Problem and expectations](#problems-faced-by-people-and-other-expectations-by-the-people)
 </details>
 
 ## Introduction
@@ -36,7 +36,7 @@ description: A brief on my hometown.
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="https://yn37git.github.io/assets/img/manchaladore/1.png" title="manchaladore" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="https://yn37git.github.io/assets/img/manchaladore/1.jpg" title="manchaladore" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
@@ -50,7 +50,7 @@ There is both dry as well as wet land in Manchaldore, and land here is fertile. 
 Now because of scarcity of water and less rain the land has lost its fertility here.
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="https://yn37git.github.io/assets/img/manchaladore/2.png" title="manchaladore" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="https://yn37git.github.io/assets/img/manchaladore/2.jpg" title="manchaladore" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
  <div class="caption">
@@ -59,7 +59,7 @@ Now because of scarcity of water and less rain the land has lost its fertility h
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="https://yn37git.github.io/assets/img/manchaladore/3.png" title="manchaladore" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="https://yn37git.github.io/assets/img/manchaladore/3.jpg" title="manchaladore" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
@@ -75,8 +75,9 @@ Some people also say that a local king called “Manchala” ruled this place so
 There are many forts like structures located in the hilly areas of Manchaldore, people here say that there were kings who fought the war here during the british rule. some dead bodies were also found in some wells, which confirms this fact.
 Manchaldore is a village headquarters for 12 nearby villages about inside the 3 kms radius. Recently one of the oldest Temple of Narasimhaswamy was renovated. The Idol was in the form of long stone or udbhava Moorthy, and has a name of Kambada Narasimhaswamy i.e., Narsimha from the pillar, this temple was in bad condition so in year 2000 all villagers of 12 village gathered and formed a committee to renovate and improve the temple. With the help of government of India, the temple is now renovated.
 Population and other densities (From 2011 census data by govt of India):
-|     Census parameter|       Data|
-|--------------------:|:----------|
+
+|   Census parameter  |     Data  |
+| ------------------- | --------: |
 |     Total population|       1425|
 |      Total No houses|        332|
 |   Female population%|  47.9(682)|
@@ -96,15 +97,15 @@ Population and other densities (From 2011 census data by govt of India):
 | Boy child population| 45.8% (54)|
 
 As per the Census Data 2011 there are 918 Females per 1000 males out of 1425 total population of village. There are 1185 girls per 1000 boys under 6 years of age in the village. 
-|           Census parameter|Total|Male|Female|
-|--------------------------:|----:|---:|:-----|
-|              Total workers|  862| 480|   382|
-|                Cultivators|  375| 282|    93|
-|     Agriculture labourer's|  264| 111|   153|
-| Household Industry workers|  131|  22|   109|
-|              Other workers|   60|  52|     8|
-|           Marginal workers|   32|  13|    19|
-|        Non-working persons|  563| 263|   300|
+|     Census parameter      |Total| Male|Female|
+| ------------------------- | --- | --- | ---- |
+|              Total workers|  862|  480|   382|
+|                Cultivators|  375|  282|    93|
+|     Agriculture labourer's|  264|  111|   153|
+| Household Industry workers|  131|   22|   109|
+|              Other workers|   60|   52|     8|
+|           Marginal workers|   32|   13|    19|
+|        Non-working persons|  563|  263|   300|
 
 Total working population of Manchaladore is 862 which are either main or marginal workers. Total workers in the village are 862 out of which 480 are male and 382 are female. Total main workers are 830 out of which female main workers are 467 and male main workers are 363. Total marginal workers of village are 32. 
 
@@ -120,7 +121,7 @@ Most farmers store their harvested crops or produce in or near their houses.
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="https://yn37git.github.io/assets/img/manchaladore/4.png" title="manchaladore" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="https://yn37git.github.io/assets/img/manchaladore/4.jpg" title="manchaladore" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
  <div class="caption">
@@ -128,7 +129,7 @@ Most farmers store their harvested crops or produce in or near their houses.
 </div>
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="https://yn37git.github.io/assets/img/manchaladore/5.png" title="manchaladore" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="https://yn37git.github.io/assets/img/manchaladore/5.jpg" title="manchaladore" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
@@ -136,7 +137,7 @@ Most farmers store their harvested crops or produce in or near their houses.
 </div>
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="https://yn37git.github.io/assets/img/manchaladore/6.png" title="manchaladore" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="https://yn37git.github.io/assets/img/manchaladore/6.jpg" title="manchaladore" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
@@ -144,7 +145,7 @@ Most farmers store their harvested crops or produce in or near their houses.
 </div>
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="https://yn37git.github.io/assets/img/manchaladore/7.png" title="manchaladore" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="https://yn37git.github.io/assets/img/manchaladore/7.jpg" title="manchaladore" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
@@ -167,7 +168,7 @@ And same goes in M.P election but instead of JDS, BJP has come to power for last
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="https://yn37git.github.io/assets/img/manchaladore/8.png" title="manchaladore" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="https://yn37git.github.io/assets/img/manchaladore/8.jpg" title="manchaladore" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
@@ -175,7 +176,7 @@ And same goes in M.P election but instead of JDS, BJP has come to power for last
 </div>
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="https://yn37git.github.io/assets/img/manchaladore/9.png" title="manchaladore" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="https://yn37git.github.io/assets/img/manchaladore/9.jpeg" title="manchaladore" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
@@ -194,7 +195,7 @@ Manchaldores sunrise time varies from 22 minutes from IST.
 - Kempamma temple: a small temple located inside the village can be found as we take the first as we move in side housing areas from the bus stand.
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="https://yn37git.github.io/assets/img/manchaladore/11.png" title="manchaladore" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="https://yn37git.github.io/assets/img/manchaladore/11.jpeg" title="manchaladore" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
  
@@ -202,13 +203,13 @@ Manchaldores sunrise time varies from 22 minutes from IST.
 - Anjanenaya temple: a very small temple located inside the village can be found in front of kempamma temple about 20 meters from it.
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="https://yn37git.github.io/assets/img/manchaladore/12.png" title="manchaladore" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="https://yn37git.github.io/assets/img/manchaladore/12.jpeg" title="manchaladore" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
  
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="https://yn37git.github.io/assets/img/manchaladore/13.png" title="manchaladore" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="https://yn37git.github.io/assets/img/manchaladore/13.jpeg" title="manchaladore" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
  
@@ -216,7 +217,7 @@ Manchaldores sunrise time varies from 22 minutes from IST.
 - Kalabyreshvara temple: a small temple it can be found as we head left about 20 meters from kempamma temple.
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="https://yn37git.github.io/assets/img/manchaladore/14.png" title="manchaladore" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="https://yn37git.github.io/assets/img/manchaladore/14.jpeg" title="manchaladore" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
  
@@ -224,7 +225,7 @@ Manchaldores sunrise time varies from 22 minutes from IST.
 - Lakshmi temple: a small temple it can be found as we go into main road, it is locate about 50 meters from anjeneya temple.
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="https://yn37git.github.io/assets/img/manchaladore/15.png" title="manchaladore" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="https://yn37git.github.io/assets/img/manchaladore/15.jpeg" title="manchaladore" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
  
@@ -233,20 +234,19 @@ Manchaldores sunrise time varies from 22 minutes from IST.
 - Malleswara temple: a fairly beg and famous temple located in Manchaldore on the way to Kuntaramnahalli in front of Government middle school.
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="https://yn37git.github.io/assets/img/manchaladore/16.png" title="manchaladore" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="https://yn37git.github.io/assets/img/manchaladore/16.jpeg" title="manchaladore" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
  
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="https://yn37git.github.io/assets/img/manchaladore/17.png" title="manchaladore" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="https://yn37git.github.io/assets/img/manchaladore/17.jpeg" title="manchaladore" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
  
-</div>
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="https://yn37git.github.io/assets/img/manchaladore/18.png" title="manchaladore" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="https://yn37git.github.io/assets/img/manchaladore/18.jpeg" title="manchaladore" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
  
@@ -257,26 +257,25 @@ Manchaldores sunrise time varies from 22 minutes from IST.
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="https://yn37git.github.io/assets/img/manchaladore/19.png" title="manchaladore" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="https://yn37git.github.io/assets/img/manchaladore/19.jpeg" title="manchaladore" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
  
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="https://yn37git.github.io/assets/img/manchaladore/20.png" title="manchaladore" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
- 
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="https://yn37git.github.io/assets/img/manchaladore/21.png" title="manchaladore" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="https://yn37git.github.io/assets/img/manchaladore/20.jpeg" title="manchaladore" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
  
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="https://yn37git.github.io/assets/img/manchaladore/22.png" title="manchaladore" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="https://yn37git.github.io/assets/img/manchaladore/21.jpeg" title="manchaladore" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+ 
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="https://yn37git.github.io/assets/img/manchaladore/22.jpeg" title="manchaladore" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
  
@@ -284,15 +283,13 @@ Manchaldores sunrise time varies from 22 minutes from IST.
 - Guddada Ranganatha swami temple: a big temple located in Hoovenakatte about 5 kms from Manchaldore.
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="https://yn37git.github.io/assets/img/manchaladore/23.png" title="manchaladore" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="https://yn37git.github.io/assets/img/manchaladore/23.jpeg" title="manchaladore" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
- <div class="caption">
-    class="right
-</div>
+ 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="https://yn37git.github.io/assets/img/manchaladore/24.png" title="manchaladore" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="https://yn37git.github.io/assets/img/manchaladore/24.jpeg" title="manchaladore" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
  
@@ -319,7 +316,7 @@ Manchaldores sunrise time varies from 22 minutes from IST.
         
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="https://yn37git.github.io/assets/img/manchaladore/25.png" title="manchaladore" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="https://yn37git.github.io/assets/img/manchaladore/25.jpeg" title="manchaladore" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
@@ -327,7 +324,7 @@ Manchaldores sunrise time varies from 22 minutes from IST.
 </div>
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="https://yn37git.github.io/assets/img/manchaladore/26.png" title="manchaladore" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="https://yn37git.github.io/assets/img/manchaladore/26.jpeg" title="manchaladore" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
@@ -335,7 +332,7 @@ Manchaldores sunrise time varies from 22 minutes from IST.
 </div>
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="https://yn37git.github.io/assets/img/manchaladore/27.png" title="manchaladore" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="https://yn37git.github.io/assets/img/manchaladore/27.jpeg" title="manchaladore" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
@@ -344,6 +341,13 @@ Manchaldores sunrise time varies from 22 minutes from IST.
 
 ### Hospitals
 There is one ayurvedic hospital, there is also one R.M.P clinic where doctor is available on alternative days.
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="https://yn37git.github.io/assets/img/manchaladore/36.jpeg" title="manchaladore" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+
  There is also one Government library on the main road of village where one can
  read newspapers, magazines or story books and novels only.
 
@@ -415,7 +419,7 @@ As there is a low rain fall in this region from past decade the ponds are being 
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="https://yn37git.github.io/assets/img/manchaladore/29.png" title="manchaladore" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="https://yn37git.github.io/assets/img/manchaladore/29.jpg" title="manchaladore" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
@@ -443,23 +447,23 @@ As there is a low rain fall in this region from past decade the ponds are being 
     
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="https://yn37git.github.io/assets/img/manchaladore/30.png" title="manchaladore" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="https://yn37git.github.io/assets/img/manchaladore/30.jpeg" title="manchaladore" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
  <div class="caption">
-    road" class="left
+    road
 </div>
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="https://yn37git.github.io/assets/img/manchaladore/31.png" title="manchaladore" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="https://yn37git.github.io/assets/img/manchaladore/31.jpeg" title="manchaladore" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
  <div class="caption">
-    water filteration plant" class="right
+    water filteration plant
 </div>
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="https://yn37git.github.io/assets/img/manchaladore/32.png" title="manchaladore" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="https://yn37git.github.io/assets/img/manchaladore/32.jpeg" title="manchaladore" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
@@ -467,7 +471,7 @@ As there is a low rain fall in this region from past decade the ponds are being 
 </div>
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="https://yn37git.github.io/assets/img/manchaladore/33.png" title="manchaladore" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="https://yn37git.github.io/assets/img/manchaladore/33.jpeg" title="manchaladore" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
@@ -475,15 +479,15 @@ As there is a low rain fall in this region from past decade the ponds are being 
 </div>
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="https://yn37git.github.io/assets/img/manchaladore/34.png" title="manchaladore" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="https://yn37git.github.io/assets/img/manchaladore/34.jpeg" title="manchaladore" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
  <div class="caption">
-    School under construction" class="right
+    School under construction
 </div>
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="https://yn37git.github.io/assets/img/manchaladore/35.png" title="manchaladore" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="https://yn37git.github.io/assets/img/manchaladore/35.jpeg" title="manchaladore" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
@@ -501,5 +505,4 @@ As there is a low rain fall in this region from past decade the ponds are being 
 - There are also no nearby fire stations
 - As there are migration, people of the village fear of lack of development in the future 
 ---
-                                      updated in 2021
-***
+> updated in 2021
