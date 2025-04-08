@@ -24,6 +24,11 @@ Here's my
 
 <details>
 <summary>CV</summary>
-
-<iframe src="https://yn37git.github.io/assets/pdf/CV_YashasN.pdf" style="width:850px; height:800px;" frameborder="0"></iframe>
+  
+<embed
+  type="application/pdf"
+  src="https://yn37git.github.io/assets/pdf/CV_YashasN.pdf"
+  width="840"
+  height="700"
+  title="C.V" />
 </details>
