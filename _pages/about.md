@@ -21,6 +21,7 @@ Hi! I have completed my masters in mathematics and am currently looking for a Ph
 Currently I am preparing for competitive exams and interviews for a PhD. role. Feel free to contact me. 
 
 Here's my
+
 <details>
 <summary>CV</summary>
 
