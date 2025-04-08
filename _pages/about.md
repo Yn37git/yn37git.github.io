@@ -20,7 +20,8 @@ Hi! I have completed my masters in mathematics and am currently looking for a Ph
 
 Currently I am preparing for competitive exams and interviews for a PhD. role. Feel free to contact me. 
 
-Here's my  <details>
+Here's my
+<details>
 <summary>CV</summary>
 
 <iframe src="https://yn37git.github.io/assets/pdf/CV_YashasN.pdf" style="width:850px; height:800px;" frameborder="0"></iframe>
