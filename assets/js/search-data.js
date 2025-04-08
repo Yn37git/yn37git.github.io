@@ -30,7 +30,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "post-short-notes",
+        },{id: "post-",
+        
+          title: "",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/2021-09-24-Manchaladore/";
+          
+        },
+      },{id: "post-short-notes",
         
           title: "Short Notes",
         
@@ -50,17 +61,6 @@ ninja.data = [{
         handler: () => {
           
             window.location.href = "/blog/2025/Partitions/";
-          
-        },
-      },{id: "post-manchaladore",
-        
-          title: "Manchaladore",
-        
-        description: "A brief on my hometown.",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2021/Manchaladore/";
           
         },
       },{
