@@ -3,33 +3,31 @@ layout: post
 title: Manchaladore 
 date: 2021-09-24
 description: A brief on my hometown.
+toc:
+    - Introduction
+    - Land
+    - History
+    - Agriculture
+    - Administration and politics
+    - Weather and climate
+    - Reference places
+        - Temples
+        - Mosque
+        - Shops
+        - Hospitals
+        - Schools and colleges
+    - Education
+    - Employment and income sources
+    - Communication
+    - Transportation
+    - Drinking water and food
+    - MIGRATION
+    - Wild life and Animals
+    - Development
+    - Problems faced by people and other expectations by the people
 ---
 
-<details>
-<summary> Table of Contents </summary>
 
- - [Introduction](#introduction)
- - [Land](#land)
- - [History](#history)
- - [Agriculture](#agriculture)
- - [Administration and politics](#administration-and-politics)
- - [Weather and climate](#weather-and-climate)
- - [Reference places](#reference-place-located-in-and-near-manchaldore)
-   - [Temples](#temples)
-   - [Mosque](#mosque)
-   - [Shops](#shops)
-   - [Hospitals](#hospitals)
-   - [Schools and colleges](#schools-and-colleges)
- - [Education](#eucation)
- - [Employment and income sources](#employment-and-income-sources)
- - [Communication](#communication)
- - [Transportation](#transportation)
- - [Drinking water and food](#drinking-water-and-food)
- - [MIGRATION](#migration)
- - [Wild life and Animals](#wild-life-and-animals)
- - [Development](#development)
- - [Problem and expectations](#problems-faced-by-people-and-other-expectations-by-the-people)
-</details>
 
 ## Introduction
 ---
@@ -97,15 +95,16 @@ Population and other densities (From 2011 census data by govt of India):
 | Boy child population| 45.8% (54)|
 
 As per the Census Data 2011 there are 918 Females per 1000 males out of 1425 total population of village. There are 1185 girls per 1000 boys under 6 years of age in the village. 
-|     Census parameter      |Total| Male|Female|
-| ------------------------- | --- | --- | ---- |
-|              Total workers|  862|  480|   382|
-|                Cultivators|  375|  282|    93|
-|     Agriculture labourer's|  264|  111|   153|
-| Household Industry workers|  131|   22|   109|
-|              Other workers|   60|   52|     8|
-|           Marginal workers|   32|   13|    19|
-|        Non-working persons|  563|  263|   300|
+
+|     Census parameter      |  Total|   Male| Female|
+| ------------------------- | :---: | :---: | ----: |
+|              Total workers|    862|    480|    382|
+|                Cultivators|    375|    282|     93|
+|     Agriculture labourer's|    264|    111|    153|
+| Household Industry workers|    131|     22|    109|
+|              Other workers|     60|     52|      8|
+|           Marginal workers|     32|     13|     19|
+|        Non-working persons|    563|    263|    300|
 
 Total working population of Manchaladore is 862 which are either main or marginal workers. Total workers in the village are 862 out of which 480 are male and 382 are female. Total main workers are 830 out of which female main workers are 467 and male main workers are 363. Total marginal workers of village are 32. 
 

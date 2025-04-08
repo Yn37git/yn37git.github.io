@@ -38,7 +38,7 @@ The partition function $$ p(n) $$ increases quite rapidly with $$ n $$. For exam
 this it is a type of Pochhammer notation of shifted factorial extended to base '$$ q $$'
 - also $$ (q;q)_n=(1-a)(1-aq)\dots (1-q^{n}) $$ which is a very tipical notation 
 - if $$ f_k=(q^k;q^k)_\infty=(1-q^k)(1-q^{2k})\dots(1-q^{nk})\dots $$
-> now from partition theory we have:
+*now from partition theory we have* :
 -  if $$ p(n) $$ represent the number of integer partitions of a non negative integer n then :
 
 $$

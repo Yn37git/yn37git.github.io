@@ -26,20 +26,30 @@
     {
       "institution": "M. S. RAMAIAH UNIVERSITY OF APPLIED SCIENCES",
       "area": "Mathematics",
-      "studyType": "M.Sc",
+      "studyType": "M.Sc.",
       "startDate": "2022-12-31",
       "endDate": "2024-12-31",
       "score": "9.73",
-      "courses": ["machine learning, numerical analysis, differential geometry, number theory, fluid mechanics, algebra, analysis and statistics."]
+      "courses": ["machine learning, numerical analysis, differential geometry, number theory, fluid mechanics, algebra, analysis and statistics."],
+      "highlights": ["Submitted Master Thesis on Arithmetic properties of (l,m)-regular colored partitions.","Learnt Machine learning algorithms and concepts that work behind these.","Presented Talks on Partition Theory.","To my best efforts and academic performance I was awarded Gold Medal from Faculty of Natural Sciences M.S. Ramaiah University of Applied Sciences."]
     },
     {
       "institution": "St. Joseph's University ",
       "area": "Physics, Chemistry, Mathematics",
-      "studyType": "B.Sc",
+      "studyType": "B.Sc.",
       "startDate": "2019-06-30",
       "endDate": "2022-04-30",
       "score": "9.41",
-      "courses": ["analysis, group theory, differential equations, modern physics,electronics and general chemistry."]
+      "courses": ["analysis, group theory, differential equations, modern physics,electronics and general chemistry."],
+      "highlights": ["Did my bachelors thesis/course work on Paradoxes in Mathematics."]
+    }
+  ],
+  "awards": [
+    {
+      "title": "Gold Medal",
+      "date": "2025-01-31",
+      "awarder": "M. S. Ramaiah University of Applied Sciences",
+      "summary": ""
     }
   ],
   "certificates": [
@@ -64,7 +74,7 @@
   "publications": [
     {
       "name": "Arithmetic properties of (ℓ, m)-regular colored partitions",
-      "publisher": "Yashas N., C. Shivashankar and S. Chandankumar.",
+      "publisher": "Yashas N., C. Shivashankar and S. Chandankumar. Communicated",
       "releaseDate": "2025",
       "url": "",
       "summary": ""
