@@ -57,7 +57,7 @@ table.table a {
 .table-dark {
   background-color: transparent;
   &.table-bordered {
-    border: 1px solid var(--global-divider-color) !important;
+    border: 5px solid var(--global-divider-color) !important;
   }
 }
 
@@ -203,7 +203,7 @@ ul.task-list input[type="checkbox"] {
   .more-info {
     margin-bottom: 5px;
     margin-top: 5px;
-    font-family: monospace;
+    font-family: Ubuntu;
 
     p {
       display: inline-block;
@@ -253,7 +253,8 @@ ul.task-list input[type="checkbox"] {
   border-bottom: 1px solid var(--global-divider-color);
   background-color: var(--global-bg-color);
   opacity: 0.75;
-  font-weight: bolder;
+  font-family: Ubuntu;
+  font-weight: 400;
 }
 
 .navbar .dropdown-menu {
@@ -286,11 +287,15 @@ ul.task-list input[type="checkbox"] {
   a {
     &:hover {
       text-decoration: none;
+      font-family: Ubuntu;
+      font-weight: 400;
     }
   }
 
   .navbar-brand {
     color: var(--global-text-color);
+    font-family: Ubuntu;
+    font-weight: 400;
   }
 
   .navbar-nav .nav-item .nav-link {
