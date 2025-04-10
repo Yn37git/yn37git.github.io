@@ -25,10 +25,6 @@ Here's my :
 <details>
 <summary>CV</summary>
 
-<iframe
-      scr="file=https://yn37git.github.io/assets/pdf/CV_YashasN.pdf"
-      width="1000px"
-      height="1000px"
-      style="border: none"></iframe>
+<iframe scr="https://yn37git.github.io/assets/pdf/CV_YashasN.pdf" style="width:850px; height:600px;" frameborder="0"></iframe>
   
 </details>
