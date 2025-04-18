@@ -24,7 +24,13 @@ Here's my :
 
 <details>
 <summary>CV</summary>
-  
-<iframe src="https://yn37git.github.io/assets/pdf/CV_YashasN.pdf" style="width:100vw; height:100hw;" frameborder="0"></iframe>
+
+ <div class="container">
+  <iframe class="responsive-iframe" src="https://yn37git.github.io/assets/pdf/CV_YashasN.pdf"></iframe>
+</div> 
+
+<iframe src="https://yn37git.github.io/assets/pdf/CV_YashasN.pdf" style="width:750vw; height:700hw;" frameborder="0"></iframe>
+
+<iframe src="https://yn37git.github.io/assets/pdf/CV_YashasN.pdf" onload='this.style.height=this.contentWindow.document.body.scrollHeight+"px";' style="height:700px;width:750%;border:none;overflow:hidden;"></iframe>
 </details>
 
