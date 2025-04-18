@@ -25,11 +25,6 @@ Here's my :
 <details>
 <summary>CV</summary>
   
-<iframe src="https://yn37git.github.io/assets/pdf/CV_YashasN.pdf" style="width:850px; height:600px;" frameborder="0"></iframe>
+<iframe src="https://yn37git.github.io/assets/pdf/CV_YashasN.pdf" style="width:100vw; height:100hw;" frameborder="0"></iframe>
 </details>
 
-<details>
-<summary>CV</summary>
-
-<iframe id="pdf-js-viewer" src="/web/viewer.html?file=https://yn37git.github.io/assets/pdf/CV_YashasN.pdf" title="webviewer" frameborder="0" width="500" height="600"></iframe>
-</details>
