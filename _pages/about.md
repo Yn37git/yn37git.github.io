@@ -26,6 +26,6 @@ Here's my :
 <summary>CV</summary>
 
 
-<iframe src="https://yn37git.github.io/assets/pdf/CV_YashasN.pdf" onload='this.style.height=this.contentWindow.document.body.scrollHeight+"px";' style="height:750px;width:90%;border:none;overflow:hidden;"></iframe>
+<iframe src="https://yn37git.github.io/assets/pdf/CV_YashasN.pdf" onload='this.style.height=this.contentWindow.document.body.scrollHeight+"px";' style="height:650px;width:90%;border:none;overflow:hidden;"></iframe>
 </details>
 
