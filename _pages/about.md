@@ -25,7 +25,24 @@ Here's my :
 <details>
 <summary>CV</summary>
 
+<object
+	data="https://yn37git.github.io/assets/pdf/CV_YashasN.pdf"
+	type="application/pdf"
+	width="100%"
+	height="650px"
+	title="CV"
+>
+	<iframe 
+      src="https://yn37git.github.io/assets/pdf/CV_YashasN.pdf" 
+      onload='this.style.height=this.contentWindow.document.body.scrollHeight+"px";' 
+      style="height:650px;width:100%;border:none;overflow:hidden;"
+    >
+		<p>
+			Your browser does not support PDFs.
+			<a href="https://yn37git.github.io/assets/pdf/CV_YashasN.pdf">Download the PDF</a>
+		</p>
+	</iframe>
+</object>
 
-<iframe src="https://yn37git.github.io/assets/pdf/CV_YashasN.pdf" onload='this.style.height=this.contentWindow.document.body.scrollHeight+"px";' style="height:650px;width:100%;border:none;overflow:hidden;"></iframe>
 </details>
 

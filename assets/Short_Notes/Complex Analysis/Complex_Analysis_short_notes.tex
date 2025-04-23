@@ -33,6 +33,16 @@ Space*=0.5mm,Space2*=0mm, Space3*=0.5mm)
 %\setlength{\columnsep}{0.5cm}
 \setlength\columnseprule{.1pt}
 
+\usepackage{tocloft}
+
+\cftsetindents{section}{0em}{2em}
+\cftsetindents{subsection}{0em}{2em}
+
+\renewcommand\cfttoctitlefont{\hfill\Large\bfseries}
+\renewcommand\cftaftertoctitle{\hfill\mbox{}}
+
+\setcounter{tocdepth}{2}
+
 \newcommand{\ddsum}[3]{\displaystyle\sum_{#1=#2}^{#3}}
 \newcommand{\snote}[1]{{\footnotesize(#1)}}
 \newcommand{\ra}{\rightarrow}
@@ -45,7 +55,7 @@ Space*=0.5mm,Space2*=0mm, Space3*=0.5mm)
 	\boldmath
 
 \begin{multicols}{2}
-
+\tableofcontents
 \section{Power Series}
 	
 \begin{easylist}
