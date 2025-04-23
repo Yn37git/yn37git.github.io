@@ -24,6 +24,16 @@
 %\setlength{\columnsep}{0.5cm}
 \setlength\columnseprule{.1pt}
 
+\usepackage{tocloft}
+
+\cftsetindents{section}{0em}{2em}
+\cftsetindents{subsection}{0em}{2em}
+
+\renewcommand\cfttoctitlefont{\hfill\Large\bfseries}
+\renewcommand\cftaftertoctitle{\hfill\mbox{}}
+
+\setcounter{tocdepth}{2}
+
 \newcommand{\tm}{\times}
 \newcommand{\ck}{.\,.\,}
 \newcommand{\snote}[1]{{\footnotesize(#1)}}
@@ -36,6 +46,7 @@
 	\boldmath
 	
 \begin{multicols}{2}
+	\tableofcontents
 \section*{Symbols used:}
 {\scriptsize 
 	\begin{align*}

@@ -34,6 +34,16 @@
 \setlength{\columnsep}{5mm}
 \setlength\columnseprule{.1pt}
 
+\usepackage{tocloft}
+
+\cftsetindents{section}{0em}{2em}
+\cftsetindents{subsection}{0em}{2em}
+
+\renewcommand\cfttoctitlefont{\hfill\Large\bfseries}
+\renewcommand\cftaftertoctitle{\hfill\mbox{}}
+
+\setcounter{tocdepth}{2}
+
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\C}{\mathbb{C}}
 \newcommand{\Na}{\mathbb{N}}
@@ -52,6 +62,7 @@
 	\maketitle
 	\boldmath
 \begin{multicols}{2}
+	\tableofcontents
 	\begin{easylist}
 	\section{Properties of $\R .$}
 	& When Set $\mathbb{Q}$ (rationals) is extended to form a set with least upper bound property
@@ -560,7 +571,7 @@ $H(a)=
 	&& And generally if $AC-B^2<0$ then $f(a)$ is saddle point, no conclusions if $AC-B^2=0$\\
 	\ckfil
 	
-\section{Differential forms and \\ Integration *{\scriptsize(not included for net syllabus)}}
+\section{Differential forms and \\ Integration}
 & \textbf{Support } of a function $f$: is the closure of set of all points  $x$ such that $f(x)\neq 0$ (note here $0$ can be a vector a linear transform or $0$ - function itself )
 & \textbf{$k$-simplex} $Q^k$ : is a set consisting of points $x=(x_1,\ck ,x_k)\in \R^k$ such that $x_1+\ck +x_k\leq 1$ and $x_i\geq 0$
 & This theories can be developed by using $k$-cells but we go with $k$-simplex as the benefit is the link between simplexes and topology of sets. 

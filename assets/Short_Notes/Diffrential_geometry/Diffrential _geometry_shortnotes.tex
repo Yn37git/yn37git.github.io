@@ -29,6 +29,16 @@
 \setlength{\columnsep}{5mm}
 \setlength\columnseprule{.1pt}
 
+\usepackage{tocloft}
+
+\cftsetindents{section}{0em}{2em}
+\cftsetindents{subsection}{0em}{2em}
+
+\renewcommand\cfttoctitlefont{\hfill\Large\bfseries}
+\renewcommand\cftaftertoctitle{\hfill\mbox{}}
+
+\setcounter{tocdepth}{2}
+
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\C}{\mathbb{C}}
 \newcommand{\Na}{\mathbb{N}}
@@ -47,9 +57,9 @@
 \begin{document}
     \maketitle
     \boldmath
-    
+ 
 \begin{multicols}{2}
-
+   \tableofcontents
 \section{Introduction}
 \subsection{Definitions}
 \begin{easylist}

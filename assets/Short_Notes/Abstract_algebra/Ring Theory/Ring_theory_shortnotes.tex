@@ -70,6 +70,15 @@
 	#1
 }
 }
+\usepackage{tocloft}
+
+\cftsetindents{section}{0em}{2em}
+\cftsetindents{subsection}{0em}{2em}
+
+\renewcommand\cfttoctitlefont{\hfill\Large\bfseries}
+\renewcommand\cftaftertoctitle{\hfill\mbox{}}
+
+\setcounter{tocdepth}{2}
 
 \usepackage{multicol}
 \setlength{\columnsep}{5mm}
@@ -104,7 +113,9 @@
 \begin{document}
 	\maketitle
 	\begin{multicols}{2}
-			\section*{symbols used}
+		\tableofcontents
+
+\section*{symbols used}
 		\begin{center}
 			$ \st \, \ra  $ such that.\\
 			
