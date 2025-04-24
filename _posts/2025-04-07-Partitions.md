@@ -4,7 +4,7 @@ title: Partitions functions
 date: 2025-03-15
 description: a concise introduction
 ---
-Here's a presentation I did in my master's u can go through it : [link](https://yn37git.github.io/assets/pdf/Q_series__Ramanujan_s_functions_and_Overpartitions.pdf) 
+Here's a presentation I did in my master's you can go through it : [link](https://yn37git.github.io/assets/pdf/Q_series__Ramanujan_s_functions_and_Overpartitions.pdf) 
 or read this blog for glimpses.
 
 ## Partitions
@@ -23,9 +23,9 @@ for example:
 $$
 \begin{align*}
 p(1) &= 1: 1=(1)\\
-p(2) &= 2: 2 = (2), 1 + 1 = (1^ 2 )\\
-p(3) &= 3: 3 = (3), 2 + 1 =(12), 1 + 1 + 1 = (1^3)\\
-p(4) &= 5: 4 = (4), 3 + 1 =(13), 2 + 2 = (2^2),2 + 1 + 1 = (12^2), 1 + 1 + 1 + 1 = (1^4 ).
+p(2) &= 2: 2 = (2), 1 + 1 = (1^2 )\\
+p(3) &= 3: 3 = (3), 2 + 1 =(2\; 1), 1 + 1 + 1 = (1^3)\\
+p(4) &= 5: 4 = (4), 3 + 1 =(3\; 1), 2 + 2 = (2^2),2 + 1 + 1 = (2^2\; 1), 1 + 1 + 1 + 1 = (1^4).
 \end{align*}
 $$
 
