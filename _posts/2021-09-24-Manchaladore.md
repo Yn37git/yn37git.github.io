@@ -475,7 +475,7 @@ As there is a low rain fall in this region from past decade the ponds are being 
 
 ## Problems faced by people and other expectations by the people
 ---
-- As the ground water is also depleting in the village people here are asking for water to be channelled from nearby Hemavati river and to refill and develop the two ponds in the village.    
+- As the ground water is also depleting in the village people here are asking for water to be channelled from nearby Hemavati river and to refill and develop the two ponds in the village. 
 - There is a huge problem related to water a there is low rain fall in this region
 - People also say that road have to be remade as there is potholes and breakdowns etc
 - There are no public toilets in or near by the village 
@@ -483,5 +483,5 @@ As there is a low rain fall in this region from past decade the ponds are being 
 - There is no ambulance facilities service running near the village and also if people face major problems the have to travel at least 10kms to find a proper hospital
 - There are also no nearby fire stations
 - As there are migration, people of the village fear of lack of development in the future 
----
+
 > updated in 2021
