@@ -10,7 +10,7 @@ When I was preparing for Mathematics competitive exams at undergraduate level th
 These Short notes are just summaries, simplified major theorems, some statements and proofs taken from Standard books which helped me learn. Source of these files (.tex and .pdf files) can be found in my [Github page](https://github.com/Yn37git/Short_Notes) (star the page if you like my work).
 
 > ##### NOTE
-> These in no way represent the standard books used to write them. Theorems and statements maybe reinterpreted as per my understanding. Some topics are yet to be typed (from my written notes) which I plan to do regularly so some topics are still under process or half written. Also if something is wrong please send the corrections or wrong doings to through* [mail](mailto:yashasn37@gmail.com) 
+> These in no way represent the standard books used to write them. Theorems and statements maybe reinterpreted as per my understanding. Some topics are yet to be typed (from my written notes) which I plan to do regularly so some topics are still under process or half written. Also if something is wrong please send the corrections or wrong doings to through [mail](mailto:yashasn37@gmail.com) 
 {: .block-warning }
 
 > ##### Tip
