@@ -1,0 +1,598 @@
+\documentclass[11pt]{extarticle}
+\usepackage{fullpage}
+\usepackage[ampersand]{easylist}
+\ListProperties(Hide=10, Style*=$\bullet\;\,$, Style2*=$\;\,${\tiny$\blacksquare$}$\;\,$,Space*=1mm,Space2*=0.1mm)
+
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,
+	linkcolor=black,
+	filecolor=black,      
+	urlcolor=black}
+
+\usepackage{amsmath,amssymb,amsthm,mathtools,mathrsfs}
+\newtheorem{thm}{Theorem}[]
+\usepackage{bibref}
+
+\usepackage[T1]{fontenc}
+\usepackage[sc,osf]{mathpazo}
+\usepackage{eulervm}
+\usepackage[bold=.05]{xfakebold}
+
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usetikzlibrary{shapes}
+\usepackage{pgfplots}
+\pgfplotsset{trig format plots=rad}
+\usetikzlibrary {3d}
+\pgfplotsset{compat=1.18}
+
+\usepackage[most]{tcolorbox}
+\tcbuselibrary{skins}
+\usepackage[explicit]{titlesec}
+\newtcolorbox{secbox}[1][]{enhanced,attach boxed title to top center,drop fuzzy shadow,breakable,colbacktitle=gray,colback=black,colframe=black,
+	coltext=white,size=title,title={#1}}
+\titleformat{\section}[runin]{\bfseries\LARGE}{}{0pt}{\hfill
+	%\begin{secbox}[\thesection]
+	%	\centering #1
+	%\end{secbox}
+	%}
+\tcbsidebyside[sidebyside adapt=left,segmentation style=solid,enhanced,size=small]
+{%
+	\thesection 
+}
+{%
+	#1
+}
+}
+\titleformat{\subsection}[runin]{\bfseries\large}{}{0pt}
+{\hfill
+%	\begin{secbox}[\thesubsection]
+	%		\centering #1
+	%	\end{secbox}
+\tcbsidebyside[sidebyside adapt=left,segmentation style=solid,enhanced,size=small]
+{%
+	\thesubsection 
+}
+{%
+	#1
+}
+}
+\titleformat{\subsubsection}[runin]{\bfseries}{}{0pt}
+{\hfill
+%		\begin{secbox}[\thesubsubsection]
+	%			\centering #1
+	%		\end{secbox}
+\tcbsidebyside[sidebyside adapt=left,segmentation style=solid,enhanced,size=small]
+{%
+	\thesubsubsection 
+}
+{%
+	#1
+}
+}
+\usepackage{tocloft}
+
+\cftsetindents{section}{0em}{2em}
+\cftsetindents{subsection}{0em}{2em}
+
+\renewcommand\cfttoctitlefont{\hfill\Large\bfseries}
+\renewcommand\cftaftertoctitle{\hfill\mbox{}}
+
+\setcounter{tocdepth}{2}
+
+\usepackage{multicol}
+\setlength{\columnsep}{5mm}
+\setlength\columnseprule{.1pt}
+
+\newcommand{\ra}{\rightarrow}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Na}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\w}[1]{\text{#1}}
+\newcommand{\ck}{.\,.\,}
+\newcommand{\sm}[2]{\displaystyle\sum_{#1}^{#2}}
+\newcommand{\Uint}[2]{\overline{\int\!}_{#1}^{\;#2}}
+\newcommand{\Lint}[2]{\underline{\int\!}_{\;#1}^{\;#2}}
+\newcommand{\pfrac}[2]{\frac{\partial#1}{\partial#2}}
+\newcommand{\ckfil}{$.\dotfill.$}
+\newcommand{\tm}{\times}
+\newcommand{\snote}[1]{{\footnotesize(#1)}}
+\newcommand{\st}{\,{}_{s}|_t\,}
+\newcommand{\gen}[1]{\langle #1 \rangle}
+\newcommand{\tbx}[2][]{
+\begin{tcolorbox}[enhanced,breakable,size=small,colback=black!2!white,title={#1},arc is angular, arc=1.5mm,
+	drop fuzzy shadow]
+	#2
+\end{tcolorbox}
+}
+\newcommand{\y}{$\blacksquare\;$}
+\newcommand{\yi}{\indent$\;\bullet\;$}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\ix}{ind}
+\author{Yashas.N}
+\title{Introductory Number Theory}
+\date{}
+\begin{document}
+\maketitle
+\begin{multicols}{2}
+	\tableofcontents
+\section*{Symbols used}
+	\begin{center}
+	$ \st \, \ra  $ such that.\\
+	$ iff\,\ra $ if and only if.\\
+	$ a|b \, \ra  $ $ a $ divides $ b $ .\\
+	$ \exists! \, \ra  $ there exists unique.\\
+	
+\end{center}
+\newcolumn
+\section{Preliminaries}
+\tbx[Principle of Mathematical induction]{
+\y First principle :  If $ S $ is a set of positive integers $ (\Z^+) $ with the following :\\
+\yi $ 1\in S. $ \\
+\yi $ k\in S \implies k+1\in S. $ \\
+then $ S $ is the set of positive integers.\\
+\y Second principle (strong induction): if $ S \subseteq \Z^+ \st $\\
+\yi $ 1\in S $ and \\
+\yi $ 1,2,\ck,k\in S  \implies k+1\in S$ \\
+then $ S=\Z^+ .$  }
+\section{Divisibility in $ \Z^+ $}
+\tbx{ \y  for every $ a,b\in \Z, \exists \text{\snote{ unique }}q\in \Z, r\in \Z^+ \st a=qb+r$  and $ 0\geq r\geq |b|. $ \\
+\y $ a|b $ \snote{$ a $ divides $ b $} iff $ a=qb $ for some \snote{unique} $ q\in \Z $ \\
+\y $ a|b $ then $ |a| \leq |b|.$ }
+\tbx{let $d= \gcd(a,b) $ denote greatest common divisor of $ a $ and $ b $ then\\
+\y $ \exists! x,y\in \Z\st d=xa+yb$ \\
+\y $ d=\text{ least element of } S=\{xa+yb|xa+yb>0,x,y\in \Z\} $. \\
+\y set $ \{xa+yb|x,y\in \Z\} $ contains precisely multiples of $ d .$\\ 
+\y if $ a|c $ and $ b|c $ then $ ab|c $ if $ \gcd(a,b)=1 $.\\
+\y Euclid's lemma : $ a|bc $ and $ \gcd(a,b)=1 $ then $ a|c .$\\
+\y $ a $ and $ b $ are relatively primes if $ \gcd(a,b)=1 $ iff $ 1=xa+yb $ for some $ x,y\in \Z. $ \\
+\y if $ a=qb+r  $ then $ \gcd(a,b)=\gcd(b,r) .$ thus $ \gcd(a,b) $ is the last remainder in the euclidean algorithm\\
+\y $ \gcd(ka,kb)=|k|\gcd(a,b) $ \snote{here $ k\neq0 $} thus prime factorisation of$ a $ ad $ b $ comes into play here.\\
+\y if $ d=\gcd(a,b) $ then there are relatively prime integers $ r,s $ such that $ a=rd $ and $ b=sd. $ \\
+\y $ \gcd(a,bc)=1 $ iff $ \gcd(a,b) =1$ and $ \gcd(a,c) =1.$ \\
+\y $ \gcd(a,n)= \gcd(kn\pm a, n)$ for all $ k\in \Z^+ .$ \\
+\y if $ \gcd(a,b)=d $ then there exist $ a_1,b_1\st a=a_1d,b=b_1d $ and $ \gcd(a_1,b_1)=1. $}
+\tbx{ let $ l= \lcm(a,b)$ denote the lowest common multiple of $ a $ and $ b. $ then\\
+ \y $ \gcd(a,b)\lcm(a,b)=ab. $ \\
+ \y $ \lcm(a,b)=ab $ iff $ \gcd(a,b)=1. $  }
+\tbx[ Diophantine equations]{  Equations in one or more variable that is to be solved in integers is called a Diophantine equation.\\
+\y The linear diophantine equation $ ax+by=c $ for given $ a,b,c\in \Z $ has a solution iff $ \gcd(a,b)|c .$
+\snote{if so then as $ d|c\implies c=dt=t(x_0a+y_0b )\implies x=x_0t,y=y_0t.$ }\\
+\y all solutions of the above linear diophantine equation is of form
+\begin{center}
+	$ x=x_0+\left(\frac{ b }{d} \right)t \quad y=y_0+\left(\frac{ a }{d} \right) t.$
+	\end{center} for some solution $ x_0,y_0 $ and arbitrary $ t\in \Z$ i.e. there are infinitely many solutions for the linear diophatine equation $ ax+by=c. $ }
+
+\section{Congruences}
+\tbx[$ a\equiv b\pmod{n} $]{ is defined as true if $ n|(a-b) $ \snote{ note $ a,b\in Z $ and $ 1<n\in \Z^+ $
+} otherwise $ a\not\equiv b\pmod{n}  $.  }
+\tbx[properties]{  
+\y $ \equiv \mod{n}$ is a equivalence relation on $ \Z $ for any $ n>1. $ \\
+if $ a\equiv b \pmod n $ and $ c\equiv b\pmod n $ then\\
+\y $ a+c \equiv  b+d \pmod n.$ \\
+\y $ ac\equiv bd\pmod n. $ \\
+\y $ a^k\equiv b^k\pmod{n} $ for $ k\in \Z^+.$\\
+\y it is not true that $ ca\equiv cb\pmod n\implies a\equiv b \pmod n $. \\
+\y $ ca\equiv cb\pmod n\implies a\equiv b \pmod{n/d} $ where $ d=\gcd(c,n). $ \\
+\y if $ a\equiv b\pmod n $ and $ m|n $ then $ a\equiv b \pmod m. $\\
+\y if $ \gcd(n,m)=1 $, $ a\equiv b\pmod{n} $ and   $ a\equiv b\pmod{m} $ then $ a\equiv b \pmod{mn} $ \\ 
+ \y if $ a\equiv b\pmod n $ and $ d|n,a,b $ then $ a/d\equiv b/d \pmod n/d. $\\
+ $ \blacksquare\star$     if $ a\equiv b\pmod n $ then $ \gcd(a,n)=\gcd(b,n) .$\\
+  \y if $ ac\equiv bd\pmod n. $ and $ b\equiv d\pmod n $ with $ \gcd(b,n)=1 $ then $ a\equiv c\pmod{n}. $  }
+   \subsection{Linear congruences}
+\tbx{ equation $ ax\equiv b\pmod n $ has a solution iff $ d|b $ for $ d=\gcd(a,n) $. if so the this equation has $ d $ mutually incongruent solutions mod $ n. $ \snote{use : this is same as solutions for diophantine equation $ ax-ny=b $}. }
+\tbx{from above point $ ax\equiv b\pmod n. $ has a unique solution mod $ n $ iff $ \gcd(a,n)=1. $ }
+\tbx{ system of linear congruence equations 
+	\begin{align*}
+		 a_1x &\equiv b_1 \pmod{m_1},\\
+		  a_2x &\equiv b_2 \pmod{m_2},\\
+		   &\vdots\\
+		    a_kx &\equiv b_k \pmod{m_k}.
+	\end{align*}
+where $ m_i's $ are relatively prime pairs is equivalent to solving system 
+	\begin{align*}
+ x &\equiv c_1 \pmod {n_1},\\
+  x &\equiv c_2 \pmod{n_2},\\
+    &\vdots \\
+   x &\equiv c_k \pmod{n_k}.
+\end{align*} where $ n_i=m_i/d_i,\; d_i=\gcd(a_i,m_i) $ and $ c_i=(b_i/d_i)(a_i') $ for $ a_i'(a_i/d_i)\equiv 1\pmod{n_i} $ \snote{use system is solvable iff each equation is solvable i.e. $ d_i|b_i $, $ \gcd(a_i/d_i,n_i)=1  $ so $ \exists! a_i' \st a_i'a_i/d_i\equiv 1\pmod{n_i} $.}  }   
+\tbx[Chinese Remainder Theorem]{for $ n_i\in \Z^+ $ and $ \gcd(n_i,n_j)=1 $ for $ i\neq j $ 
+the system of linear congruence equations 
+\begin{align*}
+	x &\equiv a_1 \pmod {n_1},\\
+	x &\equiv a_2 \pmod{n_2},\\
+	&\vdots \\
+	x &\equiv a_k \pmod{n_k}.
+	\end{align*} has a simultaneous solution. This solution is unique upto mod $ n=n_1n_2\ck n_k. $ \\
+And this solution is given by $ x=a_1N_1x_1+a_2N_2x_2\ck a_kN_kx_k $  where $ N_i=n/n_i=n_1\ck n_{i-1}n_{i+1}\ck n_k, $ for $ N_ix_i\equiv 1\pmod{n_i} .$ }
+\tbx{ The system of linear congruences
+	\begin{align*}
+		ax + by &\equiv r \pmod n\\
+		cx + d y &\equiv s \pmod n
+	\end{align*}
+	has a unique solution mod $n $ whenever 
+	$\gcd(ad-bc,n)=1. $}
+	\tbx[Fermat's Little Theorem]{ for a prime $ p $ and $ p\not|a $ we have $ a^{p-1}\equiv 1\pmod{p}. $ \snote{use as $ \{a,2a,\ck,(p-1)a\}$ forms complete congruence residue of p so $ a.2a\ck (p-1)a\equiv 1.2\ck (p-1)\pmod p\implies (p-1)!a^{p-1}\equiv (p-1)!\pmod p. $}  }
+	\tbx[Wilson's Theorem]{
+	$ p $ is a prime iff $ p|(p-1)!+1 $ i.e. $ (p-1)!\equiv -1\pmod{p} $ \snote{use for $ 1<a<p-1 , a\not|p$ so $ \exists! a'\in \{2,3,\ck p-2\} \st aa'\equiv1\pmod p$ so $ 2.3.\ck p-2=(p-2)!\equiv 1\pmod p. $}  }
+   
+   \section{Primes: Properties, Theorems and Conjectures. }
+   let $ p,q \in \Z^+$ be primes \snote{ $ p>1 $ is prime in $ \Z^+ $ if only divisors of $ p $ are $ 1 $ and $ p. $}  and $\forall ab\in \Z.$then
+   \tbx{
+   	\y $ p|ab \implies p|a\w{ or } p|b $ 
+   	\y $ p|a^k\implies p|a \w{ or } p|a^k.$
+   }
+   \tbx[Fundamental Theorem of Arithmetic]{ Every positive integer $ n>1 $ is a prime or product of primes such that its representation of the form 
+   	\begin{center}
+   		$ n=p_1^{l_1}p_2^{l_2}\ck p_k^{l_k} .$
+   	\end{center} for primes $ p_1<p_2<\ck <p_k $ and $ l_i\in \Z^+  $   is unique.}
+   \tbx{ 
+   	\y  there exists prime $ p $ appearing in prime factorization of $ a $ i.e. $ a=pm \st p\leq \sqrt{a}. $ \\
+   	\y if $ a>1 $ is not divisible by any prime $ p\leq \sqrt{a} $ then $ a $ is a prime \snote{simple restatement of above point.}\\
+   	\y There are an Infinite number of primes in $ \Z^+ $ \\
+   	\y let $ p_n $ denote the $ n^{th} $ prime in ascending order of primes then $ p_n<2^n. $\\
+   	\y for $ n>2 $ there exists a prime such that $ n<p<n! $ \snote{use: if not then $ n!-1 $ is not prime and all its prime divisors are $ p\leq n \implies p|n! $ thus $ p\leq n $ leading to contradiction $ p|1. $ }\\
+   }
+   \tbx{ \y \textbf{Goldbach conjecture} : every even integer is sum of two numbers that are either prime or $ 1 $.\\
+   	\y \textit{twin prime} question : are there infinitely many twin prime pairs \snote{primes with a gap of $ 2 $ integers between them }.\\
+   	\y for $ n\in \Z^+ $ there are $ n $ consecutive integers all of them composite \snote{$(n + 1)! + 2, (n + 1)! + 3, \ck , ( n + 1)! + ( n + 1)  $}.
+   	  }
+   	  \tbx[Dirichlet theorem]{  If $a$ and $b$ are relatively prime positive integers, then the
+   	  	arithmetic progression
+   	  	$a, a+ b, a+ 2b, a+ 3b, \ck$
+   	  	contains infinitely many primes. }
+   
+   \tbx[Fermat Kraitchik Factorisation method]{ 
+   	\y for odd integer $ n $ if $ n=x^2-y^2 $ then clearly $ n=(x+y)(x-y) $ or if $ n $ is composite i.e. $n=ab $ then $ n=(\frac{ a+b }{2} )^2-(\frac{ a-b }{2} )^2 $ holds  as both $ a,b $ are odd.\\
+   	\y So rearranging we get $ x^2-n=y^2 $ now search for smallest integers $ k \st k^2\geq n$ and look at numbers $ k^2-n, (k+1)^2-n,(k+2)^2-n,\ck $ until a value $ m\geq\sqrt{n} $ is found making $ m^2-n $ a square to give a factorisation of $ n=ml $ .\\
+   	\y this process cannot go indefinitely as $  (\frac{ n+1 }{2} )^2-n=(\frac{ n-1 }{2}  )^2  $ gives trivial factorisation $ n=n.1 $ .\\
+   	\y thus this process terminates for some $ m $ and $ n $ is composite if not then clearly $ n $ is a prime.   }
+   	\subsection{Divisibility by Small primes}
+   	let $ a=a_m10^m+a_{m-1}10{m-1}+\ck+a_110 + a_0 $ be the decimal representation of $ a $ then
+   	\tbx{$ 2|a $ iff unit digits of $ a=a_0 =2,4,8 $ or $ 0. $}
+   	\tbx{ $ 3,9|a$ iff $ 3,9|a_m+a_{m-1}\ck+a_1+a_0 $ i.e. iff  sum of the digits in decimal representation of $ a $
+   		is divisible by $ 3 $ or $ 9 $ \snote{use $ 10\equiv1\pmod{9}\equiv1\pmod{3}. $}}
+   	\tbx{ $4|a $ iff $ 4|10a_1+a_0 $ i.e. iff $ 4 $ divides the number formed by tens and units digits of $ a. $ \snote{use $ 10^k\equiv0\pmod4 $ if $ k\geq 2$ }.}
+   		\tbx{ $ 5|a $ iff $ a_0=0 $ or $ 5. $}
+   		\tbx{ $ 11|a $ iff $ 11|a_0-a_1+a_2\ck +(-1)^ma_m $ \snote{use $ 10\equiv -1 \pmod{11}$ 
+   		}. }
+   		\tbx{ $ 7,11,13|a $ iff $ 7,11,13| [(100a_2+10a_1+a_0)$\\
+   		$-(100a_5+10a_4+a_3)+(100a_8+10a_7+a_6)\ck ]$ i.e. $ 7,11,13 $ divides $ a $ iff alternating sum of $ 3 $ digits taken at a time in digits of $ a $ is divisible by $ 7,11,13$ \snote{use $ 7.11.13=1001 $ and if $ n $ is even $ 10^{3n} = 1, 10^{3n+1} = 10, 10^{3n+2} = 100 \pmod{1001}.$ of if $ n $ is odd  $ 10^{3n} = -1, 10^{3n+1} = -10, 10^{3n+2} = -100 \pmod{1001}$}.}
+%  \newcolumn
+  \section{Number theoretic functions}
+  \tbx{ Any function whose domain is the set of positive integers \snote{$\Z^+$} is called a number theoretic function or arithmetic function. }
+\tbx{ let $ \sm{d|n}{}f(d) $ sum over all divisors of $ n $ i.e. for eg: $  \sm{d|6}{}f(d)=f(1)+f(2)+f(3)+f(6).$  }
+\tbx[Multiplicative Function]{ a number theoretic function $ f(k) $ is called a multiplicative function  if $ f(mn)=f(m) f(n)$ whenever $ \gcd(m,n)=1. $}
+\tbx{ if $ f(d) $ is multiplicative then $ F(n)=\sm{d|n}{}f(d)$ is also a multiplicative function. }
+\tbx[Mobius inversion Formula]{\y Define Mobius  function 
+\[\mu(n)=
+\begin{cases}
+	1 & \w{ if } n=0\\
+	0 & \w{ if } p^2|n \w{ for some prime } p\\
+	(-1)^r & \w{ if } n=p_1p_2\ck p_r \w{ where } p_i's\\
+	&\quad \w{ are distint primes.}
+\end{cases}\] 
+\y let $ \mathbb{F}(n)=\sm{d|n}{}\mu(d) $ then 
+\[\mathbb{F}(n)=\begin{cases}
+	1 & \w{ if } n=1\\
+	0 & \w{ otherwise. }
+\end{cases}\]
+\y clearly $ \mu(n) $ and $ \mathbb{F}(n) $ are multiplicative.\\
+\y \textbf{The Formula} : if $ f,F $ are two number theoretic functions such that 
+
+\begin{center}
+ $  F(n)=\sm{d|n}{}f(d) $ 
+ \end{center}
+
+then 
+
+
+\begin{center}
+ $ f(n)=\sm{d|n}{} \mu(d)F(\frac{ n }{d})=\sm{d|n}{}\mu(\frac{ n }{d})F(d). $ 
+ \end{center}
+}
+\tbx{
+ Clearly from above we get if \\
+$  F(n)=\sm{d|n}{}f(d) $ is multiplicative then $ f(n) $ is also multiplicative.}
+\tbx[Positive Divisors function ]{  for a given integer $ n $ let $ \tau(n) $ denote the number of positive divisors of $ n $ and $ \sigma(n) $ denote the sum of these divisors then \\
+\y$ \tau(n)=\sm{d|n}{}1. $ \\
+\y $ \sigma(n)=\sm{d|n}{}d. $ \\
+Now if $ n=p_1^{k_1}p_2^{k_2}\ck p_r^{k_r} $ is prime factorisation of $ n $ then \\
+\y\begin{align*}
+	\tau(n)&=(k_1+1)(k_2+1)\ck (k_r+1)\\
+	&=\displaystyle\prod_{1\leq i\leq r}(k_1+1). 
+\end{align*}
+\snote{use for each $ p_i $ there are $ k_i+1 $ choices for divisors of $ n $ given by $ d=p_1^{a_1}p_2^{a_2}\ck p_r^{a_r} $ for $ 0\leq a_i \leq k_i $ respectively}. \\
+\y \begin{align*}
+	\sigma(n)&=\frac{ p_1^{k_1+1}-1 }{p_1-1} \frac{ p_2^{k_2+1}-1 }{p_2-1}\ck \frac{ p_r^{k_r+1}-1 }{p_r-1}\\
+	& = \prod\limits_{1\leq i \leq r}^{}\frac{ p_i^{k_i+1}-1 }{p_i-1}.
+\end{align*}
+\snote{use the factors in the product  $ (1+p_1+p_1^2+\ck +p_1^{k_1})(1+p_2+p_2^2+\ck +p_2^{k_2})\ck (1+p_r+p_r^2+\ck +p_r^{k_r})   $ are the only values $ d $ can take if $ d|n $ }.\\
+\y $ \tau(n) $ and $ \sigma(n) $ are multiplicative functions.\\
+\y $ n^{\tau(n)/2} =\prod\limits_{d|n}^{} d.$ \\
+\y $ \tau(n) $ is odd iff $ n $ is a perfect square.\\
+\y $ \sigma(n) $ is odd iff $ n $ is a perfect square of twice a perfect square \snote{use : for odd prime $ p,\; 1+p+p^2+\ck +p^k $ is odd iff $ k $ is even}.\\
+\y $ \sm{d|n}{}\frac{ 1 }{d} =\frac{ \sigma(n) }{n} . $ \\
+\y $ \sm{d|n}{}\sigma(d)=\sm{n|d}{}\frac{ n }{d} \tau(d). $ }
+
+\tbx[Greatest integer function]{ 
+Let $ [x] $ for real number $ x $ denote the largest integer less than or equal to $ x $ i.e. $ [x] $ is a unique integer satisfying $ x-1<[x]\leq x $}
+\tbx{
+\y every $ x=[x]+\theta  $ for $ 0\leq \theta <1. $ \\
+\y if $ p $ appears in the prime factorisation of $ n $ then the highest exponent of $ p $ dividing $ n! $ is given by 
+\begin{center}
+ $ \sm{k=1}{\infty}\left[\frac{ n }{d} \right]. $ 
+ \end{center}
+ 
+clearly this series converges as $ [n/p^k]=0 $ for $ p^k>n. $\\
+\y if $ f,F $ are two number theoretic functions such that 
+
+\begin{center}
+ $  F(n)=\sm{d|n}{}f(d) $ 
+ \end{center}
+
+then for $ N\in \Z^+ $ 
+\begin{center}
+	$ \sm{n=1}{N}F(n)=\sm{k=1}{N}f(k)\left[\frac{ N }{k} \right] .$
+	\end{center}  }
+\tbx[Euler's $ \phi $ function]{
+Define $ \phi(n) $ as the number of positive integers$\leq n $ that are relatively prime to $ n. $ }
+\tbx{
+\y $ \phi(p)=p-1 $ for a prime $p.  $ \\
+\y $ \phi(p^k)=p^k-p^{k-1}=p^{k-1}(p-1)=p^{k}(1-\frac{ 1 }{p} ) $ \snote{use: there are $ p,2p,\ck ,p^2,\ck p^{k-1}p $ integers that are not co-prime $\leq p^{k} $ }.\\ 
+ \y $ \phi $ is a multiplicative function.\\
+if $ n= p_1^{k_1}p_2^{k_2}\ck p_r^{k_r}$ is its prime factorisation then \\
+\y \begin{align*}
+	 \phi(n)&=p_1^{k_1-1}(p_1-1) \ck p_2^{k_2-1}(p_2-1)\\
+	 & \qquad \ck p_r^{k_r-1}(p_r-1) \\
+	 &=n(1-\frac{ 1 }{p_1} )(1-\frac{ 1 }{p_2} )\ck (1-\frac{ 1 }{ p_r }).
+\end{align*}  
+\y $ \phi(2^k)=2^{k-1} .$ \\
+\y $ \phi(n) $ is even $ \forall n>2. $ \\
+\y $ \frac{ \sqrt{n} }{2} \leq \phi(n) \leq n$ \snote{use $ p-1>\sqrt{p} $ and $ k-1/2\geq k/2 $}. \\
+\y if $ n $ has $ r $ distinct primes in its prime factorisation then $ 2^r|\phi(n) $ .\\
+\y if $ d|n $ then $ \phi(d)|\phi(n). $ \\
+}
+\section{More on Congruences}
+\tbx{  for $ n>1 $ and $ \gcd(a,n)=1 $. If $ a_1,a_2,\ck ,a_{\phi(n)} $ are positive integers less than $ n $ and relatively prime to $ n $ then $ aa_1,aa_2,\ck ,aa_{\phi(n)} $ is also congruent to $ a_1,a_2,\ck ,a_{\phi(n)} $ modulo $ n $ in some order.}
+\tbx[Euler's Theorem]{ for $n\in \Z^+ $ and $ \gcd(a,n)=1 $ we have 
+	
+\begin{center}
+ $ a^{\phi(n)}\equiv 1\pmod{n}. $ 
+ \end{center}
+
+\snote{use above point or induction on power of $ p $ by fermat's and binomial theorem.}}
+\tbx{ 
+\y if $ \gcd(m,n)=1 $ then $ m^{\phi(n)} +n^{\phi(m)}\equiv 1 \pmod{mn}$ \\
+\y 
+\begin{center}
+ $ n=\sm{d|n}{}\phi(d) $ 
+ \end{center}
+ \snote{use if $ n=p^k $ then $ \sum_{d|n=p^k}\phi(n)=1+(p-1)+(p^2-p)+\ck+(p^k-p^{k-1})=p^k $ and multiplicity of $ \phi $ for multiplicity of $ \sum_{d|n}\phi(d) $}.
+\y sum of positive integers less than $ n $ and relatively prime to $ n $ is equal to $ \frac{ n\phi(n) }{2} $ \snote{use $ \gcd(a,n)=\gcd(n-a,n) $ so $ \{n-a_1,n-a_2,\ck n-a_{\phi(n)}\}=\{a_1,a_2,\ck ,a_{\phi(n)}\} $ integers relatively prime to $ n $ so the set sum is also equal}.
+}
+\section{Primitive roots}
+\tbx{ for $ n>1 $ and $ \gcd(a,n)=1 $, define \textbf{Order} of $ a $ modulo $ n $ as the smallest +ve integer $ k \st a^k\equiv 1\pmod{n}.$}
+\tbx{  if $ a $ has order $ k $ modulo $ n $\\
+	\y then $ a^h\equiv1\pmod{n} $ iff $ k|h $, in particular $ k|\phi(n) .$ \\
+\y $ a^i\equiv a^j\pmod{n} $ iff $ i\equiv j \pmod{k}. $ \\
+\y integers $ a,a^2,\ck, a^k $ are incongruent modulo $ n. $ \\
+\y $ a^h $ has order $ \frac{ k }{\gcd(k,h)} $  }
+\tbx[primitive root ]{ for $ \gcd(a,n)=1 $ if $ a $ has order $ \phi(n) $ \snote{maximum order} then $ a $ is called primitive root of $ n. $}
+\tbx{ if $ a $ is primitive root of $ n $ then
+\y $ \{a,a^2,\ck a^{\phi(n)}\}=\{a_1,a_2,\ck , a_{\phi(n)}\} $ which is the set of relative primes less than $ n. $ \\
+\y if $ n $ has primitive roots then there are $ \phi(\phi(n)) $ of them \snote{use order argument}.}
+\subsection{existence of primitive roots }
+\tbx[Lagrange Theorem]{ for a prime $ p $ and integral coefficient polynomial
+$ f(x)=a_nx^n+a_{n-1}x^{n-1}\ck a_1x+a_0 $ with $ a_n\not\equiv0\pmod{n} $ has at most $ n $ incongruent solutions modulo $ p $ for equation $ f(x)\equiv 0\pmod p $ \snote{use induction}.\\  }
+\tbx{  for a prime $ p $ if $ d|p-1 $ then 
+\y $ x^d-1 \equiv 0 \pmod{p}$ has exactly $ d $ solutions incongruent modulo $ p $.\\ 
+\y there are exactly $ \phi(d) $ incongruent integers having order $ d $ modulo $ p. $ \\
+\y in particular there are $ \phi(p-1) $ primitive roots modulo $ p. $}
+\tbx{ for $ k\geq 3 $ the integer $ 2^k $ has no primitive roots \snote{use induction to prove $ a^{2^{k-2}} \equiv 1\pmod{2^k} \forall a$ }. }
+\tbx{ for $ m,n>2 $ if $ \gcd(m,n)=1 $ then integer $ mn $ doesn't have a primitive root \snote{use both $ \phi(n),\phi(m) $ are even so $ h=\lcm(\phi(n),\phi(m))=\phi(n)\phi(m)/\gcd(m,n)\leq \phi(n)\phi(m)/2 $ so by euler's theorem $ a^h\equiv 1\pmod{n}$ and $ \equiv 1\pmod{m} $ so $ a^h\equiv 1 \pmod{mn} \forall a$}.}
+\tbx{from above we get $ n $ doesn't have a primitive root if \\
+	\y 2 odd primes divide $ n $ \\
+	\y $ n=2^kp $ for $ k\geq 2 $ and $ 2\not|p $ \\}
+
+\tbx{ if $ p $ is an odd prime and $ r $ a primitive root of $ p $ then \\
+\y $ r^p-1\not\equiv 1 \pmod{p^2} $ or $ r'=r+p,\; r'^{p-1}\not\equiv1\pmod{p^2} $ \\
+\y from above point we get $ r $ or $ r' $ is a primitive root of $ p^2 $ \\
+let $ r $ be a primitve root of $ p $ such that $ r^{p-1}\not\equiv1\pmod{p^2} $ then\\
+\y for each $ k\geq 2 $ 
+\begin{center}
+ $  r^{p^{k-2}(p-1)}\not\equiv 1 \pmod{p^{k}}. $ 
+ \end{center}
+ \snote{use induction}.
+\y $ r $ is a primitive root of $ p^k $ \snote{use all above points}. }
+\tbx{ Integer of form $ 2p^k $ for odd prime $ p $ has a primitive root \snote{use $ \phi(2p^k)=\phi(p^k) $ so any odd primitive root $ r $ of $ p^k $  is a primitive root of $ 2p^k$ ( this exists as : if primitive root of $ p^k $  $ r' $ is even then $ r=r'+p^k $ is odd)}. }
+
+\tbx[Summary]{ An integer $ n>1 $ has a primitive root iff 
+
+\begin{center}
+ $ n=2,4,p^k\w{ or }2p^k $ 
+ \end{center}
+  for odd prime $ p $ and $ k\in \Z^+. $}
+
+\subsection{Indices}
+\tbx[Relative Index]{ If for a given $ n\in \Z^+ $ has a primitive root $ r $ then for $ a\st \gcd(a,n)=1 $ \\ the smallest integer $ k\st a\equiv r^k\pmod n $  is called the index of $ a $ relative to $ r$ denoted by $ k=\ix_ra$ \snote{i.e. $ r^{\ix_ra}\equiv a\pmod{n} $ }. }
+\tbx{ let $ n $ have a primitive root $ r $ and $ \gcd(a,n)=\gcd(b,n)=1 $ then \\
+	\y $ 0\leq \ix_ra\leq \phi(a). $ \\
+	\y $ \ix_r(ab)\equiv \ix_ra+\ix_rb\pmod{\phi(n)}. $\\
+	\y $ \ix_ra^k\equiv k\ix_ra\pmod{\phi(n)}.$ \\
+	  \y $ \ix_r1\equiv 0\pmod{\phi(n)} $  }
+\tbx[Binomial Congruence]{ for $ n\in \Z^+ $ having a primitive root \snote{any} $ r $ and $ \gcd(a,n)=1 $, the binomial congruence 
+\begin{center}
+ $ x^k\equiv a\pmod{n}\quad k\geq 2 $ 
+ \end{center}
+  is equivalent to the linear congruence 
+
+\begin{center}
+ $ k\ix_r x \equiv \ix_r a\pmod{\phi(a)} $ 
+ \end{center}
+
+thus the binomial congruence has a solution $ x_0 $ iff for $ d=\gcd(a,\phi(n)) $ , $ d|\ix_ra. $ If so then there are exactly $ d $ incongruent solutions. 
+\tbx{ eg: if $ n=p $ an odd prime and $ k=2 $ then $ \phi(p)=p-1 $ and as $ d=\gcd(2,p-1)=2  $ we have 
+
+\begin{center}
+ $ x^2\equiv a\pmod{p} $ 
+ \end{center}
+ has a solution iff $ 2|\ix_ra $, if s exactly $ 2 $ solutions. Now as $ r^k $ runs through $ p-1 $ values \snote{$ k=\ix_ra $}, we get this binomial congruence has solution for precisely $ p-1/2 $ values of $ a $. } 
+\tbx{ Improving above arguments we have the binomial congruence 
+\begin{center}
+ $ x^k\equiv a\pmod{n}\quad k\geq 2 $ 
+ \end{center}
+ 
+	has a solution iff 
+\begin{center}
+ $ a^{\phi(n)/d}\equiv 1\pmod{n}. $ 
+ \end{center}
+} for $ d=\gcd(k,\phi(n)) $ \snote{use this is equivalent to $ \frac{ \phi(n) }{d} \ix_ra\equiv 0\pmod{\phi(a)} $ which has a solution iff $ d|\ix_ra $ }.
+\tbx{ thus 
+\begin{center}
+ $ x^k\equiv a\pmod{p} $ 
+ \end{center}
+ 
+	has solution iff 
+\begin{center}
+ $ a^{p-1/d} \equiv 1\pmod{p}. $ 
+ \end{center}
+ for $ d=\gcd(k,p-1) .$ }}
+\tbx[Exponential Congruence]{  for an odd prime $ p $ with primitive root $ r $, the exponential congruence 
+\begin{center}
+ $  a^x\equiv b\pmod{p} $ 
+ \end{center}
+ has a solution iff for $ d=\gcd(\ix_ra,p-1) $ , $ d|i\ix_rb. $ If then there are $ d $ incongruent solutions modulo $ p-1. $}
+
+\subsection{Quadratic Congruence and residue}
+ 
+\tbx[main problem]{ 
+\y for a given off prime $ p $ the quadratic congruence 
+
+\begin{center}
+ $ ax^2+bx+c\equiv 0\pmod{p} $ 
+ \end{center}
+ where $ a\not\equiv 0\pmod{p} $ 
+hold iff 
+\begin{center}
+ $ (2ax+b)^2\equiv b^2-4ac\pmod p. $ 
+ \end{center}
+
+\snote{use $ \gcd(a,p)=1 $ so $ \gcd(4a,p)=1 $ so the congruence is equivalent to $ 4a(ax^2+bx+c)\equiv(2ax+b)^2-(b^2-4ac)\equiv 0\pmod{p} $} \\
+\y so solving this quadratic congruence is equivalent to solving  
+$ y^2\equiv d\pmod{p}$ and $
+y\equiv2ax+b\pmod{p} $
+where $ d=b^2-4ac. $
+\y So this problem boils down to solving quadratic congruence of form $ x^2\equiv a\pmod{p}. $\\
+\y if $ x_0 $ is solution of the above congruence then $ p-x_0 $  is also another $ \not\equiv\pmod{p} $  solution given $ a\neq 0\pmod{p}.$\\
+\y thus by lagrange theorem these exhaust incongruent solutions modulo $ p. $}
+
+\tbx[Quadratic residue]{  for an odd prime $ p $  and $ \gcd(a,p)=1 $  is the quadratic congruence $ x^2\equiv a\pmod{p} $ has a solution the $ a $ is said to be quadratic residue of $ p $ otherwise $ a $ is quadratic nonresidue of $ p $. }
+\tbx[Euler's criterion]{  $ a $ is quadratic residue of $ p $ \snote{ an odd prime} iff  
+\begin{center}
+ $ a^{(p-1)/2}\equiv 1 \pmod{p}. $ 
+ \end{center}
+
+\snote{use if $ r$ is primitive root of $ p $ then $ a\equiv r^k\pmod{p} $ and $a^{(p-1)/2}\equiv r^{k(p-1)/2} \equiv 1\pmod p$ so $ p-1 |k(p-1)/2 $ or $ k=2j $ }.}
+\tbx{ now $ (a^{(p-1)/2}-1)(a^{(p-1)/2}+1)\equiv a^{p-1}-1\equiv 0\pmod p $ so either $ a^{(p-1)/2}\equiv 1 \w{ or } -1 \pmod{p} $ \\
+Thus if $ a^{(p-1)/2}\equiv-1\pmod{p} $ then $ a $ is quadratic nonresidue of $ p. $}
+
+\tbx[Legendre symbol]{
+for an odd prime $ p $  and $ \gcd(a,p)=1 $ define \\
+$ (\frac{ a }{p})=
+\begin{cases}
+	1 & \w{ if $ a $ is quadratic residue of }p,\\
+	-1 & \w{ if $ a $ is quadratic nonresidue}\\
+	& \w{ of }p.
+\end{cases} $  }
+\tbx{ if $ a $ and $ b $ are relatively prime to odd prime $ p $ then\\
+\y $ a^{(p-1)/2}\equiv(\frac{ a }{p} )\pmod{p} $.\\
+\y $ a\equiv b\pmod{p} \implies (\frac{ a }{p}  )=(\frac{ b }{p} )$.\\
+\y   $ (\frac{ ab }{p})=(\frac{ a }{p} )(\frac{ b }{p} ). $ \\
+\y $ (\frac{ a^2 }{p} )=1 $ \\
+\y $ (\frac{ 1 }{p})=1 $  and $ (\frac{ -1 }{p})=(-1)^{(p-1)/2}. $}
+\tbx{ 
+$ (\frac{ -1 }{p} ) =
+\begin{cases}
+	1& \w{ if } p\equiv 1\pmod 4,\\
+	-1 & \w{ if } p\equiv 3\pmod{4}.
+\end{cases}$  }
+\tbx{ for off prime $ p $ 
+\begin{center}
+ $ \sm{a=1}{p-1}(\frac{ a }{p} )=0. $ 
+ \end{center}
+
+Hence there are precisely $ (p-1)/2 $ quadratic residue and $   (p-1)/2$ quadratic nonresidue of $ p $
+\snote{use if $ r $ is primitive root of $ p $ then $ x^2\equiv r\pmod{p} $ has no solution so $ r^{(p-1)/2} \equiv -1\pmod{p}$ so $ \sm{a=1}{p-1}(\frac{ a }{p} )=\sm{k=1}{p-1} $  } }
+\tbx{ Thus from above point we have for an odd prime $ p $ having primitive root $ r $ : quadratic residue of $ p $ are congruent to even powers of $ r $ modulo $ p $ and quadratic nonresidues congruent of $ p $ to  odd powers of $ r $ modulo $ p. $}
+\tbx[Gauss's Lemma]{  for an odd prime $ p $ and $ \gcd(a,p)=1 $ if there are $ n $ integers in the set $ \{a,2a,3a,\ck, \frac{ p-1 }{2}a \} $ whose remainder upon division by $ p $ exceeds $ p/2 $ then 
+\begin{center}
+ $ (\frac{ a }{p}) =(-1)^n $ 
+ \end{center}
+.}
+\tbx{ \[(\frac{ 2 }{p}) =
+	\begin{cases}
+		1 & \w{ if } p\equiv 1\pmod{8}\\
+		&\quad \w{ or } p\equiv 7\pmod{8}\\
+		-1&\w{ if } p\equiv 3\pmod{8}\\
+		& \quad \w{ or } p\equiv 5\pmod{8}
+	\end{cases}.\] 
+\snote{use gauss's lemma}}
+\tbx{ From above point and similarities of $ (p^2-1)/8 $ we get if $ p $ is an odd prime then
+
+\begin{center}
+ $ (\frac{ 2 }{p} )=(-1)^{\frac{ p^2-1 }{8}.  } $ 
+ \end{center}
+ }
+\tbx{ if $ p $ is an odd prime and $ a $ an odd integer with $ \gcd(a,p)= $ then 
+\begin{center}
+ $ (\frac{ a }{p} )=(-1)^{\sum_{k=1}^{(p-1)/2}[ka/p]} $ 
+ \end{center}
+
+where $ [\cdot] $ denotes the greatest integer function. }
+\tbx[Quadratic Reciprocity Law]{  if $ p $ and $ q $ are distinct odd primes then 
+
+\begin{center}
+ $ (\frac{ p }{q} )(\frac{ q }{p})=(-1)^{\frac{ p-1 }{2}\frac{ q-1 }{2} }. $ 
+ \end{center}
+ }
+\tbx{Consequences : if $ p $ and $ q $ are distinct odd primes then \\
+\y \[(\frac{ p }{q} )(\frac{ q }{p})=
+\begin{cases}
+	1 &\w{ if } p \w{ or } q \equiv 1\pmod{4}\\
+	-1 & \w{ if } p\equiv q\equiv 3\pmod{4}
+\end{cases}.\]
+\y \[(\frac{ p }{q} )=
+\begin{cases}
+	(\frac{ q }{p})&\w{ if } p \w{ or } q \equiv 1\pmod{4}\\
+	-(\frac{ q }{p}) & \w{ if } p\equiv q\equiv 3\pmod{4}
+\end{cases}.\]}
+\tbx[Calculation of $ (\frac{ a }{p} ) $]{
+if $ a=\pm 2^{k_0}p_1^{k_1}p_2^{k_2}\ck p_r^{k_r} $ is its prime factorisation then
+
+\begin{center}
+ $ (\frac{ a }{p})=(\frac{ \pm1 }{p} ) (\frac{ 2 }{p})^{k_0}(\frac{ p_1 }{p})^{k_1}(\frac{ p_2 }{p})^{k_2}\ck( \frac{ p_r }{p})^{k_r} . $ 
+ \end{center}
+ 
+Thus we can invert above for odd primes $ p_i $ to get a smaller denominator by above point and continue this process until we end up with blocks only of form $ (\frac{ \pm 1 }{q_i}) $ and $ (\frac{ 2 }{q_i}) $ for odd primes $ q_i\leq p $ which can be easily calculated by $ (\frac{ -1 }{q_i} )=(-1)^{(q_i-1)/2} $ and $ (\frac{ 2 }{q_i} )=(-1)^{(q_i^2-1)/8} $.}
+\tbx{ for odd prime $ p $ and $ \gcd(a,p)=1 $ 
+\begin{center}
+ $  x^2\equiv a\pmod{p^n} $ 
+ \end{center}
+ is solvable iff $ (\frac{ a }{p})=1. $}
+\tbx{ for odd integer $ a $ \\
+\y $ x^2\equiv a\pmod{2} $ is always solvable.\\
+\y $ x^2\equiv a\pmod{4} $ is solvable iff $ a\equiv 1\pmod{4} $.\\
+\y $ x^2\equiv a\pmod{2^n} $ for $ n\geq 3 $ is solvable iff $ a\equiv 1\pmod{8} $. }
+\tbx{ From above points we have if $ n=  2^{k_0}p_1^{k_1}p_2^{k_2}\ck p_r^{k_r} $ for odd primes $ p_i $ and $ \gcd(a,n) =1$ then $ x^2\equiv a\pmod{n} $ is solvable iff\\
+	\y $ (\frac{ a }{p_i})=1 $ \\
+	\y $ a\equiv1\pmod{4} $ if $ 4|a $ but $ 8\not|a $  or $ a\equiv1\pmod{8} $ if $ 8|a $.}
+	\newcolumn
+	\begin{thebibliography}{9}
+		\bibitem{ENT}
+		David M. Burton : Elementary number theory, McGraw·Hill, 7, (2010).
+	\end{thebibliography}
+\end{multicols}
+\end{document}
