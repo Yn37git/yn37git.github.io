@@ -85,7 +85,7 @@ $$\begin{align*}
 \end{align*}
 $$ 
 
-## Colored paartitions
+## Colored partitions
 ---
 - Now clearly to create a partition of $$ n $$ parts $$ (\lambda_i) $$ are chosen from $$ N $$ (set of natural numbers = 1,2,3,...)
 let this set of parts to be chosen represented by $$ S $$ then:

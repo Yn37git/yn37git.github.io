@@ -16,9 +16,9 @@ social: true # includes social icons at the bottom of the page
 #limit: 3 # leave blank to include all the blog posts
 ---
 
-Hi! I have completed my masters in mathematics and am currently looking for a PhD. role. I am interested in Number theory, Linear algebra, Machine learning and Algebra (These may seem like vast and different topics but as I am just begining my Journey , I am ready for a good exploration).
+Hi! I have completed my masters in mathematics and am currently looking for a PhD. role. I am interested in Number theory, Linear algebra, Machine learning and Algebra (These may look like vast and different topics but as I am just beginning my Journey , I am ready for a good exploration).
 
-Currently I am preparing for competitive exams and interviews for a PhD. role. Feel free to contact me. 
+Currently I am preparing for competitive exams and interviews for a PhD. Feel free to contact me. 
 
 Here's my : 
 
