@@ -5,9 +5,9 @@
 
 \usepackage{hyperref}
 \hypersetup{colorlinks=true,
-	linkcolor=black,
+	linkcolor= blue,
 	filecolor=black,      
-	urlcolor=black}
+	urlcolor=blue }
 	
 \usepackage{amsmath,amssymb,amsthm,mathtools,mathrsfs}
 \newtheorem{thm}{Theorem}[]
@@ -122,6 +122,10 @@
 \date{}
 \begin{document}
 \maketitle
+\begin{center}\texttt{
+		\href{https://yn37git.github.io/blog/2025/Short-Notes/}{yn37git.github.io/blog/2025/Short-Notes}}
+\end{center} 
+
 \boldmath
 
 \begin{multicols}{2}
@@ -243,6 +247,7 @@
 			\y $H\cup K \ll G$ iff $H\subseteq K$ or $K\subseteq H$.
 		
 	}
+	\newcolumn
 	\section{Homomorphism and Isomorphisms}
 	\tbx[\textbf{Homomorphism} ]{ a map $\phi: G\ra H$ for groups $(G,\star),(H,\diamond)$ is 
 		a homomorphism if \\ $\phi(a\star b)=\phi(a)\diamond\phi(b)\; \forall a,b\in G$ 
@@ -271,6 +276,8 @@
 	\tbx{ The map $\psi : g\ra g^2$ in $G$ is homomorphism iff $G$ is abelian.
 	}
 	\tbx{ if $A$ is abelian then the map $\psi : a\ra a^k$ is a homomorphism.}
+	
+	\newcolumn
 	\section{Automorphism $Aut(\;)$}
 	\tbx{ $Aut(G)$ is the set of all isomorphism of a group $G$ onto itself.\\
 		$Aut(G)$ forms a group under function composition.
@@ -424,7 +431,8 @@
 		\begin{center}
 			$ |G:H|=|G:K| \,|K:H| .$
 	\end{center}}
-	
+
+	\newcolumn
 	\section{Quotient Groups}
 	
 	\tbx{Fiber : another word for preimage. It can be imagined as a comparison of a cloth to a function
@@ -620,7 +628,7 @@
 		\y   all composition factors of $ G $ are of prime order. 
 	}
 	\tbx{if $ G $ is a finite group in which every proper subgroup is abelian then $ G $ is solvable.}
-	\newcolumn
+%	\newcolumn
 	
 	\section{Major Theorems and consequences}
 	\subsection{Lagrange's theorem}
@@ -693,23 +701,7 @@
 			\y  $ A\trianglelefteq G $ iff $ \overline{A} \trianglelefteq \overline{G}. $ 
 		
 	}
-	\subsection{Cayley's Theorem and \\ Class equations}
-	\tbx[\textbf{ Cayley's Theorem} ]{every group is isomorphic to a group of permutations (a subgroup
-		of a symmetric group)  in particular if $ |G|=n<\infty $  then $ G\cong $ a subgroup of $ S_n $
-		\snote{can be derived by left multiplication action of $ G $ on its subgroup $ \{1\} $}.
-	}
-	\tbx[Consequences of Cayley's theorem]{ 
-			\y    if   $ G $ is a finite group of order $ n $, $ p $ is the smallest prime dividing $ n $ and if any subgroup is of 	index $ p $ (if exists) in $ G $ i.e. $ |G:H|=p $ then $ H $ is normal. \\
-			\snote{use  left multiplication action of $ G $ on $ \{gH\} $ i.e. $ \pi_H : G\ra S_p $ (permutation representation of the action) whose kernel $ K\ll H $ is such that $ G/K $ isomorphic to a subgroup of $ S_p $ and $|G:K|=|G:H||H:K|  $ so $ |G:K|=pk $ and $ pk|p!\implies k|(p-1)! $ thus $ k=1 $ by minimality of $ p||G| $ so $ K=H $.}\\
-			\y Immidieately from preceding point we get \textbf{any subgroup of index $ 2 $ is necessarily a normal subgroup}. \\
-			\y  using similar argument as preceding points we get : if $ H $ has finite index in $ G $ i.e. $ |G:H|=n<\infty $ then  
-			There exists $ K\ll H $ normal in $ G $ such that $ |G:K|\leq n! .$\\
-			\y now if we follow Group action (left multiplication) to find the elements of subgroup of symmetric group that $ G $ is isomorphic to then these elements are called \textbf{left regular representations} of $ G $. \\
-			\y  if $ G $ is a finite group then for left regular representation of $ G $ of an element $ x\in G $ of order $ n $ in $ G $ is product of $ m \; n- $cycles only, where $ |G|=nm .$  \\
-			\y so for $ \pi:G\ra S_G$ represents the isomorphism stated in Caleys's theorem (by left regular representation)  and  $ x\in G $ $ \phi(x) $ is an odd permutation iff $ |x| $ is even and $ \frac{ |G| }{|\gen{x}|}  $ is odd.\snote{refer symmetric groups}\\
-			\y Immediately  from preceding point we get in representation of $ G $ if there exists an odd permutation then $ G $ has a subgroup of index $ 2.$ \\
-			\y  if $|G|=2k $ for $ k $ odd then $ G $ has a subgroup of index $ 2 $ i.e. $ \exists H\ll G $ more precisely $ H\trianglelefteq G $ such that $ |G:H|=2 $ ({\footnotesize use preceding 4 points)} 
-	}
+	\subsection{ Class equations and \\ Cayley's Theorem }
 	
 	\tbx[\textbf{The Class Equation} ]{for $ G $ a finite group if $ g_1,g_2,\ck , g_r $ are representatives of distinct conjugacy classes \snote{equivalence class of $ G $ acting on itself by conjugation} of $ G $ not contained in 
 		$ Z(G) $ then 
@@ -719,17 +711,37 @@
 	}
 	\tbx[Consequences of  Class equations :]{
 		
-			\y  if $ P $ is a group such that $ |P|=p^\alpha $ for $ p $ prime and $ \alpha \geq 1 $  then $ P $ has  
-			a non trivial center. i.e. \\
-			$ Z(P)\neq 1 $ (and by Lagrange theorem $ |Z(P) |\geq p $)\\
-			\y  	now using the preceding point and lattice isomorphism theorem for strong induction on we get : \\ 
-			\textbf{for $ p $ prime if $ |G|=p^\alpha $ then there exists a subgroup of order $ p^\beta $ in $ G $ for every
-				$ 0\leq \beta \leq \alpha .$}\\
-			\y  if $ |G|=p^2 $ for $ p $ prime then $ G $ is abelian as $ P/Z(P) $ is cyclic and more precisely  
-			$ Z\cong Z_{p^2} $ or $ Z_p \times Z_p $
-		
-		
+		\y  if $ P $ is a group such that $ |P|=p^\alpha $ for $ p $ prime and $ \alpha \geq 1 $  then $ P $ has  
+		a non trivial center. i.e. \\
+		$ Z(P)\neq 1 $ (and by Lagrange theorem $ |Z(P) |\geq p $)\\
+		\y  	now using the preceding point and lattice isomorphism theorem for strong induction on we get : \\ 
+		\textbf{for $ p $ prime if $ |G|=p^\alpha $ then there exists a subgroup of order $ p^\beta $ in $ G $ for every
+			$ 0\leq \beta \leq \alpha .$}\\
+		\y  if $ |G|=p^2 $ for $ p $ prime then $ G $ is abelian as $ P/Z(P) $ is cyclic and more precisely  
+		$ Z\cong Z_{p^2} $ or $ Z_p \times Z_p $
 	}
+	
+	\tbx[\textbf{ Cayley's Theorem} ]{every group is isomorphic to a group of permutations (a subgroup
+		of a symmetric group)  in particular if $ |G|=n<\infty $  then $ G\cong $ a subgroup of $ S_n $
+		\snote{can be derived by left multiplication action of $ G $ on its subgroup $ \{1\} $}.
+	}
+	
+	\tbx[Consequences of Cayley's theorem]{ 
+			\y    if   $ G $ is a finite group of order $ n $, $ p $ is the smallest prime dividing $ n $ and if any subgroup is of 	index $ p $ (if exists) in $ G $ i.e. $ |G:H|=p $ then $ H $ is normal. \\
+			\snote{use  left multiplication action of $ G $ on $ \{gH\} $ i.e. $ \pi_H : G\ra S_p $ (permutation representation of the action) whose kernel $ K\ll H $ is such that $ G/K $ isomorphic to a subgroup of $ S_p $ and $|G:K|=|G:H||H:K|  $ so $ |G:K|=pk $ and $ pk|p!\implies k|(p-1)! $ thus $ k=1 $ by minimality of $ p||G| $ so $ K=H $.}\\
+			\y Immidieately from preceding point we get \textbf{any subgroup of index $ 2 $ is necessarily a normal subgroup}. \\
+			\y  using similar argument as preceding points we get : if $ H $ has finite index in $ G $ i.e. $ |G:H|=n<\infty $ then  
+			There exists $ K\ll H $ normal in $ G $ such that $ |G:K|\leq n! .$\\
+			\y now if we follow Group action (left multiplication) to find the elements of subgroup of symmetric group that $ G $ is isomorphic to then these elements are called \textbf{left regular representations} of $ G $. \\
+			\y  if $ G $ is a finite group then for left regular representation of $ G $ of an element $ x\in G $ of order $ n $ in $ G $ is product of $ m \; n- $cycles only, where $ |G|=nm .$  \\
+			\y so for $ \pi:G\ra S_G$ represents the isomorphism stated in Cayleys's theorem (by left regular representation)  and  $ x\in G $ $ \phi(x) $ is an odd permutation iff $ |x| $ is even and $ \frac{ |G| }{|\gen{x}|}  $ is odd.\snote{refer symmetric groups}\\
+			\y Immediately  from preceding point we get in representation of $ G $ if there exists an odd permutation then $ G $ has a subgroup of index $ 2.$ }
+			
+			\tbx{
+			\y  if $|G|=2k $ for $ k $ odd then $ G $ has a subgroup of index $ 2 $ i.e. $ \exists H\ll G $ more precisely $ H\trianglelefteq G $ such that $ |G:H|=2 $ ({\footnotesize use preceding 4 points)} 
+	}
+	
+	
 	\subsection{Cauchy's and Sylow's Theorem}
 	\tbx[\textbf{Cauchy's Theorem} ]{if $ G $ is finite group such that $ p| |G| $ (prime $ p $) then $ G $ has an element of order $ p .$\\
 		{ \footnotesize (use McKay's proof  : form $ p- $tupels from elements of  $ G $ i.e. $ \{(x_1,x_2,\ck,x_p) \}$ such that $ x_1x_2\ck x_p =1 $  and prove cyclic permutation here forms an equivalence relation , whose equivalence classes can have only orders $ 1 $ or $ p $ and there exist more than one element whose equivalence class is singleton. )} 
@@ -757,7 +769,8 @@
 		if $ P $ is Sylow $ p $-subgroups of $ G $ then $P$ is normal in $ G $ iff $ P $ char $ G .$ iff all subgroups generated by 
 		elements of $ p $-power order are $ p $-groups  (i.e. if $ X\subset G $ and $ |x| $is a power of $ p $ for every 
 		$ x\in X $ then $ \langle X \rangle $ is $ p $-group) iff $ n_p(G)=1. $}
-	\newcolumn
+%	\newcolumn
+
 	\subsubsection{ Classification of groups using Sylow's theorem}
 	 if $ p,q $ are distinct primes
 	\tbx[group $ G $ of order $ pq $ ]{
@@ -804,7 +817,8 @@
 			\y  if $ K $ char $H$ and $ H\trianglelefteq G $ then $ K\trianglelefteq G .$ \\
 			\y  $ H $ char $ K $  and $ K $ char $ G $ then $ H $ char $ G .$  
 	}
-	\newcolumn
+%	\newcolumn
+
 		\section{Semi Direct product}
 	
 	\tbx{Motivation :  to Generalise direct product so that not both $ H $ and $ K $ be normal to make a group 
@@ -1028,7 +1042,7 @@
 			\y  if $G$ is any finite group generated by two distinct elements $x,y$ for order of $ y =\;2$ then $G\cong D_{2n}$ where $n=|xy|$ \\
 			\y \textbf{also if $ |G|=2p $ for a prime $ p $ and is non abelian then $ G\cong D_{2p} $  }}
 
-\tbx[Class equation]{ for $ D_{2n} $ we have \\
+\tbx[Class equation]{ \footnotesize for $ D_{2n} $ we have \\
 \y if $ n $ is even then : $ \{e,r^n/2\}=Z(D_{2n}) $, for every $ r^i,\; $ $ r^j r^i r^{n-j}=r^i $ , $ sr^is=r^{-i}=r^{n-1} $ and $ sr^jr^i r^{-j}s=r^{-i} $ so for given $ n-2 $ $ r^i $ variables have a conjugacy class of order $ 2 $ so a total of $ n-2/2 $ classes , for $ s,\; $ $ r^jsr^{-j}=sr^{n-2j} $ now as $ n $ is even $ n-2j $ is even so conjugacy class of $ s  =\{sr^{2i}\} $ and for $ sr,\;$ $ r^jsrr^{-j} =sr^{n-2j+1}$ so conjugacy class of $ sr $ $ =\{sr^{2i+1}\} $ from this we get class equation
 \begin{center}
 	$ |D_{2n}|=1+1 +\underbrace{2+2+\ck+2}_{\frac{ n-2 }{2} \w{ times}}+\frac{ n }{2} +\frac{ n }{2} $
@@ -1041,8 +1055,10 @@
 \tbx[Semi direct product construction of $ D_{2n}=H\smdp K $  ]{ \y clearly $ \gen{r} $ is of index $ 2 $ so normal in $ D_{2n} $ so $ H=\gen{r}= Z_n$ and $ K=Z_2 $ only possibility left\\
 \y  we know $ rs=sr^{-1} $ i.e. $ srs=r^{-1} $ or $ sr^is=r^{-i} $ so define automorphism $ \phi : K\ra Aut(H)  $ by $x.y=y^{-1}  $ \\
 \y thus we have $ D_{2n}\cong Z_n\smdp Z_2 $ }
+
+\newcolumn
 	\subsection{Symmetric Groups}
-	
+%	{\footnotesize}
 	\tbx{Motivation : every element in a finite or countably finite set can be numbered so
 		representing each element with a number makes sense the bijections (maps) of these sets 
 		form a group these can be represented as permutations or rearrangements of numbers.
@@ -1054,12 +1070,17 @@
 	}
 	\tbx{for set $\Omega=\{1,2,\ck,n\}$ the bijections on this or Symmetric group of this group is
 		$S_n$ and clearly $|S_n|=n!$}
+		
+%		\newcolumn
 	\subsubsection{Cycles} 
 	
 	\tbx{each bijection $\sigma$ of $\Omega$ can be represented as the following :\\
 		$\sigma=(\!a_1,a_2,\ck,a_{(\!m_1\!)}\!)(\!a_{(\!m_1\!)+1},a_{(\!m_1\!)+2},\ck\\
 		,a_{(\!m_2\!)}\!)\ck(\!a_{(\!m_k\!)+1},a_{(\!m_k\!)+2},\ck,a_{m_{(\!k+1\!)}}\!)$
-		which can be read as (if $\ra$ indicates maps to) 
+		which can be read as follows :}
+%		\newcolumn
+		
+		if $\ra$ indicates maps to 
 	\begin{flushleft}
 		\begin{tikzpicture}[scale=.65]
 	%		\draw [thin,densely dashed](-2,2)grid(2,-2);
@@ -1100,7 +1121,7 @@
 	
 \end{tikzpicture} 
 \end{flushleft}
-	where $a_i$'s are distinct elements of $\Omega$}
+	where $a_i$'s are distinct elements of $\Omega$
 	
 	\subsubsection{ Properties of Cycles and cycle decompositions:}
 	
@@ -1127,6 +1148,7 @@
 			$(\tau(b_1),\tau(b_2),\ck ,\tau(b_{k_1})),\ck   .$
 		\end{center} (use if $ \sigma(i)=j \implies  \tau \sigma \tau^{-1} (\tau(i))=\tau(j)$ thus if $ i,j $ appear in $\sigma\implies\; \tau(i),\tau(j)$ appear in $\tau$'s cycle decomposition).
 	}
+	
 	\tbx{From preceding point we get 2 elements of $ S_n $ are conjugates iff they have same cycle type.
 	}
 	\tbx{and from preceding two point we get the number of conjugacy classes of $ S_n $ are equal to the partitions of $ n .$ (note here we include even 1-cycles)
