@@ -5,9 +5,9 @@
 
 \usepackage{hyperref}
 \hypersetup{colorlinks=true,
-	linkcolor=black,
+	linkcolor= blue,
 	filecolor=black,      
-	urlcolor=black}
+	urlcolor=blue }
 
 \usepackage{amsmath,amssymb,amsthm,mathtools,mathrsfs}
 \newtheorem{thm}{Theorem}[]
@@ -112,6 +112,10 @@
 \date{}
 \begin{document}
 	\maketitle
+\begin{center}\texttt{
+		\href{https://yn37git.github.io/blog/2025/Short-Notes/}{yn37git.github.io/blog/2025/Short-Notes}}
+\end{center} 
+
 	\begin{multicols}{2}
 		\tableofcontents
 
@@ -458,9 +462,11 @@ so any Subring of Integral domain containing unity is a Subdomain\\
 	Ring of functions on $ \R $ \snote{identity is the identity function, has zero divisors}
 }
 
+\newcolumn
 \section{Quotient rings and its properties}
 \tbx{ \y if $ R $ is commutative ring then $ R/I $ is also a commutative ring (converse may not be true).\\
 \y if $ R $ is commutative and $ M/I $ is an ideal in $ R/I $ iff $ M $ is an ideal containing $ I $ in $ R $ \snote{restatement of $ 4^{th} $ isomorphism theorem}.	 }
+
 
 	\subsection{Chinese Remainder Theorem (c.r.t)}
 
@@ -537,7 +543,8 @@ of p as a sum of two squares is unique.\\
 \y  $a +bi , a-bi $ the distinct irreducible factors of $p = a^2 + b^2 =
 (a + bi) (a - bi ) $ for the primes $p \in \Z $ with $p \equiv 1 \pmod 4 $ \snote{both of which
 have norm $p $}.}
-\newcolumn
+%\newcolumn
+
 		\section{Polynomial Rings} 
 
 \tbx{for any commutative ring $ R $ with identity we define $ R[x] $ as the ring of polynomial a set containing elements of type :

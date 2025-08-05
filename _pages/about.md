@@ -15,12 +15,16 @@ social: true # includes social icons at the bottom of the page
 #  scrollable: false # adds a vertical scroll bar if there are more than 3 new posts #items
 #limit: 3 # leave blank to include all the blog posts
 ---
+Hi! 
 
-Hi! I have completed my masters in mathematics and am currently looking for a PhD. role. I am interested in Number theory, Linear algebra, Machine learning and Algebra (These may look like vast and different topics but as I am just beginning my Journey , I am ready for a good exploration).
+I am currently a first year PhD student in the [School of Mathematics](https://maths.iisertvm.ac.in/) at Indian Institute of Science Education and Research, Thiruvanathapuram ([IISER TVM](https://www.iisertvm.ac.in/)). I am interested in Partial Differential Equations, Applied and Computational Mathematics.
 
-Currently I am preparing for competitive exams and interviews for a PhD. Feel free to contact me. 
 
-Here's my : 
+I have completed MSc. Mathematics from M.S. Ramaiah University of Applied Sciences ([MSRUAS](https://www.msruas.ac.in/)) and BSc. (PCM) from St. Josephs College ([SJC](https://sjc.ac.in/)).
+
+I usually sit in a quite dark room and study or overthink, apart from that I play chess, like to teach, like to debate, and am interested in [FOSS](https://en.wikipedia.org/wiki/Free_and_open-source_software) and Digital freedom movements. Fell free to contact me, I'm happy to have a good chat. 
+
+also here's my : 
 
 <details>
 <summary>CV</summary>

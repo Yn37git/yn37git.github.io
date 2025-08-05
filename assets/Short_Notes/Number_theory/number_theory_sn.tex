@@ -5,9 +5,9 @@
 
 \usepackage{hyperref}
 \hypersetup{colorlinks=true,
-	linkcolor=black,
+	linkcolor= blue,
 	filecolor=black,      
-	urlcolor=black}
+	urlcolor=blue }
 
 \usepackage{amsmath,amssymb,amsthm,mathtools,mathrsfs}
 \newtheorem{thm}{Theorem}[]
@@ -111,13 +111,20 @@
 \newcommand{\yi}{\indent$\;\bullet\;$}
 \DeclareMathOperator{\lcm}{lcm}
 \DeclareMathOperator{\ix}{ind}
-\author{Yashas.N}
-\title{Introductory Number Theory}
+\author{Yashas.N \\
+}
+\title{Introductory Number Theory
+}
 \date{}
 \begin{document}
 \maketitle
+\begin{center}\texttt{
+\href{https://yn37git.github.io/blog/2025/Short-Notes/}{yn37git.github.io/blog/2025/Short-Notes}}
+\end{center} 
+
 \begin{multicols}{2}
 	\tableofcontents
+
 \section*{Symbols used}
 	\begin{center}
 	$ \st \, \ra  $ such that.\\
@@ -129,16 +136,16 @@
 \newcolumn
 \section{Preliminaries}
 \tbx[Principle of Mathematical induction]{
-\y First principle :  If $ S $ is a set of positive integers $ (\Z^+) $ with the following :\\
+\y First principle :  If $ S $ is a subset of positive integers $ (\Z^+) $ with the following :\\
 \yi $ 1\in S. $ \\
 \yi $ k\in S \implies k+1\in S. $ \\
-then $ S $ is the set of positive integers.\\
+then $ S $ is the whole set of positive integers i.e. $ S=\Z^+. $\\
 \y Second principle (strong induction): if $ S \subseteq \Z^+ \st $\\
 \yi $ 1\in S $ and \\
 \yi $ 1,2,\ck,k\in S  \implies k+1\in S$ \\
 then $ S=\Z^+ .$  }
 \section{Divisibility in $ \Z^+ $}
-\tbx{ \y  for every $ a,b\in \Z, \exists \text{\snote{ unique }}q\in \Z, r\in \Z^+ \st a=qb+r$  and $ 0\geq r\geq |b|. $ \\
+\tbx{ \y  for every $ a,b\in \Z, \exists \text{\snote{ unique }}q\in \Z, r\in \Z^+ \st a=qb+r$  and $ 0\leq r\leq |b|. $ \\
 \y $ a|b $ \snote{$ a $ divides $ b $} iff $ a=qb $ for some \snote{unique} $ q\in \Z $ \\
 \y $ a|b $ then $ |a| \leq |b|.$ }
 \tbx{let $d= \gcd(a,b) $ denote greatest common divisor of $ a $ and $ b $ then\\
@@ -164,7 +171,7 @@ then $ S=\Z^+ .$  }
 \begin{center}
 	$ x=x_0+\left(\frac{ b }{d} \right)t \quad y=y_0+\left(\frac{ a }{d} \right) t.$
 	\end{center} for some solution $ x_0,y_0 $ and arbitrary $ t\in \Z$ i.e. there are infinitely many solutions for the linear diophatine equation $ ax+by=c. $ }
-
+\newcolumn
 \section{Congruences}
 \tbx[$ a\equiv b\pmod{n} $]{ is defined as true if $ n|(a-b) $ \snote{ note $ a,b\in Z $ and $ 1<n\in \Z^+ $
 } otherwise $ a\not\equiv b\pmod{n}  $.  }
@@ -221,7 +228,7 @@ And this solution is given by $ x=a_1N_1x_1+a_2N_2x_2\ck a_kN_kx_k $  where $ N_
    \section{Primes: Properties, Theorems and Conjectures. }
    let $ p,q \in \Z^+$ be primes \snote{ $ p>1 $ is prime in $ \Z^+ $ if only divisors of $ p $ are $ 1 $ and $ p. $}  and $\forall ab\in \Z.$then
    \tbx{
-   	\y $ p|ab \implies p|a\w{ or } p|b $ 
+   	\y $ p|ab \implies p|a\w{ or } p|b $ \\
    	\y $ p|a^k\implies p|a \w{ or } p|a^k.$
    }
    \tbx[Fundamental Theorem of Arithmetic]{ Every positive integer $ n>1 $ is a prime or product of primes such that its representation of the form 
@@ -296,6 +303,8 @@ then
 \tbx{
  Clearly from above we get if \\
 $  F(n)=\sm{d|n}{}f(d) $ is multiplicative then $ f(n) $ is also multiplicative.}
+
+\newcolumn
 \tbx[Positive Divisors function ]{  for a given integer $ n $ let $ \tau(n) $ denote the number of positive divisors of $ n $ and $ \sigma(n) $ denote the sum of these divisors then \\
 \y$ \tau(n)=\sm{d|n}{}1. $ \\
 \y $ \sigma(n)=\sm{d|n}{}d. $ \\
@@ -318,8 +327,8 @@ Now if $ n=p_1^{k_1}p_2^{k_2}\ck p_r^{k_r} $ is prime factorisation of $ n $ the
 \y $ \sm{d|n}{}\sigma(d)=\sm{n|d}{}\frac{ n }{d} \tau(d). $ }
 
 \tbx[Greatest integer function]{ 
-Let $ [x] $ for real number $ x $ denote the largest integer less than or equal to $ x $ i.e. $ [x] $ is a unique integer satisfying $ x-1<[x]\leq x $}
-\tbx{
+Let $ [x] $ for real number $ x $ denote the largest integer less than or equal to $ x $ i.e. $ [x] $ is a unique integer satisfying $ x-1<[x]\leq x $\\
+%\tbx{
 \y every $ x=[x]+\theta  $ for $ 0\leq \theta <1. $ \\
 \y if $ p $ appears in the prime factorisation of $ n $ then the highest exponent of $ p $ dividing $ n! $ is given by 
 \begin{center}
@@ -373,6 +382,7 @@ if $ n= p_1^{k_1}p_2^{k_2}\ck p_r^{k_r}$ is its prime factorisation then \\
  \snote{use if $ n=p^k $ then $ \sum_{d|n=p^k}\phi(n)=1+(p-1)+(p^2-p)+\ck+(p^k-p^{k-1})=p^k $ and multiplicity of $ \phi $ for multiplicity of $ \sum_{d|n}\phi(d) $}.
 \y sum of positive integers less than $ n $ and relatively prime to $ n $ is equal to $ \frac{ n\phi(n) }{2} $ \snote{use $ \gcd(a,n)=\gcd(n-a,n) $ so $ \{n-a_1,n-a_2,\ck n-a_{\phi(n)}\}=\{a_1,a_2,\ck ,a_{\phi(n)}\} $ integers relatively prime to $ n $ so the set sum is also equal}.
 }
+\newcolumn
 \section{Primitive roots}
 \tbx{ for $ n>1 $ and $ \gcd(a,n)=1 $, define \textbf{Order} of $ a $ modulo $ n $ as the smallest +ve integer $ k \st a^k\equiv 1\pmod{n}.$}
 \tbx{  if $ a $ has order $ k $ modulo $ n $\\
@@ -415,7 +425,8 @@ let $ r $ be a primitve root of $ p $ such that $ r^{p-1}\not\equiv1\pmod{p^2} $
  $ n=2,4,p^k\w{ or }2p^k $ 
  \end{center}
   for odd prime $ p $ and $ k\in \Z^+. $}
-
+  
+\newcolumn
 \subsection{Indices}
 \tbx[Relative Index]{ If for a given $ n\in \Z^+ $ has a primitive root $ r $ then for $ a\st \gcd(a,n)=1 $ \\ the smallest integer $ k\st a\equiv r^k\pmod n $  is called the index of $ a $ relative to $ r$ denoted by $ k=\ix_ra$ \snote{i.e. $ r^{\ix_ra}\equiv a\pmod{n} $ }. }
 \tbx{ let $ n $ have a primitive root $ r $ and $ \gcd(a,n)=\gcd(b,n)=1 $ then \\
@@ -465,7 +476,7 @@ thus the binomial congruence has a solution $ x_0 $ iff for $ d=\gcd(a,\phi(n)) 
  $  a^x\equiv b\pmod{p} $ 
  \end{center}
  has a solution iff for $ d=\gcd(\ix_ra,p-1) $ , $ d|i\ix_rb. $ If then there are $ d $ incongruent solutions modulo $ p-1. $}
-
+\newcolumn
 \subsection{Quadratic Congruence and residue}
  
 \tbx[main problem]{ 
@@ -588,8 +599,8 @@ Thus we can invert above for odd primes $ p_i $ to get a smaller denominator by 
 \y $ x^2\equiv a\pmod{2^n} $ for $ n\geq 3 $ is solvable iff $ a\equiv 1\pmod{8} $. }
 \tbx{ From above points we have if $ n=  2^{k_0}p_1^{k_1}p_2^{k_2}\ck p_r^{k_r} $ for odd primes $ p_i $ and $ \gcd(a,n) =1$ then $ x^2\equiv a\pmod{n} $ is solvable iff\\
 	\y $ (\frac{ a }{p_i})=1 $ \\
-	\y $ a\equiv1\pmod{4} $ if $ 4|a $ but $ 8\not|a $  or $ a\equiv1\pmod{8} $ if $ 8|a $.}
-	\newcolumn
+	\y $ a\equiv1\pmod{4} $ if $ 4|n $ but $ 8\not|n $  or $ a\equiv1\pmod{8} $ if $ 8|n $.}
+%	\newcolumn
 	\begin{thebibliography}{9}
 		\bibitem{ENT}
 		David M. Burton : Elementary number theory, McGraw·Hill, 7, (2010).

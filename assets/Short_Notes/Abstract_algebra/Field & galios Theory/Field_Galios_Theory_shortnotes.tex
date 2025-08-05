@@ -5,9 +5,9 @@
 
 \usepackage{hyperref}
 \hypersetup{colorlinks=true,
-	linkcolor=black,
+	linkcolor= blue,
 	filecolor=black,      
-	urlcolor=black}
+	urlcolor=blue }
 	
 \usepackage{amsmath,amssymb,amsthm,mathtools,mathrsfs}
 \newtheorem{thm}{Theorem}[]
@@ -122,6 +122,10 @@
 
 \begin{document}
 	\maketitle
+	\begin{center}\texttt{
+			\href{https://yn37git.github.io/blog/2025/Short-Notes/}{yn37git.github.io/blog/2025/Short-Notes}}
+	\end{center} 
+	
 	\boldmath
 	\begin{multicols}{2}
 	\tableofcontents
@@ -256,6 +260,8 @@ if $[K_1:F]=n,[K_2:F]=m$ and $ (n,m)=1 $ then $ [K_1K_2:F]=nm=  [K_1:F][K_2:F].$
 \snote{use Artin's proof : for every monic poly $ f(x)\in  F[x]$ denote $ x_f $ as an indeterminate and in ring $ F[\ck,
 x_f,\ck] $ (an infinite variable polynomial field) prove ideal $ I=\gen{\ck,f(x_f),\ck} \forall f$ is proper thus contained in some maximal ideal $ M $ , let $ K_1 =F[\ck , x_f,\ck ]/M$ (quotient) clearly $ K_1 $ contains an isomorphic copy of $ F $ and every poly $ f \in F[x]$ has a root  in $ K_1 $ namely $ x_f $ performing this same process to $ K_1 $ and further we get $ F=K_0\subseteq K_1 \subseteq K_2 \ck \subseteq K_j \subseteq K_{j+1} \subseteq\ck  $ (not direct subsets but isomorphic) and let $ K= \underset{j\geq 0}{K_j}$ the $ K $ is algebraically closed and contains $ F $ \\
 Now if $ K $ is algebraically closed field containing $ F $ then $ \bar{F} \subseteq K$ containing elements of $ K $ algebraic over $ F$ is the algebraic closure of $ F.$  }}
+\newcolumn
+
 \subsection{Separable and Inseparable\\ Extensions}
 %\tbx{ if $ f(x)=(x-a_1)^{n_1}(x-a_2)^{n_2}\ck (x-a_k)^{n_k} \in F[x] $ for $ a_i's $ distinct elements in the splitting field $ a_i $ is called a multiple root if $ n_i>1 $ with multiplicity $ n_i $ of $ f(x) $ or is simple root of $ f(x) $  if $ n_i=1 $ }
 \tbx[Separable and Inseparable]{ A polynomial $ f(x)\in F[x] $ is separable if it has no multiple roots i.e. all its roots are distinct and has no repeated roots, if $ f(x) $ is not separable then it is inseparable.}
@@ -305,7 +311,7 @@ clearly there are precisely $ \varphi(n) $ (euler's $ \varphi $-function) primit
 %\tbx{ if  $ (m,n)=1 $ and $ \zeta_m,\zeta_n$ are primitive $ m^{th} $ and $ n^{th} $ root of unity then $ \zeta_m\zeta_n $ is the primitive $ mn^{th} $ root of unity.\\
 %if $ d|n $ then $ \zeta_d^n=1 $ so $ \zeta_d\in \mu_d $ and $ \zeta_n^d $ is one the primitive $ (n/d)^{th} $ root of unity.    }
 
-\newcolumn
+%\newcolumn
 \subsubsection{Main Concept}
 \tbx[Cyclotomic Field]{  if $ \zeta_n $ is primitive $ n^{th} $ root of unity then $ \Q(\zeta_n) $ is called cyclotomic field of $ n^{th} $ root of unity}
 \tbx{ let $ \mu_n $ denote the group of $ n^{th} $ roots of unity over $ \Q $ (only the roots)\\
