@@ -4,7 +4,7 @@ title: about
 permalink: /
 
 profile:
-  align: left
+  align: right
   image: yn37pic.png
   image_circular: true # crops the image to make it circular
 selected_papers: false # includes a list of papers marked as "selected={true}"
@@ -22,7 +22,7 @@ I am currently a first year PhD student in the [School of Mathematics](https://m
 
 I have completed MSc. Mathematics from M.S. Ramaiah University of Applied Sciences ([MSRUAS](https://www.msruas.ac.in/)) and BSc. (PCM) from St. Josephs College ([SJC](https://sjc.ac.in/)).
 
-I usually sit in a quite dorky room and study or overthink, apart from that I play chess, like to teach, like to debate, and am interested in [FOSS](https://en.wikipedia.org/wiki/Free_and_open-source_software) and Digital freedom movements. Fell free to contact me, I'm happy to have a good chat. 
+I usually sit in quite dorky places and study or overthink, apart from that I play chess, like to teach, like to debate, and am interested in [FOSS](https://en.wikipedia.org/wiki/Free_and_open-source_software) and Digital freedom movements. Feel free to contact me, I'm happy to have a good chat. 
 
 also here's my : 
 
