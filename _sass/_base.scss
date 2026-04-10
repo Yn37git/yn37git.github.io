@@ -17,11 +17,11 @@ li,
 span,
 strong {
   color: var(--global-text-color);
-  ont-family: 'Arvo', sans-serif; 
+  font-family: 'Arvo', sans-serif; 
   font-weight: 400;
 }
 body {
-  ont-family: 'Arvo', sans-serif; 
+  font-family: 'Arvo', sans-serif; 
   font-weight: 400;
 }
 hr {
@@ -307,6 +307,7 @@ ul.task-list input[type="checkbox"] {
   }
 
   .navbar-nav .nav-item.active > .nav-link {
+    font-family: 'Arvo', sans-serif;
     background-color: inherit;
     font-weight: bolder;
     color: var(--global-theme-color);
