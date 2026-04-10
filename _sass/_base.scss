@@ -203,7 +203,7 @@ ul.task-list input[type="checkbox"] {
   .more-info {
     margin-bottom: 5px;
     margin-top: 5px;
-    font-family: Ubuntu;
+    font-family: 'Arvo', sans-serif;
 
     p {
       display: inline-block;
@@ -253,7 +253,7 @@ ul.task-list input[type="checkbox"] {
   border-bottom: 1px solid var(--global-divider-color);
   background-color: var(--global-bg-color);
   opacity: 0.75;
-  font-family: Ubuntu;
+  font-family: 'Arvo', sans-serif;
   font-weight: 400;
 }
 
@@ -287,20 +287,20 @@ ul.task-list input[type="checkbox"] {
   a {
     &:hover {
       text-decoration: none;
-      font-family: Ubuntu;
+      font-family: 'Arvo', sans-serif; 
       font-weight: 400;
     }
   }
 
   .navbar-brand {
     color: var(--global-text-color);
-    font-family: Ubuntu;
+    font-family: 'Arvo', sans-serif; 
     font-weight: 400;
   }
 
   .navbar-nav .nav-item .nav-link {
     color: var(--global-text-color);
-
+    font-family: 'Arvo', sans-serif; 
     &:hover {
       color: var(--global-hover-color);
     }
