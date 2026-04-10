@@ -15,14 +15,22 @@ social: true # includes social icons at the bottom of the page
 #  scrollable: false # adds a vertical scroll bar if there are more than 3 new posts #items
 #limit: 3 # leave blank to include all the blog posts
 ---
-Hi! 
 
-I am currently a first year PhD student in the [School of Mathematics](https://maths.iisertvm.ac.in/) at Indian Institute of Science Education and Research, Thiruvanathapuram ([IISER TVM](https://www.iisertvm.ac.in/)). I am interested in Partial Differential Equations, Applied and Computational Mathematics.
+Hi! *Namaste!* 
 
+I am a first year PhD student at [School of Mathematics](https://maths.iisertvm.ac.in/) in Indian Institute of Science Education and Research, Thiruvanathapuram ([IISER TVM](https://www.iisertvm.ac.in/ )). 
 
-I have completed MSc. Mathematics from M.S. Ramaiah University of Applied Sciences ([MSRUAS](https://www.msruas.ac.in/)) and BSc. (PCM) from St. Josephs College ([SJC](https://sjc.ac.in/)).
+Have been working under [Dr. Sudarshan Kumar K](https://www.iisertvm.ac.in/faculty/sudarshan/personal-information ), Specializing in Numerical methods for hypebolic conservation laws. 
 
-I usually sit in quite dorky places and study or overthink, apart from that I play chess, like to teach, like to debate, and am interested in [FOSS](https://en.wikipedia.org/wiki/Free_and_open-source_software) and Digital freedom movements. Feel free to contact me, I'm happy to have a good chat. 
+Also I have a keen intereste in Partial Differential Equations, Applied and Computational Mathematics.
+
+***
+
+I have completed MSc. Mathematics from M.S. Ramaiah University of Applied Sciences ([MSRUAS](https://www.msruas.ac.in/)) and BSc. (PCM) from St. Josephs College ([SJC](https://sjc.ac.in/ )).
+
+***
+
+I usually sit in quite dorky places and study or overthink, apart from that I play chess, like to teach, like to debate, and am interested in [FOSS](https://en.wikipedia.org/wiki/Free_and_open-source_software) and Digital freedom movements. Feel free to contact me, I will be happy to have a good chat. 
 
 also here's my : 
 
