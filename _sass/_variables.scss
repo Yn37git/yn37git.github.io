@@ -62,3 +62,11 @@ $back-to-top-right: 30px;
 $back-to-top-diameter: 40px;
 $back-to-top-height: $back-to-top-diameter;
 $back-to-top-width: $back-to-top-diameter;
+
+@font-face {
+  font-family: 'Arvo';
+  font-style: normal;
+  font-weight: 400; // Or whatever weight your font is
+  font-display: swap; // This value is commonly used for performance
+  src: url('../fonts/Arvo.ttf') format('truetype');
+}

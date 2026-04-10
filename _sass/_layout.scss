@@ -3,6 +3,7 @@
  ******************************************************************************/
 
 body {
+  font-family: 'Arvo', sans-serif; 
   padding-bottom: 70px;
   color: var(--global-text-color);
   background-color: var(--global-bg-color);
@@ -13,6 +14,7 @@ body {
   h4,
   h5,
   h6 {
+    font-family: 'Arvo', sans-serif; 
     scroll-margin-top: 66px;
   }
 }
