@@ -13,10 +13,10 @@ These Short notes are just summaries, simplified major theorems, some statements
 Click on the topics to open pdfs (or you can just download them).
 
 <details>
-<summary>Abstract algebra</summary>
+<summary> Abstract algebra</summary>
 
 <details>
-<summary>Group theory</summary>
+<summary> Group theory</summary>
 
 
 <object
@@ -40,7 +40,7 @@ Click on the topics to open pdfs (or you can just download them).
 </details>
 
 <details>
-<summary>Ring theory</summary>
+<summary> Ring theory</summary>
 
 <object
 	data="https://yn37git.github.io/assets/Short_Notes/Abstract_algebra/Ring Theory/Ring_theory_shortnotes.pdf"
@@ -63,7 +63,7 @@ Click on the topics to open pdfs (or you can just download them).
 </details>
 
 <details>
-<summary>Field and Galios theory</summary>
+<summary> Field and Galios theory</summary>
 
 <object
 	data="https://yn37git.github.io/assets/Short_Notes/Abstract_algebra/Field & galios Theory/Field_Galios_Theory_shortnotes.pdf"
@@ -136,7 +136,7 @@ Click on the topics to open pdfs (or you can just download them).
 <summary> Linear algebra</summary>
 
 <details>
-<summary> linear alg</summary>
+<summary> Theory</summary>
 
 <object
 	data="https://yn37git.github.io/assets/Short_Notes/Linear_Algebra/linear_algebra/Linear_algebra_shortnotes.pdf"
@@ -159,7 +159,7 @@ Click on the topics to open pdfs (or you can just download them).
 </details>
 
 <details>
-<summary> Matrix properties </summary>
+<summary> Properties of Matrices </summary>
 
 <object
 	data="https://yn37git.github.io/assets/Short_Notes/Linear_Algebra/matrix_properties/matrix_properties_shortnotes.pdf"
@@ -253,7 +253,8 @@ Click on the topics to open pdfs (or you can just download them).
 
 <details>
 <summary> Real analysis</summary>
-
+<details>
+<summary> Theory</summary>
 <object
 	data="https://yn37git.github.io/assets/Short_Notes/Real_analysis/Real_analysis_shortnotes.pdf"
 	type="application/pdf"
@@ -318,6 +319,7 @@ Click on the topics to open pdfs (or you can just download them).
 		</p>
 	</iframe>
 </object>
+</details>
 </details>
 
 > ##### NOTE

@@ -18,11 +18,10 @@ social: true # includes social icons at the bottom of the page
 
 *Namaste!* 
 
-I am a first year PhD student at [School of Mathematics](https://maths.iisertvm.ac.in/) in Indian Institute of Science Education and Research, Thiruvanathapuram ([IISER TVM](https://www.iisertvm.ac.in/ )). 
+I am a first year PhD student at [School of Mathematics](https://maths.iisertvm.ac.in/) in Indian Institute of Science Education and Research, Thiruvanathapuram ([IISER TVM](https://www.iisertvm.ac.in/ )),
+working under [Dr. Sudarshan Kumar K](https://www.iisertvm.ac.in/faculty/sudarshan/personal-information ), Specializing in Numerical methods for hypebolic conservation laws. 
 
-Have been working under [Dr. Sudarshan Kumar K](https://www.iisertvm.ac.in/faculty/sudarshan/personal-information ), Specializing in Numerical methods for hypebolic conservation laws. 
-
-Also I have a keen intereste in Partial Differential Equations, Applied and Computational Mathematics.
+I am mostly interested in Partial Differential Equations, Applied and Computational Mathematics.
 
 
 I have completed MSc. Mathematics from M.S. Ramaiah University of Applied Sciences ([MSRUAS](https://www.msruas.ac.in/)) and BSc. (PCM) from St. Josephs College ([SJC](https://sjc.ac.in/ )).
